@@ -58,7 +58,7 @@ public class GrabSheep : MonoBehaviour
            sheep = other.gameObject.transform;
 
         }
-        
+         
     
     }
 
@@ -75,6 +75,8 @@ public class GrabSheep : MonoBehaviour
 
         }
         }
+
+        
     }
 
      private void OnCollisionExit2D(Collision2D other) 
