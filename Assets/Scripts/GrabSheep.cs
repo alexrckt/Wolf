@@ -8,6 +8,7 @@ public class GrabSheep : MonoBehaviour
     Sheeps_Clothing sc;
     bool isTouchingSheep;
     public bool isTouchingDropPoint;
+    public Transform mouth;
     
     public Transform sheep;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class GrabSheep : MonoBehaviour
             sheep.SetParent(gameObject.transform, true);
             sheep.GetComponent<CircleCollider2D>().enabled = false;
             
+            
             wc.IsCarryingSheep(true);
             sc.Stealth(false);
             return;
@@ -42,6 +44,10 @@ public class GrabSheep : MonoBehaviour
         }
     }
 
+    public void DangleSheep(Transform whereMouth)
+    {
+       sheep.transform.position = whereMouth.position;
+    }
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Sheep")

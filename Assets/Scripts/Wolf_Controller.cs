@@ -10,28 +10,37 @@ public class Wolf_Controller : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 moveVelocity;
     Vector2 moveInput;
-    public Vector2 lastMotionVector;
+    [HideInInspector] public Vector2 lastMotionVector;
     Animator animator;
-    public bool moving;
-    public bool isStealthed;
-    public bool isCarryingSheep;
+    GrabSheep gs;
+     bool moving;
+    [HideInInspector] public bool isStealthed;
+    [HideInInspector]  public bool isCarryingSheep;
+
+    public Transform dangleN;
+    public Transform dangleE;
+    public Transform dangleS;
+    public Transform dangleW;
     
     private float stealthMsFactor = 1f;
     private float carryMsFactor = 1f;
+    float horizontal;
+    float vertical;
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         moveSpeedCurrent = moveSpeed;
         animator = GetComponent<Animator>();
+        gs = GetComponent<GrabSheep>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(horizontal, vertical );
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
@@ -40,6 +49,7 @@ public class Wolf_Controller : MonoBehaviour
         animator.SetBool("moving", moving);
         if (horizontal != 0 || vertical != 0)
         {
+         DangleSheep();
          lastMotionVector = new Vector2(horizontal, vertical).normalized;
          animator.SetFloat("lastHorizontal", horizontal);
          animator.SetFloat("lastVertical", vertical);
@@ -74,6 +84,32 @@ public class Wolf_Controller : MonoBehaviour
       else
       carryMsFactor = 1f;
       
+    }
+
+    void DangleSheep()
+    {
+     if (isCarryingSheep)
+     { 
+      if (horizontal == 1 )
+      {
+        gs.DangleSheep(dangleE);
+      }
+      else if (vertical == 1  )
+      {
+        gs.DangleSheep(dangleN);
+      }
+      else if (horizontal == -1  )
+      {
+        gs.DangleSheep(dangleW);
+      }
+      else if (vertical == -1  )
+      {
+        gs.DangleSheep(dangleS);
+      }
+      
+
+
+     }
     }
 
 }
