@@ -6,19 +6,22 @@ public class GrabSheep : MonoBehaviour
 {
     Wolf_Controller wc;
     Sheeps_Clothing sc;
+    DropPoint_BringSheep dpBSheep;
     bool isTouchingSheep;
-    public bool isTouchingDropPoint;
+    [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
+    public float sheepValue = 1f;
+    [HideInInspector] public Transform sheep;
     
-    public Transform sheep;
-    // Start is called before the first frame update
     void Start()
     {
         wc = GetComponent<Wolf_Controller>();
         sc = GetComponent<Sheeps_Clothing>();
+        dpBSheep = FindObjectOfType<DropPoint_BringSheep>();
+
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if(Input.GetKeyDown (KeyCode.G))
@@ -69,9 +72,9 @@ public class GrabSheep : MonoBehaviour
 
           if (wc.isCarryingSheep)
         {
-           Destroy(sheep.gameObject);
-           //sheep = null;
-           wc.IsCarryingSheep(false);
+          wc.IsCarryingSheep(false);
+           Destroy(sheep.gameObject);           
+           dpBSheep.UpdateSheepText(sheepValue);
 
         }
         }

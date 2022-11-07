@@ -13,7 +13,7 @@ public class Wolf_Controller : MonoBehaviour
     [HideInInspector] public Vector2 lastMotionVector;
     Animator animator;
     GrabSheep gs;
-     bool moving;
+    bool moving;
     [HideInInspector] public bool isStealthed;
     [HideInInspector]  public bool isCarryingSheep;
 

@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 7099436863203433969}
   - component: {fileID: 7099436863203433971}
   - component: {fileID: 7099436863203433968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dom_niz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
