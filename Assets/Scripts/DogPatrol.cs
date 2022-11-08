@@ -9,18 +9,20 @@ public class DogPatrol : MonoBehaviour
     {
         Calm,
         Sniffing,
-        Chasing
+        Chasing,
+        LostTarget
     }
 
-    public float speed;
+    GameObject playerRef;
     public float waitTimeMin;
     public float waitTimeMax;
     public float waitTimeSniffMin;
     public float waitTimeSniffMax;
+    public string stateDebug;
 
     public State CurrentState { get; set; }
     private LinkedListNode<GameObject> wolfFootstep;
-    Vector2 lastMotionVector;
+    //Vector2 lastMotionVector;
     public Transform[] moveSpots;
     private int randomSpot;
     AIDestinationSetter aids;
@@ -29,9 +31,11 @@ public class DogPatrol : MonoBehaviour
     bool moving;
     public float horizontal;
     public float vertical;
-    // Start is called before the first frame update
+    Vector2 lastPlayerPos;
+    
     void Start()
     {
+        playerRef = GameObject.FindGameObjectWithTag("Player");
         CurrentState = State.Calm;
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
@@ -42,6 +46,21 @@ public class DogPatrol : MonoBehaviour
     
     void Update()
     {
+        switch (CurrentState)
+        {
+            case State.Calm:
+            stateDebug = "Calm";
+            return;
+            case State.Chasing:
+            stateDebug = "Chasing";
+            return;
+            case State.Sniffing:
+            stateDebug = "Sniffin";
+            return;
+            case State.LostTarget:
+            stateDebug = "Lost";
+            return;
+        }
         horizontal = aiPath.desiredVelocity.x;
         vertical = aiPath.desiredVelocity.y;
 
@@ -55,7 +74,7 @@ public class DogPatrol : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-            lastMotionVector = new Vector2(horizontal, vertical).normalized;
+            //lastMotionVector = new Vector2(horizontal, vertical).normalized;
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
@@ -75,7 +94,7 @@ public class DogPatrol : MonoBehaviour
         if (CurrentState != State.Sniffing)
         {
             CurrentState = State.Sniffing;
-            aiPath.maxSpeed *= 2;
+            aiPath.maxSpeed *= 2; // need var to store normal / sniffing / chasing speeds
         }
         wolfFootstep = WolfController.Footsteps.Find(step.gameObject);
     }
@@ -92,19 +111,29 @@ public class DogPatrol : MonoBehaviour
             {
                 randomSpot = Random.Range(0, moveSpots.Length);
                 target = moveSpots[randomSpot];
-            } else if (CurrentState == State.Sniffing)
+            }
+             else if (CurrentState == State.Sniffing)
             {
                 target = wolfFootstep.Next.Value.transform;
-            } else
+                
+            }
+            else if (CurrentState == State.LostTarget)
             {
-                target = moveSpots[randomSpot]; // тут будет волк
+                target = null;
+                aiPath.destination = lastPlayerPos;
+                if (aiPath.reachedDestination)
+                {CurrentState = State.Calm;}
+            }
+             else
+            {
+                target = playerRef.transform; // tut budet volk
             }
 
             var initialState = CurrentState;
             while(Vector2.Distance(transform.position, target.position) > 0.2f
                   && initialState == CurrentState)
             {
-                //transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+                
                 aids.target = target;
                 yield return null;
             }
@@ -132,7 +161,7 @@ public class DogPatrol : MonoBehaviour
          return Random.Range(min, max);
      }
 
-    void NormalizeMoveDest()
+    public void NormalizeMoveDest()
     {
         
       if (horizontal > 0)
@@ -152,5 +181,16 @@ public class DogPatrol : MonoBehaviour
         {
             vertical = -1f;
         }
+    }
+
+
+    public void PlayerLastSeen()
+    {
+         
+          lastPlayerPos = playerRef.transform.position;
+         
+         
+       if (CurrentState == State.Chasing)
+         {CurrentState = State.LostTarget;}
     }
 }

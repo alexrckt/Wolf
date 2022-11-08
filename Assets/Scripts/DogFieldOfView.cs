@@ -1,0 +1,117 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Pathfinding;
+
+public class DogFieldOfView : MonoBehaviour
+{
+    public float radius;
+    [Range (0, 360)]
+    public float angle;
+    public bool canSeePlayer;
+    public Transform fovPoint;
+    public GameObject playerRef;
+    public LayerMask playerMask;
+    public LayerMask obstacleMask;
+    public GameObject[] fovDirs;
+    Vector3 fovDir = new Vector3();
+    DogPatrol dp;
+    WolfController wc;
+
+        private void Start()
+    {
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+        wc = playerRef.GetComponent<WolfController>();
+        dp = GetComponent<DogPatrol>();
+        StartCoroutine(FOVRoutine());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private IEnumerator FOVRoutine()
+    {
+        
+
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        while (true)
+        {
+            yield return wait;
+            FieldOfViewCheck();
+        }
+    }
+
+    private void FieldOfViewCheck()
+    {
+        Collider2D[] rangeChecks = Physics2D.OverlapCircleAll(transform.position,  radius, playerMask);
+        if (rangeChecks.Length != 0 && !wc.isStealthed ) // if player is in the circle's range
+        {
+            
+          WhereIsDogLooking(); // check where the dog is facing now
+                               // maybe it's better to check directly which anim is playing? idk
+
+            Transform target = rangeChecks[0].transform;
+            Vector2 directionToTarget = (target.position - transform.position).normalized;
+
+            if (Vector2.Angle(fovDir, directionToTarget) < angle / 2) // if player in view angle
+            {
+                float distanceToTarget = Vector2.Distance(transform.position, target.position);
+                if (!Physics2D.Raycast(transform.position, directionToTarget,
+                                                distanceToTarget,obstacleMask)) // if player isn't
+                                                                            // behind an obstacle
+                {
+                    canSeePlayer = true;
+                    dp.CurrentState = DogPatrol.State.Chasing;
+                    Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
+                    // debug white line shows fov - 5 times a second
+                } 
+                else // if player is behind an obstacle
+                {
+                    canSeePlayer = false;
+                   dp.PlayerLastSeen(); // if dog is chasing
+                                //sets dog to lost state and saves a ref to last point 
+                                 //where it saw the player
+                }
+            }
+            else // if player isn't in view angle
+            {
+             canSeePlayer = false;
+             dp.PlayerLastSeen();
+            }
+        }
+        else if (canSeePlayer) // if player was in view angle but got away from it
+        {
+        canSeePlayer = false;
+        dp.PlayerLastSeen();
+        // method for getting last pos seen, going there, then resetting to calm on reach destination
+         
+        }
+        
+
+    }
+
+    void WhereIsDogLooking()
+    {
+        dp.NormalizeMoveDest();
+            
+
+            if (dp.horizontal == 1)
+             {fovDir = fovDirs[1].transform.right;} // right - east
+            else if (dp.horizontal == -1)
+             {fovDir = -fovDirs[3].transform.right;} // left - west
+            else if (dp.vertical == -1)
+             {fovDir = -fovDirs[2].transform.up;} // down - south
+            else if (dp.vertical == 1)
+             {fovDir = fovDirs[0].transform.up;} // up - north
+                       
+            
+            else // idle - face down
+            {fovDir = -fovDirs[2].transform.up;};
+    }
+
+    
+}
