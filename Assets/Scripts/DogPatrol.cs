@@ -45,10 +45,9 @@ public class DogPatrol : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-         
-         lastMotionVector = new Vector2(horizontal, vertical).normalized;
-         animator.SetFloat("lastHorizontal", horizontal);
-         animator.SetFloat("lastVertical", vertical);
+            lastMotionVector = new Vector2(horizontal, vertical).normalized;
+            animator.SetFloat("lastHorizontal", horizontal);
+            animator.SetFloat("lastVertical", vertical);
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DropPoint_BringSheep : MonoBehaviour
+public class DropPointBringSheep : MonoBehaviour
 {
     public TextMeshProUGUI sheepText;
     float sheepBrought = 0;

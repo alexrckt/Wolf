@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))] 
-public class Wolf_Controller : MonoBehaviour
+public class WolfController : MonoBehaviour
 {
     public float moveSpeed;
     public float moveSpeedCurrent;
@@ -49,16 +50,18 @@ public class Wolf_Controller : MonoBehaviour
         animator.SetBool("moving", moving);
         if (horizontal != 0 || vertical != 0)
         {
-         DangleSheep();
-         lastMotionVector = new Vector2(horizontal, vertical).normalized;
-         animator.SetFloat("lastHorizontal", horizontal);
-         animator.SetFloat("lastVertical", vertical);
+            DangleSheep();
+            lastMotionVector = new Vector2(horizontal, vertical).normalized;
+            animator.SetFloat("lastHorizontal", horizontal);
+            animator.SetFloat("lastVertical", vertical);
         }
     }
 
     void Move()
     {
-        moveSpeedCurrent = moveSpeed * stealthMsFactor * carryMsFactor ;
+        moveSpeedCurrent = 
+            (moveInput.x != 0 && moveInput.y != 0 ? moveSpeed / 2 : moveSpeed) 
+            * stealthMsFactor * carryMsFactor ;
         rb.velocity = moveInput * moveSpeedCurrent;
     }
 
@@ -69,22 +72,14 @@ public class Wolf_Controller : MonoBehaviour
     public void IsStealthed(bool yesno)
     {
         isStealthed = yesno;
-      if (yesno)
-      stealthMsFactor = 0.5f;
-      else
-      stealthMsFactor = 1f;
-      
+        stealthMsFactor = yesno ? 0.5f : 1f;
     }
  
- public void IsCarryingSheep(bool yesno)
-    {
-        isCarryingSheep = yesno;
-      if (yesno)
-      carryMsFactor = 0.5f;
-      else
-      carryMsFactor = 1f;
-      
-    }
+    public void IsCarryingSheep(bool yesno)
+ {
+     isCarryingSheep = yesno;
+     carryMsFactor = yesno ? 0.5f : 1f;
+ }
 
     void DangleSheep()
     {

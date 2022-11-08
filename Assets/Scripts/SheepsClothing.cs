@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sheeps_Clothing : MonoBehaviour
+public class Sheeps—lothing : MonoBehaviour
 {
     public bool isWearingClothing = false;
     public GameObject clothes;
-    Wolf_Controller w_c;
+    WolfController w_c;
     // Start is called before the first frame update
     void Start()
     {
-        w_c = GetComponent<Wolf_Controller>();
+        w_c = GetComponent<WolfController>();
     }
 
     // Update is called once per frame
