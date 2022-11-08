@@ -9194,6 +9194,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2106051138}
     m_Modifications:
+    - target: {fileID: 41222918, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 336064165, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: moveSpots.Array.data[0]
       value: 

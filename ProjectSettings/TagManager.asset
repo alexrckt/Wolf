@@ -8,6 +8,7 @@ TagManager:
   - Farmer
   - Dog
   - DropPoint
+  - WolfFootstep
   layers:
   - Default
   - TransparentFX

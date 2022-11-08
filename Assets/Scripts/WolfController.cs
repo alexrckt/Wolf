@@ -1,11 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Random = System.Random;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 [RequireComponent(typeof(Rigidbody2D))] 
 public class WolfController : MonoBehaviour
 {
+    public GameObject footstep;
+    [field: HideInInspector] public static LinkedList<GameObject> Footsteps { get; set; }
+
     public float moveSpeed;
     public float moveSpeedCurrent;
     public Rigidbody2D rb;
@@ -15,8 +24,9 @@ public class WolfController : MonoBehaviour
     Animator animator;
     GrabSheep gs;
     bool moving;
+
     [HideInInspector] public bool isStealthed;
-    [HideInInspector]  public bool isCarryingSheep;
+    [HideInInspector] public bool isCarryingSheep;
 
     public Transform dangleN;
     public Transform dangleE;
@@ -27,6 +37,8 @@ public class WolfController : MonoBehaviour
     private float carryMsFactor = 1f;
     float horizontal;
     float vertical;
+    private Vector3 lastStep;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +46,8 @@ public class WolfController : MonoBehaviour
         moveSpeedCurrent = moveSpeed;
         animator = GetComponent<Animator>();
         gs = GetComponent<GrabSheep>();
-
+        lastStep = new Vector3();
+        Footsteps = new LinkedList<GameObject>();
     }
 
     // Update is called once per frame
@@ -65,8 +78,19 @@ public class WolfController : MonoBehaviour
         rb.velocity = moveInput * moveSpeedCurrent;
     }
 
+    void SpawnFootsteps()
+    {
+        if (Vector3.Distance(transform.position, lastStep) > 1)
+        {
+            lastStep = transform.position;
+            Footsteps.AddLast(Instantiate(footstep, transform.position, 
+                Quaternion.LookRotation(Vector3.forward, lastMotionVector)));
+        }
+    }
+
     private void FixedUpdate() {
         Move();
+        SpawnFootsteps();
     }
 
     public void IsStealthed(bool yesno)
@@ -76,10 +100,10 @@ public class WolfController : MonoBehaviour
     }
  
     public void IsCarryingSheep(bool yesno)
- {
-     isCarryingSheep = yesno;
-     carryMsFactor = yesno ? 0.5f : 1f;
- }
+    {
+        isCarryingSheep = yesno;
+        carryMsFactor = yesno ? 0.5f : 1f;
+    }
 
     void DangleSheep()
     {

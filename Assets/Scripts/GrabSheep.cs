@@ -5,7 +5,7 @@ using UnityEngine;
 public class GrabSheep : MonoBehaviour
 {
     WolfController wc;
-    Sheeps—lothing sc;
+    SheepsClothing sc;
     DropPointBringSheep dpBSheep;
     bool isTouchingSheep;
     [HideInInspector] public bool isTouchingDropPoint;
@@ -16,7 +16,7 @@ public class GrabSheep : MonoBehaviour
     void Start()
     {
         wc = GetComponent<WolfController>();
-        sc = GetComponent<Sheeps—lothing>();
+        sc = GetComponent<SheepsClothing>();
         dpBSheep = FindObjectOfType<DropPointBringSheep>();
 
     }

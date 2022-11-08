@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sheeps—lothing : MonoBehaviour
+public class SheepsClothing : MonoBehaviour
 {
     public bool isWearingClothing = false;
     public GameObject clothes;
@@ -16,8 +16,8 @@ public class Sheeps—lothing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetKeyDown("space"))
-         {
+        if (Input.GetKeyDown("space"))
+        {
             isWearingClothing = !isWearingClothing;
             if (isWearingClothing && !w_c.isCarryingSheep)
             {
@@ -25,16 +25,16 @@ public class Sheeps—lothing : MonoBehaviour
             }
             else
             {
-               Stealth(false); 
+                Stealth(false);
             }
-            
-         }
+
+        }
     }
 
-   
+
     public void Stealth(bool yesno)
     {
-               clothes.SetActive(yesno);
-                w_c.IsStealthed(yesno);
+        clothes.SetActive(yesno);
+        w_c.IsStealthed(yesno);
     }
 }

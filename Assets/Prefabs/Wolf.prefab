@@ -221,8 +221,8 @@ GameObject:
   - component: {fileID: 3213818300290640730}
   - component: {fileID: 3213818300290640734}
   - component: {fileID: 1594530997}
+  - component: {fileID: 6432798178696637}
   - component: {fileID: 3213818300290640729}
-  - component: {fileID: 1594530998}
   - component: {fileID: 1594530999}
   m_Layer: 0
   m_Name: Wolf
@@ -357,29 +357,7 @@ CircleCollider2D:
   m_Offset: {x: 0.030466795, y: 0.040622234}
   serializedVersion: 2
   m_Radius: 0.41566277
---- !u!114 &3213818300290640729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3213818300290640709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27f1642191eeae4399f52b70899b866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  moveSpeedCurrent: 2
-  rb: {fileID: 0}
-  lastMotionVector: {x: 0, y: 0}
-  isStealthed: 0
-  isCarryingSheep: 0
-  dangleN: {fileID: 1169275899}
-  dangleE: {fileID: 285352027}
-  dangleS: {fileID: 1156918781}
-  dangleW: {fileID: 896557270}
---- !u!114 &1594530998
+--- !u!114 &6432798178696637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,6 +371,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isWearingClothing: 0
   clothes: {fileID: 1908698817}
+--- !u!114 &3213818300290640729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213818300290640709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27f1642191eeae4399f52b70899b866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstep: {fileID: 1459896515237557381, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
+  moveSpeed: 4
+  moveSpeedCurrent: 2
+  rb: {fileID: 0}
+  lastMotionVector: {x: 0, y: 0}
+  isStealthed: 0
+  isCarryingSheep: 0
+  dangleN: {fileID: 1169275899}
+  dangleE: {fileID: 285352027}
+  dangleS: {fileID: 1156918781}
+  dangleW: {fileID: 896557270}
 --- !u!114 &1594530999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchingDropPoint: 0
   mouth: {fileID: 285352027}
+  sheepValue: 1
   sheep: {fileID: 0}
 --- !u!1 &5447136916981268775
 GameObject:

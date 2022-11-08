@@ -5,10 +5,21 @@ using Pathfinding;
 
 public class DogPatrol : MonoBehaviour
 {
+    public enum State
+    {
+        Calm,
+        Sniffing,
+        Chasing
+    }
+
     public float speed;
     public float waitTimeMin;
     public float waitTimeMax;
-    
+    public float waitTimeSniffMin;
+    public float waitTimeSniffMax;
+
+    public State CurrentState { get; set; }
+    private LinkedListNode<GameObject> wolfFootstep;
     Vector2 lastMotionVector;
     public Transform[] moveSpots;
     private int randomSpot;
@@ -21,6 +32,7 @@ public class DogPatrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CurrentState = State.Calm;
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
@@ -30,13 +42,11 @@ public class DogPatrol : MonoBehaviour
     
     void Update()
     {
-         horizontal = aiPath.desiredVelocity.x;
+        horizontal = aiPath.desiredVelocity.x;
         vertical = aiPath.desiredVelocity.y;
 
         NormalizeMoveDest();
-        
 
-        
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
         
@@ -51,22 +61,76 @@ public class DogPatrol : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("WolfFootstep") 
+            && CurrentState != State.Chasing)
+        {
+            SetSniffingState(other);
+        }
+    }
+
+    void SetSniffingState(Collider2D step)
+    {
+        if (CurrentState != State.Sniffing)
+        {
+            CurrentState = State.Sniffing;
+            aiPath.maxSpeed *= 2;
+        }
+        wolfFootstep = WolfController.Footsteps.Find(step.gameObject);
+    }
+
      IEnumerator Move(){
         while (true)
         {
-            
-            randomSpot = Random.Range(0, moveSpots.Length);
-            while(Vector2.Distance(transform.position, moveSpots[randomSpot].position) > 0.2f)
+            // if calm do random check
+            // if sniffing follow the path
+            // if chasing follow the wolf
+            Transform target;
+
+            if (CurrentState == State.Calm)
+            {
+                randomSpot = Random.Range(0, moveSpots.Length);
+                target = moveSpots[randomSpot];
+            } else if (CurrentState == State.Sniffing)
+            {
+                target = wolfFootstep.Next.Value.transform;
+            } else
+            {
+                target = moveSpots[randomSpot]; // тут будет волк
+            }
+
+            var initialState = CurrentState;
+            while(Vector2.Distance(transform.position, target.position) > 0.2f
+                  && initialState == CurrentState)
             {
                 //transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-                aids.target = moveSpots[randomSpot];
+                aids.target = target;
                 yield return null;
             }
-            yield return new WaitForSeconds(Random.Range(waitTimeMin, waitTimeMax));
-            
+            yield return new WaitForSeconds(GetWaitTime());
         }
-        
-    }
+     }
+
+     private float GetWaitTime()
+     {
+         float min = 0;
+         float max = 0;
+
+         switch (CurrentState)
+         {
+            case State.Calm:
+                min = waitTimeMin;
+                max = waitTimeMax;
+                break;
+            case State.Sniffing:
+                min = waitTimeSniffMin;
+                max = waitTimeSniffMax;
+                break;
+         }
+
+         return Random.Range(min, max);
+     }
 
     void NormalizeMoveDest()
     {
