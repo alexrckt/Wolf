@@ -9,6 +9,7 @@ TagManager:
   - Dog
   - DropPoint
   - WolfFootstep
+  - DogPatrolSpot
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ using Vector3 = UnityEngine.Vector3;
 [RequireComponent(typeof(Rigidbody2D))] 
 public class WolfController : MonoBehaviour
 {
-    public GameObject footstep;
+    public GameObject footstepPrefab;
     [field: HideInInspector] public static LinkedList<GameObject> Footsteps { get; set; }
 
     public float moveSpeed;
@@ -53,9 +53,12 @@ public class WolfController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region Animator update
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
         moveInput = new Vector2(horizontal, vertical );
+
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
         
@@ -68,6 +71,7 @@ public class WolfController : MonoBehaviour
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
+        #endregion
     }
 
     void Move()
@@ -83,8 +87,14 @@ public class WolfController : MonoBehaviour
         if (Vector3.Distance(transform.position, lastStep) > 1)
         {
             lastStep = transform.position;
-            Footsteps.AddLast(Instantiate(footstep, transform.position, 
-                Quaternion.LookRotation(Vector3.forward, lastMotionVector)));
+
+            var fs = Instantiate(footstepPrefab, transform.position,
+                Quaternion.LookRotation(Vector3.forward, lastMotionVector));
+            
+            //var bounds = fs.GetComponent<Collider2D>().bounds;
+            // Expand the bounds along the Z axis
+            //bounds.Expand(Vector3.forward * 1000);
+            Footsteps.AddLast(fs);
         }
     }
 

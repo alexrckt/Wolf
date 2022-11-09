@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Pathfinding;
+using System.Runtime.Serialization;
+using UnityEditorInternal;
 
-public class DogPatrol : MonoBehaviour
+public class DogController : MonoBehaviour
 {
     public enum State
     {
@@ -14,16 +17,23 @@ public class DogPatrol : MonoBehaviour
     }
 
     GameObject playerRef;
+
+    public float maxSpeedCalm;
+    public float maxSpeedSniffing;
+    public float maxSpeedChasing;
+    public float maxSpeedLostTarget;
     public float waitTimeMin;
     public float waitTimeMax;
     public float waitTimeSniffMin;
     public float waitTimeSniffMax;
-    public string stateDebug;
+    public float waitTimeLostTargetMin;
+    public float waitTimeLostTargetMax;
 
-    public State CurrentState { get; set; }
+    public State currentState;
     private LinkedListNode<GameObject> wolfFootstep;
     //Vector2 lastMotionVector;
-    public Transform[] moveSpots;
+    //public Transform[] moveSpots;
+    public List<GameObject> moveSpots;
     private int randomSpot;
     AIDestinationSetter aids;
     AIPath aiPath;
@@ -36,31 +46,18 @@ public class DogPatrol : MonoBehaviour
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
-        CurrentState = State.Calm;
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
+        moveSpots = GameObject.FindGameObjectsWithTag("DogPatrolSpot").ToList();
+
+        SetCalmState();
         StartCoroutine(Move());
     }
 
-    
     void Update()
     {
-        switch (CurrentState)
-        {
-            case State.Calm:
-            stateDebug = "Calm";
-            return;
-            case State.Chasing:
-            stateDebug = "Chasing";
-            return;
-            case State.Sniffing:
-            stateDebug = "Sniffin";
-            return;
-            case State.LostTarget:
-            stateDebug = "Lost";
-            return;
-        }
+        #region Animator update
         horizontal = aiPath.desiredVelocity.x;
         vertical = aiPath.desiredVelocity.y;
 
@@ -78,76 +75,114 @@ public class DogPatrol : MonoBehaviour
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
+        #endregion
     }
 
+    #region State switch
+    // Switching to CALM state on Awake AND after timeout in LOSTTARGET state
+    // Switching to SNIFFING state IF find wolf steps AND NOT in CHASING state
+    // Switching to CHASING state IF wolf appear in raycast field
+    // Switching to LOSTTARGET state IF wolf disappear in raycast field
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals("WolfFootstep") 
-            && CurrentState != State.Chasing)
+            && currentState != State.Chasing)
         {
             SetSniffingState(other);
         }
     }
 
-    void SetSniffingState(Collider2D step)
+    public void SetCalmState()
     {
-        if (CurrentState != State.Sniffing)
-        {
-            CurrentState = State.Sniffing;
-            aiPath.maxSpeed *= 2; // need var to store normal / sniffing / chasing speeds
-        }
+        currentState = State.Calm;
+        aiPath.maxSpeed = maxSpeedCalm;
+    }
+
+    public void SetSniffingState(Collider2D step)
+    {
+        currentState = State.Sniffing;
+        aiPath.maxSpeed = maxSpeedSniffing;
         wolfFootstep = WolfController.Footsteps.Find(step.gameObject);
     }
 
-     IEnumerator Move(){
+    public void SetChasingState()
+    {
+        currentState = State.Chasing;
+        aiPath.maxSpeed = maxSpeedChasing;
+    }
+
+    public void SetLostTargetState()
+    {
+        currentState = State.LostTarget;
+        aiPath.maxSpeed = maxSpeedLostTarget;
+    }
+    #endregion
+
+    IEnumerator Move(){
         while (true)
         {
             // if calm do random check
             // if sniffing follow the path
             // if chasing follow the wolf
+            // if losttarget go to last visible point, wait, then calm
             Transform target;
 
-            if (CurrentState == State.Calm)
+            if (currentState == State.Calm)
             {
-                randomSpot = Random.Range(0, moveSpots.Length);
-                target = moveSpots[randomSpot];
+                randomSpot = Random.Range(0, moveSpots.Count);
+                target = moveSpots[randomSpot].transform;
             }
-             else if (CurrentState == State.Sniffing)
+            else if (currentState == State.Sniffing)
             {
-                target = wolfFootstep.Next.Value.transform;
-                
+                try
+                {
+                    target = wolfFootstep.Next.Value.transform; // follow the footsteps
+                    Destroy(wolfFootstep.Value);
+                }
+                catch
+                {
+                    target = null;  // if there is none left - set calm state
+                    SetCalmState();
+                }
             }
-            else if (CurrentState == State.LostTarget)
+            else if (currentState == State.LostTarget)
             {
                 target = null;
                 aiPath.destination = lastPlayerPos;
                 if (aiPath.reachedDestination)
-                {CurrentState = State.Calm;}
+                    SetCalmState();
             }
-             else
+            else
             {
                 target = playerRef.transform; // tut budet volk
             }
 
-            var initialState = CurrentState;
-            while(Vector2.Distance(transform.position, target.position) > 0.2f
-                  && initialState == CurrentState)
+            var initialState = currentState;
+            while(target != null && Vector2.Distance(transform.position, target.position) > 0.9f
+                  && initialState == currentState)
             {
-                
                 aids.target = target;
                 yield return null;
             }
             yield return new WaitForSeconds(GetWaitTime());
         }
-     }
+    }
 
-     private float GetWaitTime()
-     {
-         float min = 0;
-         float max = 0;
+    public void PlayerLastSeen()
+    {
+        lastPlayerPos = playerRef.transform.position;
 
-         switch (CurrentState)
-         {
+        if (currentState == State.Chasing)
+            SetLostTargetState();
+    }
+
+    private float GetWaitTime()
+    {
+        float min = 0;
+        float max = 0;
+
+        switch (currentState)
+        {
             case State.Calm:
                 min = waitTimeMin;
                 max = waitTimeMax;
@@ -156,15 +191,19 @@ public class DogPatrol : MonoBehaviour
                 min = waitTimeSniffMin;
                 max = waitTimeSniffMax;
                 break;
-         }
+            case State.LostTarget:
+                min = waitTimeLostTargetMin;
+                max = waitTimeLostTargetMax;
+                break;
+        }
 
-         return Random.Range(min, max);
-     }
+        return Random.Range(min, max);
+    }
 
     public void NormalizeMoveDest()
     {
-        
-      if (horizontal > 0)
+
+        if (horizontal > 0)
         {
             horizontal = 1f;
         }
@@ -181,16 +220,5 @@ public class DogPatrol : MonoBehaviour
         {
             vertical = -1f;
         }
-    }
-
-
-    public void PlayerLastSeen()
-    {
-         
-          lastPlayerPos = playerRef.transform.position;
-         
-         
-       if (CurrentState == State.Chasing)
-         {CurrentState = State.LostTarget;}
     }
 }
