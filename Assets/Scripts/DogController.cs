@@ -71,7 +71,7 @@ public class DogController : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-            //lastMotionVector = new Vector2(horizontal, vertical).normalized;
+            
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
@@ -125,6 +125,8 @@ public class DogController : MonoBehaviour
             // if sniffing follow the path
             // if chasing follow the wolf
             // if losttarget go to last visible point, wait, then calm
+            
+
             Transform target;
 
             if (currentState == State.Calm)
@@ -156,9 +158,13 @@ public class DogController : MonoBehaviour
             {
                 target = playerRef.transform; // tut budet volk
             }
+            if (currentState != State.Calm && horizontal == 0 && vertical == 0 && target != null)
+            {
+                aiPath.destination = target.position;
+            }
 
             var initialState = currentState;
-            while(target != null && Vector2.Distance(transform.position, target.position) > 0.9f
+            while(target != null && Vector2.Distance(transform.position, target.position) > 0.2f
                   && initialState == currentState)
             {
                 aids.target = target;

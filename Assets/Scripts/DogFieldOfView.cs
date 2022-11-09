@@ -7,6 +7,7 @@ using Pathfinding;
 public class DogFieldOfView : MonoBehaviour
 {
     public float radius;
+    public float closeradius;
     [Range (0, 360)]
     public float angle;
     public bool canSeePlayer;
@@ -46,7 +47,8 @@ public class DogFieldOfView : MonoBehaviour
     private void FieldOfViewCheck()
     {
         Collider2D[] rangeChecks = Physics2D.OverlapCircleAll(transform.position,  radius, playerMask);
-        if (rangeChecks.Length != 0 && !wc.isStealthed ) // if player is in the circle's range
+        Collider2D[] closeRangeChecks = Physics2D.OverlapCircleAll(transform.position,  closeradius, playerMask);
+        if (closeRangeChecks.Length == 0 && rangeChecks.Length != 0 && !wc.isStealthed ) // if player is in the circle's range
         {
             
             WhereIsDogLooking();    // check where the dog is facing now
@@ -79,14 +81,23 @@ public class DogFieldOfView : MonoBehaviour
             {
                 canSeePlayer = false;
                 dc.PlayerLastSeen();
+                
             }
         }
-        else if (canSeePlayer) // if player was in view angle but got away from it
+        else if (closeRangeChecks.Length == 0 && canSeePlayer) // if player was in view angle but got away from it
         {
             canSeePlayer = false;
             dc.PlayerLastSeen();
+            
             // method for getting last pos seen, going there, then resetting to calm on reach destination
 
+        }
+        else if (closeRangeChecks.Length != 0)
+        {
+            canSeePlayer = true;
+            Transform target = closeRangeChecks[0].transform;
+                    dc.SetChasingState();
+                    Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
         }
 
 
