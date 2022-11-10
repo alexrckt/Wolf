@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Pathfinding;
 using System.Runtime.Serialization;
+using System.Text;
 using UnityEditorInternal;
+using Random = UnityEngine.Random;
 
 public class DogController : MonoBehaviour
 {
@@ -30,7 +33,7 @@ public class DogController : MonoBehaviour
     public float waitTimeLostTargetMax;
 
     public State currentState;
-    private LinkedListNode<GameObject> wolfFootstep;
+    private LinkedListNode<FootStepFade> wolfFootstep;
     //Vector2 lastMotionVector;
     //public Transform[] moveSpots;
     public List<GameObject> moveSpots;
@@ -53,6 +56,8 @@ public class DogController : MonoBehaviour
 
         SetCalmState();
         StartCoroutine(Move());
+
+        //InvokeRepeating("Debugging", 1f, 1f);
     }
 
     void Update()
@@ -76,6 +81,13 @@ public class DogController : MonoBehaviour
             animator.SetFloat("lastVertical", vertical);
         }
         #endregion
+
+    }
+
+    void Debugging()
+    {
+        var aiPath = GetComponent<AIPath>();
+        Debug.Log($"{aiPath.remainingDistance} {aiPath.hasPath} {aiPath.velocity}");
     }
 
     #region State switch
@@ -91,18 +103,25 @@ public class DogController : MonoBehaviour
             SetSniffingState(other);
         }
     }
+    public void SetSniffingState(Collider2D step)
+    {
+        currentState = State.Sniffing;
+        aiPath.maxSpeed = maxSpeedSniffing;
+
+        var newStep = WolfController.Footsteps.Find(step.GetComponent<FootStepFade>());
+
+        if (wolfFootstep != null)
+        {
+            wolfFootstep = (newStep.Value.lifeTime > wolfFootstep.Value.lifeTime) ? newStep : wolfFootstep;
+        }
+
+        wolfFootstep = newStep;
+    }
 
     public void SetCalmState()
     {
         currentState = State.Calm;
         aiPath.maxSpeed = maxSpeedCalm;
-    }
-
-    public void SetSniffingState(Collider2D step)
-    {
-        currentState = State.Sniffing;
-        aiPath.maxSpeed = maxSpeedSniffing;
-        wolfFootstep = WolfController.Footsteps.Find(step.gameObject);
     }
 
     public void SetChasingState()
@@ -138,8 +157,7 @@ public class DogController : MonoBehaviour
             {
                 try
                 {
-                    target = wolfFootstep.Next.Value.transform; // follow the footsteps
-                    Destroy(wolfFootstep.Value);
+                    target = wolfFootstep.Next.Value.transform; // follow the footstep
                 }
                 catch
                 {

@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27f1642191eeae4399f52b70899b866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepPrefab: {fileID: 1459896515237557381, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
+  footstepPrefab: {fileID: 4037411245752282829, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
   moveSpeed: 4
   moveSpeedCurrent: 2
   rb: {fileID: 0}

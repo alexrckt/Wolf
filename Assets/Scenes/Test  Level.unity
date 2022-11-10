@@ -1111,7 +1111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697887609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fovPointE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755365786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fovPointN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561956157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fovPointS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8405,8 +8405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a1f4d39c5091e44872d9cca61701af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  angle: 90
+  radius: 7
+  closeradius: 1
+  angle: 180
   canSeePlayer: 0
   fovPoint: {fileID: 1561956157}
   playerRef: {fileID: 144407534}
@@ -8563,7 +8564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1789150843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fovPointW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8933,6 +8934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone1
       objectReference: {fileID: 0}
+    - target: {fileID: 183960182148583262, guid: 12ae1d1617d8a9e4ba43e30d0fc2e6d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12ae1d1617d8a9e4ba43e30d0fc2e6d6, type: 3}
 --- !u!1001 &965847546667787119
@@ -9112,6 +9117,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3213818300290640729, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
+      propertyPath: footstepPrefab
+      value: 
+      objectReference: {fileID: 4037411245752282829, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
 --- !u!1001 &3736755259172652808
@@ -9124,6 +9133,10 @@ PrefabInstance:
     - target: {fileID: 3736755259129757156, guid: e20cf2c742c7b184284905861cf48148, type: 3}
       propertyPath: m_Name
       value: Stone2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736755259129757156, guid: e20cf2c742c7b184284905861cf48148, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3736755259129757158, guid: e20cf2c742c7b184284905861cf48148, type: 3}
       propertyPath: m_RootOrder
@@ -9181,6 +9194,10 @@ PrefabInstance:
     - target: {fileID: 4180872483180338052, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
       propertyPath: m_Name
       value: Tracktor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180872483180338052, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4180872483180338055, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
       propertyPath: m_RootOrder
@@ -9296,6 +9313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2106051138}
     m_Modifications:
+    - target: {fileID: 41222915, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 41222918, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -9361,8 +9382,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 336064167, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: endReachedDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 336064167, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: whenCloseToDestination
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000115567808811977, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_RootOrder
@@ -9412,6 +9437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8674306046146722403, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_BodyType
       value: 0
@@ -9429,9 +9462,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 75130674}
     m_Modifications:
+    - target: {fileID: 7099436862249817017, guid: 56f9016bc5be6d84c9a9f10ba8cdca7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7099436862902923312, guid: 56f9016bc5be6d84c9a9f10ba8cdca7d, type: 3}
       propertyPath: m_Name
       value: Dom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099436862902923312, guid: 56f9016bc5be6d84c9a9f10ba8cdca7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7099436862902923315, guid: 56f9016bc5be6d84c9a9f10ba8cdca7d, type: 3}
       propertyPath: m_RootOrder

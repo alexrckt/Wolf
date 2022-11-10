@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Mono.Cecil;
 using Unity.VisualScripting;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -12,8 +13,8 @@ using Vector3 = UnityEngine.Vector3;
 [RequireComponent(typeof(Rigidbody2D))] 
 public class WolfController : MonoBehaviour
 {
-    public GameObject footstepPrefab;
-    [field: HideInInspector] public static LinkedList<GameObject> Footsteps { get; set; }
+    public FootStepFade footstepPrefab;
+    [field: HideInInspector] public static LinkedList<FootStepFade> Footsteps { get; set; }
 
     public float moveSpeed;
     public float moveSpeedCurrent;
@@ -47,7 +48,14 @@ public class WolfController : MonoBehaviour
         animator = GetComponent<Animator>();
         gs = GetComponent<GrabSheep>();
         lastStep = new Vector3();
-        Footsteps = new LinkedList<GameObject>();
+        Footsteps = new LinkedList<FootStepFade>();
+
+        //InvokeRepeating("Debugging", 1f, 1f);
+    }
+
+    void Debugging()
+    {
+        Debug.Log("Footstep list count: " + Footsteps.Count);
     }
 
     // Update is called once per frame
@@ -88,7 +96,7 @@ public class WolfController : MonoBehaviour
         {
             lastStep = transform.position;
 
-            var fs = Instantiate(footstepPrefab, transform.position,
+            var fs = Instantiate<FootStepFade>(footstepPrefab, transform.position,
                 Quaternion.LookRotation(Vector3.forward, lastMotionVector));
             
             //var bounds = fs.GetComponent<Collider2D>().bounds;
