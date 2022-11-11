@@ -102,7 +102,8 @@ public class DogController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag.Equals("WolfFootstep") 
-            && currentState != State.Chasing)
+            && currentState != State.Chasing
+            && currentState != State.LostTarget)
         {
             SetSniffingState(other);
         }
@@ -120,7 +121,7 @@ public class DogController : MonoBehaviour
             wolfFootstep = (newStep.Value.lifeTime > wolfFootstep.Value.lifeTime) ? newStep : wolfFootstep;
         }
         else
-        wolfFootstep = newStep;
+            wolfFootstep = newStep;
     }
 
     public void SetCalmState()
@@ -152,9 +153,6 @@ public class DogController : MonoBehaviour
             // if sniffing follow the path
             // if chasing follow the wolf
             // if losttarget go to last visible point, wait, then calm
-            
-
-            
 
             if (currentState == State.Calm)
             {
@@ -166,8 +164,6 @@ public class DogController : MonoBehaviour
                 try
                 {
                      target = wolfFootstep.Next.Value.transform; // follow the footstep
-                     
-                
                 }
                 catch
                 {
@@ -192,28 +188,31 @@ public class DogController : MonoBehaviour
             while(target != null && Vector2.Distance(transform.position, target.position) > 0.5f
                   && initialState == currentState )
             {
-                
-                
-                 
-                 aids.target = target;
-               
+                aids.target = target;
                 yield return null;
             }
-            yield return new WaitForSeconds(GetWaitTime());
+
+            //Timer
+            var duration = GetWaitTime();
+            while (duration >= 0
+                   && currentState != State.Chasing)
+            {
+                duration -= Time.deltaTime;
+                yield return null;
+            }
+
+            //Debug.Log("Iteration of main While in state " + currentState);
+            yield return null;
         }
     }
 
     public void PlayerLastSeen()
     {
-       
-
         if (currentState == State.Chasing)
         {
-             
-        lastPlayerPosTarget = Instantiate(debugTar, playerRef.transform.position, Quaternion.identity);
-        SetLostTargetState();
+            lastPlayerPosTarget = Instantiate(debugTar, playerRef.transform.position, Quaternion.identity);
+            SetLostTargetState();
         }
-            
     }
 
     private float GetWaitTime()

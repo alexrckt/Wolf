@@ -331,11 +331,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &144407534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3213818300290640709, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
-  m_PrefabInstance: {fileID: 3213818299166210026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &152806186
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,40 +8383,6 @@ Transform:
   m_Father: {fileID: 1813490646}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1682475444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
-  m_PrefabInstance: {fileID: 5000115567710376022}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1682475451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682475444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a1f4d39c5091e44872d9cca61701af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 7
-  closeradius: 1
-  angle: 180
-  canSeePlayer: 0
-  fovPoint: {fileID: 1561956157}
-  playerRef: {fileID: 144407534}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 64
-  fovDirs:
-  - {fileID: 755365785}
-  - {fileID: 697887608}
-  - {fileID: 1561956156}
-  - {fileID: 1789150842}
 --- !u!4 &1691193297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 972209364390833258, guid: 38e29d1257ab4874881f5b746f15ee75, type: 3}
@@ -9388,6 +9349,10 @@ PrefabInstance:
     - target: {fileID: 336064167, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: whenCloseToDestination
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682475451, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
+      propertyPath: radius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5000115567808811977, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_RootOrder
