@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Farmer_Idle_Down
+  m_Name: Farmer_Walk_Top
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1334975085, guid: 37e9a3f3e3fe0e845947b91a83faab4a, type: 3}
+      value: {fileID: -1042837900, guid: 18a96eeb193ee5f44adbb63c0671d86b, type: 3}
     - time: 0.083333336
-      value: {fileID: 6737133, guid: 37e9a3f3e3fe0e845947b91a83faab4a, type: 3}
+      value: {fileID: 1009939545, guid: 18a96eeb193ee5f44adbb63c0671d86b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1334975085, guid: 37e9a3f3e3fe0e845947b91a83faab4a, type: 3}
-    - {fileID: 6737133, guid: 37e9a3f3e3fe0e845947b91a83faab4a, type: 3}
+    - {fileID: -1042837900, guid: 18a96eeb193ee5f44adbb63c0671d86b, type: 3}
+    - {fileID: 1009939545, guid: 18a96eeb193ee5f44adbb63c0671d86b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
