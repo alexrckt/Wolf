@@ -44,7 +44,10 @@ public class DogController : MonoBehaviour
     bool moving;
     public float horizontal;
     public float vertical;
-    Vector2 lastPlayerPos;
+    
+    public GameObject debugTar;
+    GameObject lastPlayerPosTarget;
+    Transform target;
     
     void Start()
     {
@@ -81,7 +84,8 @@ public class DogController : MonoBehaviour
             animator.SetFloat("lastVertical", vertical);
         }
         #endregion
-
+         // if (currentState == State.Sniffing && target != null) // CRUTCH
+                // {Vector2.MoveTowards(transform.position, target.position, maxSpeedSniffing * Time.deltaTime);}
     }
 
     void Debugging()
@@ -95,7 +99,7 @@ public class DogController : MonoBehaviour
     // Switching to SNIFFING state IF find wolf steps AND NOT in CHASING state
     // Switching to CHASING state IF wolf appear in raycast field
     // Switching to LOSTTARGET state IF wolf disappear in raycast field
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag.Equals("WolfFootstep") 
             && currentState != State.Chasing)
@@ -107,6 +111,7 @@ public class DogController : MonoBehaviour
     {
         currentState = State.Sniffing;
         aiPath.maxSpeed = maxSpeedSniffing;
+        
 
         var newStep = WolfController.Footsteps.Find(step.GetComponent<FootStepFade>());
 
@@ -114,24 +119,27 @@ public class DogController : MonoBehaviour
         {
             wolfFootstep = (newStep.Value.lifeTime > wolfFootstep.Value.lifeTime) ? newStep : wolfFootstep;
         }
-
+        else
         wolfFootstep = newStep;
     }
 
     public void SetCalmState()
     {
+        
         currentState = State.Calm;
         aiPath.maxSpeed = maxSpeedCalm;
     }
 
     public void SetChasingState()
     {
+        
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
     }
 
     public void SetLostTargetState()
     {
+        
         currentState = State.LostTarget;
         aiPath.maxSpeed = maxSpeedLostTarget;
     }
@@ -146,7 +154,7 @@ public class DogController : MonoBehaviour
             // if losttarget go to last visible point, wait, then calm
             
 
-            Transform target;
+            
 
             if (currentState == State.Calm)
             {
@@ -157,7 +165,9 @@ public class DogController : MonoBehaviour
             {
                 try
                 {
-                    target = wolfFootstep.Next.Value.transform; // follow the footstep
+                     target = wolfFootstep.Next.Value.transform; // follow the footstep
+                     
+                
                 }
                 catch
                 {
@@ -167,8 +177,8 @@ public class DogController : MonoBehaviour
             }
             else if (currentState == State.LostTarget)
             {
-                target = null;
-                aiPath.destination = lastPlayerPos;
+                target = lastPlayerPosTarget.transform;
+                
                 if (aiPath.reachedDestination)
                     SetCalmState();
             }
@@ -176,16 +186,17 @@ public class DogController : MonoBehaviour
             {
                 target = playerRef.transform; // tut budet volk
             }
-            if (currentState != State.Calm && horizontal == 0 && vertical == 0 && target != null)
-            {
-                aiPath.destination = target.position;
-            }
+            
 
             var initialState = currentState;
-            while(target != null && Vector2.Distance(transform.position, target.position) > 0.2f
-                  && initialState == currentState)
+            while(target != null && Vector2.Distance(transform.position, target.position) > 0.5f
+                  && initialState == currentState )
             {
-                aids.target = target;
+                
+                
+                 
+                 aids.target = target;
+               
                 yield return null;
             }
             yield return new WaitForSeconds(GetWaitTime());
@@ -194,10 +205,15 @@ public class DogController : MonoBehaviour
 
     public void PlayerLastSeen()
     {
-        lastPlayerPos = playerRef.transform.position;
+       
 
         if (currentState == State.Chasing)
-            SetLostTargetState();
+        {
+             
+        lastPlayerPosTarget = Instantiate(debugTar, playerRef.transform.position, Quaternion.identity);
+        SetLostTargetState();
+        }
+            
     }
 
     private float GetWaitTime()
