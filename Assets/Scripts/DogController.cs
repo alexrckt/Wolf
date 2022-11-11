@@ -41,6 +41,7 @@ public class DogController : MonoBehaviour
     AIDestinationSetter aids;
     AIPath aiPath;
     Animator animator;
+    private Barker barker;
     bool moving;
     public float horizontal;
     public float vertical;
@@ -56,7 +57,9 @@ public class DogController : MonoBehaviour
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
         moveSpots = GameObject.FindGameObjectsWithTag("DogPatrolSpot").ToList();
+        barker = GetComponentInChildren<Barker>();
 
+        barker.AnimationSwitch(false);
         SetCalmState();
         StartCoroutine(Move());
 
@@ -136,6 +139,7 @@ public class DogController : MonoBehaviour
         
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
+        barker.AnimationSwitch(true);
     }
 
     public void SetLostTargetState()
@@ -143,6 +147,7 @@ public class DogController : MonoBehaviour
         
         currentState = State.LostTarget;
         aiPath.maxSpeed = maxSpeedLostTarget;
+        barker.AnimationSwitch(false);
     }
     #endregion
 
