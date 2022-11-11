@@ -185,7 +185,7 @@ public class DogController : MonoBehaviour
             
 
             var initialState = currentState;
-            while(target != null && Vector2.Distance(transform.position, target.position) > 0.5f
+            while(target != null && Vector2.Distance(transform.position, target.position) > 0.1f
                   && initialState == currentState )
             {
                 aids.target = target;
