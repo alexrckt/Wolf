@@ -1086,10 +1086,10 @@ TextureImporter:
       name: Farmer (2)_46
       rect:
         serializedVersion: 2
-        x: 146
+        x: 140
         y: 899
-        width: 27
-        height: 55
+        width: 37
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1128,8 +1128,8 @@ TextureImporter:
       name: Farmer (2)_48
       rect:
         serializedVersion: 2
-        x: 270
-        y: 899
+        x: 269
+        y: 898
         width: 37
         height: 54
       alignment: 0
@@ -1170,9 +1170,9 @@ TextureImporter:
       name: Farmer (2)_50
       rect:
         serializedVersion: 2
-        x: 402
+        x: 397
         y: 899
-        width: 32
+        width: 37
         height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1571,7 +1571,7 @@ TextureImporter:
         serializedVersion: 2
         x: 18
         y: 706
-        width: 36
+        width: 27
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1590,10 +1590,10 @@ TextureImporter:
       name: Farmer (2)_70
       rect:
         serializedVersion: 2
-        x: 82
-        y: 706
-        width: 36
-        height: 50
+        x: 51
+        y: 707
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1611,10 +1611,10 @@ TextureImporter:
       name: Farmer (2)_71
       rect:
         serializedVersion: 2
-        x: 146
-        y: 707
-        width: 36
-        height: 50
+        x: 116
+        y: 708
+        width: 65
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1632,9 +1632,9 @@ TextureImporter:
       name: Farmer (2)_72
       rect:
         serializedVersion: 2
-        x: 210
+        x: 182
         y: 707
-        width: 36
+        width: 60
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1653,10 +1653,10 @@ TextureImporter:
       name: Farmer (2)_73
       rect:
         serializedVersion: 2
-        x: 274
-        y: 706
-        width: 36
-        height: 51
+        x: 243
+        y: 707
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1674,10 +1674,10 @@ TextureImporter:
       name: Farmer (2)_74
       rect:
         serializedVersion: 2
-        x: 338
-        y: 706
-        width: 36
-        height: 50
+        x: 308
+        y: 707
+        width: 66
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1695,9 +1695,9 @@ TextureImporter:
       name: Farmer (2)_75
       rect:
         serializedVersion: 2
-        x: 402
-        y: 706
-        width: 36
+        x: 376
+        y: 707
+        width: 59
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1716,10 +1716,10 @@ TextureImporter:
       name: Farmer (2)_76
       rect:
         serializedVersion: 2
-        x: 466
-        y: 706
-        width: 36
-        height: 51
+        x: 436
+        y: 707
+        width: 66
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1779,9 +1779,9 @@ TextureImporter:
       name: Farmer (2)_79
       rect:
         serializedVersion: 2
-        x: 81
-        y: 642
-        width: 30
+        x: 53
+        y: 641
+        width: 62
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1800,10 +1800,10 @@ TextureImporter:
       name: Farmer (2)_80
       rect:
         serializedVersion: 2
-        x: 145
+        x: 119
         y: 641
-        width: 30
-        height: 57
+        width: 62
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,9 +1821,9 @@ TextureImporter:
       name: Farmer (2)_81
       rect:
         serializedVersion: 2
-        x: 210
+        x: 182
         y: 641
-        width: 29
+        width: 62
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1842,10 +1842,10 @@ TextureImporter:
       name: Farmer (2)_82
       rect:
         serializedVersion: 2
-        x: 273
+        x: 246
         y: 641
-        width: 30
-        height: 57
+        width: 62
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1863,9 +1863,9 @@ TextureImporter:
       name: Farmer (2)_83
       rect:
         serializedVersion: 2
-        x: 337
-        y: 642
-        width: 30
+        x: 310
+        y: 641
+        width: 62
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1884,10 +1884,10 @@ TextureImporter:
       name: Farmer (2)_84
       rect:
         serializedVersion: 2
-        x: 401
+        x: 374
         y: 641
-        width: 30
-        height: 57
+        width: 62
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1905,9 +1905,9 @@ TextureImporter:
       name: Farmer (2)_85
       rect:
         serializedVersion: 2
-        x: 465
+        x: 436
         y: 641
-        width: 29
+        width: 62
         height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1926,9 +1926,9 @@ TextureImporter:
       name: Farmer (2)_86
       rect:
         serializedVersion: 2
-        x: 529
+        x: 526
         y: 641
-        width: 30
+        width: 33
         height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2663,8 +2663,8 @@ TextureImporter:
         serializedVersion: 2
         x: 79
         y: 256
-        width: 30
-        height: 50
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2684,8 +2684,8 @@ TextureImporter:
         serializedVersion: 2
         x: 145
         y: 256
-        width: 26
-        height: 52
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2705,8 +2705,8 @@ TextureImporter:
         serializedVersion: 2
         x: 208
         y: 256
-        width: 27
-        height: 51
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2727,7 +2727,7 @@ TextureImporter:
         x: 272
         y: 256
         width: 31
-        height: 51
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2747,7 +2747,7 @@ TextureImporter:
         serializedVersion: 2
         x: 335
         y: 256
-        width: 30
+        width: 31
         height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2769,7 +2769,7 @@ TextureImporter:
         x: 399
         y: 256
         width: 31
-        height: 51
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2790,7 +2790,7 @@ TextureImporter:
         x: 464
         y: 256
         width: 31
-        height: 51
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2831,8 +2831,8 @@ TextureImporter:
         serializedVersion: 2
         x: 591
         y: 256
-        width: 32
-        height: 52
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2852,8 +2852,8 @@ TextureImporter:
         serializedVersion: 2
         x: 656
         y: 256
-        width: 27
-        height: 51
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2873,8 +2873,8 @@ TextureImporter:
         serializedVersion: 2
         x: 719
         y: 256
-        width: 28
-        height: 52
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2894,8 +2894,8 @@ TextureImporter:
         serializedVersion: 2
         x: 783
         y: 256
-        width: 28
-        height: 51
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2955,9 +2955,9 @@ TextureImporter:
       name: Farmer (2)_135
       rect:
         serializedVersion: 2
-        x: 115
+        x: 112
         y: 194
-        width: 61
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3020,7 +3020,7 @@ TextureImporter:
         serializedVersion: 2
         x: 309
         y: 194
-        width: 66
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3125,7 +3125,7 @@ TextureImporter:
         serializedVersion: 2
         x: 627
         y: 194
-        width: 68
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3501,9 +3501,9 @@ TextureImporter:
       name: Farmer (2)_161
       rect:
         serializedVersion: 2
-        x: 134
-        y: 66
-        width: 65
+        x: 131
+        y: 67
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3522,9 +3522,9 @@ TextureImporter:
       name: Farmer (2)_162
       rect:
         serializedVersion: 2
-        x: 199
-        y: 66
-        width: 62
+        x: 198
+        y: 67
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3564,9 +3564,9 @@ TextureImporter:
       name: Farmer (2)_164
       rect:
         serializedVersion: 2
-        x: 327
-        y: 66
-        width: 63
+        x: 323
+        y: 67
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3670,8 +3670,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 645
-        y: 66
-        width: 66
+        y: 67
+        width: 67
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
