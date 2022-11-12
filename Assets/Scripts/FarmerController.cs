@@ -4,6 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using System;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class FarmerController : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class FarmerController : MonoBehaviour
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponent<Animator>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        moveSpots = GameObject.FindGameObjectsWithTag("FarmerPatrolSpot").ToList();
 
         StartCoroutine(Move());
     }
@@ -47,7 +49,7 @@ public class FarmerController : MonoBehaviour
     void Update()
     {
         debugVelocity = aiPath.velocity;
-         #region Animator update
+        #region Animator update
         horizontal = aiPath.desiredVelocity.x;
         vertical = aiPath.desiredVelocity.y;
         AbsVectors(); // compares if the agent is going more vertically or horizontally
@@ -62,28 +64,26 @@ public class FarmerController : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-            
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
         #endregion
-       
     }
 
 
 IEnumerator Move(){
         while (true)
         {
-          int randomSpot = Random.Range(0, moveSpots.Count);
-                target = moveSpots[randomSpot].transform;
+            int randomSpot = Random.Range(0, moveSpots.Count);
+            target = moveSpots[randomSpot].transform;
 
             while(target != null && Vector2.Distance(transform.position, target.position) > 0.8f)
-                  
             {
                 aids.target = target;
                 yield return null;
             }
-           yield return new WaitForSeconds(3f);
+
+            yield return new WaitForSeconds(3f);
         }
 }
     public void NormalizeMoveDest()

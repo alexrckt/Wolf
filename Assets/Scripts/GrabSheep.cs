@@ -68,15 +68,15 @@ public class GrabSheep : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag == "DropPoint")
         {
-          isTouchingDropPoint = true;
+            isTouchingDropPoint = true;
 
-          if (wc.isCarryingSheep)
-        {
-          wc.IsCarryingSheep(false);
-           Destroy(sheep.gameObject);           
-           dpBSheep.UpdateSheepText(sheepValue);
+            if (wc.isCarryingSheep)
+            {
+                wc.IsCarryingSheep(false);
+                Destroy(sheep.gameObject);           
+                dpBSheep.UpdateSheepText(sheepValue);
 
-        }
+            }
         }
 
         

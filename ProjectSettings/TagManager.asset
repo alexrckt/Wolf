@@ -10,6 +10,8 @@ TagManager:
   - DropPoint
   - WolfFootstep
   - DogPatrolSpot
+  - GameManager
+  - FarmerPatrolSpot
   layers:
   - Default
   - TransparentFX
