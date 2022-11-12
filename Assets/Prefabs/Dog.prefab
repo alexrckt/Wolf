@@ -252,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5000115567808811977
 Transform:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000015894572, y: 0.004102747}
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.2
 --- !u!114 &336064165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.2
   height: 2
   canMove: 1
   maxSpeed: 1
@@ -555,7 +555,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ecbf78c349a58c543ae1ae10bbca82cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

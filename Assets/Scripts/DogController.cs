@@ -49,6 +49,7 @@ public class DogController : MonoBehaviour
     public GameObject debugTar;
     GameObject lastPlayerPosTarget;
     Transform target;
+    public Transform footstepParent;
     
     void Start()
     {
@@ -216,6 +217,7 @@ public class DogController : MonoBehaviour
         if (currentState == State.Chasing)
         {
             lastPlayerPosTarget = Instantiate(debugTar, playerRef.transform.position, Quaternion.identity);
+            lastPlayerPosTarget.transform.SetParent(footstepParent, true);
             SetLostTargetState();
         }
     }
@@ -266,7 +268,7 @@ public class DogController : MonoBehaviour
         }
     }
 
-    private void AbsVectors()
+    public void AbsVectors()
     {
         if (Math.Abs(vertical) > Math.Abs(horizontal))
         {

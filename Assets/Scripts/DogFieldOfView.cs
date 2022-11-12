@@ -19,12 +19,16 @@ public class DogFieldOfView : MonoBehaviour
     Vector3 fovDir = new Vector3();
     DogController dc;
     WolfController wc;
+    AnimatorClipInfo[] clipAnimArray;
+    Animator animator;
 
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         wc = playerRef.GetComponent<WolfController>();
         dc = GetComponent<DogController>();
+        
+        animator = GetComponentInChildren<Animator>();
         StartCoroutine(FOVRoutine());
     }
 
@@ -103,20 +107,36 @@ public class DogFieldOfView : MonoBehaviour
 
     }
 
-    void WhereIsDogLooking()
+    
+     public void WhereIsDogLooking()
     {
+        dc.AbsVectors();
         dc.NormalizeMoveDest();
+        
+        clipAnimArray = animator.GetCurrentAnimatorClipInfo(0);
+        string animName = (clipAnimArray[0].clip.name);
 
-        if (dc.horizontal == 1)
-             fovDir = fovDirs[1].transform.right; // right - east
-        else if (dc.horizontal == -1)
-             fovDir = -fovDirs[3].transform.right; // left - west
-        else if (dc.vertical == -1)
-             fovDir = -fovDirs[2].transform.up; // down - south
-        else if (dc.vertical == 1)
-             fovDir = fovDirs[0].transform.up; // up - north
-        else 
-             fovDir = -fovDirs[2].transform.up; // idle - face down
+        if (animName == "Idle_Down_Dog" 
+         || animName == "Walk_Down_Dog")
+        {
+           fovDir = -fovDirs[2].transform.up;
+          // Debug.Log("down");
+        }
+        else if (animName == "Walk_Up_Dog")
+         {
+            fovDir = fovDirs[0].transform.up;
+           // Debug.Log("up");
+         }
+         else if (animName == "Walk_Right_Dog")
+         {
+            fovDir = fovDirs[1].transform.right;
+          //  Debug.Log("right");
+         }
+         else if (animName == "Walk_Left_Dog")
+         {
+            fovDir = -fovDirs[3].transform.right;
+          //  Debug.Log("left");
+         }
     }
 
     

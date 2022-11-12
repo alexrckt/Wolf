@@ -39,6 +39,7 @@ public class WolfController : MonoBehaviour
     float horizontal;
     float vertical;
     private Vector3 lastStep;
+    public Transform footstepParent;
 
     // Start is called before the first frame update
     void Awake()
@@ -103,6 +104,7 @@ public class WolfController : MonoBehaviour
             // Expand the bounds along the Z axis
             //bounds.Expand(Vector3.forward * 1000);
             Footsteps.AddLast(fs);
+            fs.transform.SetParent(footstepParent, true);
         }
     }
 

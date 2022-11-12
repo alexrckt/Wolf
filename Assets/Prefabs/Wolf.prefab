@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6432798178696637}
   - component: {fileID: 3213818300290640729}
   - component: {fileID: 1594530999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wolf
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstepPrefab: {fileID: 4037411245752282829, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
-  moveSpeed: 4
+  moveSpeed: 6
   moveSpeedCurrent: 2
   rb: {fileID: 0}
   lastMotionVector: {x: 0, y: 0}
@@ -394,6 +394,7 @@ MonoBehaviour:
   dangleE: {fileID: 285352027}
   dangleS: {fileID: 1156918781}
   dangleW: {fileID: 896557270}
+  footstepParent: {fileID: 0}
 --- !u!114 &1594530999
 MonoBehaviour:
   m_ObjectHideFlags: 0
