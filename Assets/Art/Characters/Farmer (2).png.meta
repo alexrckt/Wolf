@@ -1401,10 +1401,10 @@ TextureImporter:
       name: Farmer (2)_61
       rect:
         serializedVersion: 2
-        x: 81
-        y: 771
-        width: 30
-        height: 50
+        x: 49
+        y: 770
+        width: 63
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1422,9 +1422,9 @@ TextureImporter:
       name: Farmer (2)_62
       rect:
         serializedVersion: 2
-        x: 145
+        x: 113
         y: 770
-        width: 30
+        width: 63
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1443,9 +1443,9 @@ TextureImporter:
       name: Farmer (2)_63
       rect:
         serializedVersion: 2
-        x: 209
-        y: 769
-        width: 29
+        x: 177
+        y: 770
+        width: 63
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1464,9 +1464,9 @@ TextureImporter:
       name: Farmer (2)_64
       rect:
         serializedVersion: 2
-        x: 273
+        x: 243
         y: 770
-        width: 30
+        width: 63
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1485,10 +1485,10 @@ TextureImporter:
       name: Farmer (2)_65
       rect:
         serializedVersion: 2
-        x: 337
-        y: 771
-        width: 30
-        height: 50
+        x: 307
+        y: 770
+        width: 63
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1506,9 +1506,9 @@ TextureImporter:
       name: Farmer (2)_66
       rect:
         serializedVersion: 2
-        x: 401
+        x: 371
         y: 770
-        width: 30
+        width: 63
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1527,9 +1527,9 @@ TextureImporter:
       name: Farmer (2)_67
       rect:
         serializedVersion: 2
-        x: 466
-        y: 769
-        width: 29
+        x: 461
+        y: 770
+        width: 33
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1550,7 +1550,7 @@ TextureImporter:
         serializedVersion: 2
         x: 529
         y: 770
-        width: 30
+        width: 33
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1968,9 +1968,9 @@ TextureImporter:
       name: Farmer (2)_88
       rect:
         serializedVersion: 2
-        x: 74
-        y: 578
-        width: 36
+        x: 72
+        y: 579
+        width: 64
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1989,9 +1989,9 @@ TextureImporter:
       name: Farmer (2)_89
       rect:
         serializedVersion: 2
-        x: 138
+        x: 137
         y: 579
-        width: 36
+        width: 64
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2010,9 +2010,9 @@ TextureImporter:
       name: Farmer (2)_90
       rect:
         serializedVersion: 2
-        x: 202
+        x: 201
         y: 579
-        width: 36
+        width: 64
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2031,10 +2031,10 @@ TextureImporter:
       name: Farmer (2)_91
       rect:
         serializedVersion: 2
-        x: 266
-        y: 578
-        width: 36
-        height: 51
+        x: 264
+        y: 579
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2052,9 +2052,9 @@ TextureImporter:
       name: Farmer (2)_92
       rect:
         serializedVersion: 2
-        x: 330
+        x: 327
         y: 578
-        width: 36
+        width: 64
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2073,10 +2073,10 @@ TextureImporter:
       name: Farmer (2)_93
       rect:
         serializedVersion: 2
-        x: 394
-        y: 578
-        width: 36
-        height: 51
+        x: 390
+        y: 579
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2094,10 +2094,10 @@ TextureImporter:
       name: Farmer (2)_94
       rect:
         serializedVersion: 2
-        x: 458
-        y: 578
-        width: 36
-        height: 51
+        x: 455
+        y: 579
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
