@@ -19,16 +19,18 @@ public class FarmerController : MonoBehaviour
         Chasing,
         LostTarget
     }
-     public State currentState;
-     GameObject playerRef;
-     Vector2 lastMotionVector;
-     bool moving;
-     public float horizontal;
+    public State currentState;
+    GameObject playerRef;
+    Vector2 lastMotionVector;
+    public bool moving;
+    public float horizontal;
     public float vertical;
     public Vector2 debugVelocity;
     
     public List<GameObject> moveSpots;
     Transform target;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,7 @@ public class FarmerController : MonoBehaviour
             animator.SetFloat("lastVertical", vertical);
         }
         #endregion
+       
     }
 
 
@@ -80,10 +83,10 @@ IEnumerator Move(){
                 aids.target = target;
                 yield return null;
             }
-           yield return new WaitForSeconds(0f);
+           yield return new WaitForSeconds(3f);
         }
 }
-    private void NormalizeMoveDest()
+    public void NormalizeMoveDest()
     {
         if (horizontal > 0)
         {
@@ -104,7 +107,7 @@ IEnumerator Move(){
         }
     }
 
-    private void AbsVectors()
+    public void AbsVectors()
     {
         if (Math.Abs(vertical) > Math.Abs(horizontal))
         {
@@ -115,5 +118,10 @@ IEnumerator Move(){
             vertical = 0f;
         }
        
+    }
+
+    public void PlayerLastSeen()
+    {
+        
     }
 }
