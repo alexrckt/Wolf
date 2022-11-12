@@ -1548,9 +1548,9 @@ TextureImporter:
       name: Farmer (2)_68
       rect:
         serializedVersion: 2
-        x: 529
+        x: 503
         y: 770
-        width: 33
+        width: 63
         height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1718,7 +1718,7 @@ TextureImporter:
         serializedVersion: 2
         x: 436
         y: 707
-        width: 66
+        width: 60
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1737,10 +1737,10 @@ TextureImporter:
       name: Farmer (2)_77
       rect:
         serializedVersion: 2
-        x: 530
-        y: 706
-        width: 36
-        height: 51
+        x: 498
+        y: 707
+        width: 60
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1926,10 +1926,10 @@ TextureImporter:
       name: Farmer (2)_86
       rect:
         serializedVersion: 2
-        x: 526
+        x: 503
         y: 641
-        width: 33
-        height: 57
+        width: 62
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2116,9 +2116,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 522
-        y: 578
-        width: 36
-        height: 51
+        y: 579
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3854,6 +3854,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Farmer (2)_178
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 707
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ba785fa8ea5764bb24f8c5ed44984c
+      internalID: 1169383912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer (2)_179
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 639
+        width: 62
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bacc3f9f95986c4fb99704ef5c7d259
+      internalID: -1179605365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmer (2)_180
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 579
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d8ba1e632791942971b22073031e52
+      internalID: -2128544390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3974,6 +4037,7 @@ TextureImporter:
       Farmer (2)_170: 1222436843
       Farmer (2)_45: -658896950
       Farmer (2)_81: 1728600324
+      Farmer (2)_180: -2128544390
       Farmer (2)_64: 916036812
       Farmer (2)_142: -1868218888
       Farmer (2)_19: 447045415
@@ -4014,6 +4078,7 @@ TextureImporter:
       Farmer (2)_139: 88233161
       Farmer (2)_50: -1024028276
       Farmer (2)_82: 1444687433
+      Farmer (2)_179: -1179605365
       Farmer (2)_33: -318271354
       Farmer (2)_0: -321703694
       Farmer (2)_65: 977402666

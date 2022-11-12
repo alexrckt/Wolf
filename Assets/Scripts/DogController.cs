@@ -71,7 +71,8 @@ public class DogController : MonoBehaviour
         #region Animator update
         horizontal = aiPath.desiredVelocity.x;
         vertical = aiPath.desiredVelocity.y;
-
+        AbsVectors();  // compares if the agent is going more vertically or horizontally
+                      // to decide which anim is more sutiable
         NormalizeMoveDest();
 
         animator.SetFloat("horizontal", horizontal);
@@ -87,8 +88,7 @@ public class DogController : MonoBehaviour
             animator.SetFloat("lastVertical", vertical);
         }
         #endregion
-         // if (currentState == State.Sniffing && target != null) // CRUTCH
-                // {Vector2.MoveTowards(transform.position, target.position, maxSpeedSniffing * Time.deltaTime);}
+        
     }
 
     void Debugging()
@@ -264,5 +264,18 @@ public class DogController : MonoBehaviour
         {
             vertical = -1f;
         }
+    }
+
+    private void AbsVectors()
+    {
+        if (Math.Abs(vertical) > Math.Abs(horizontal))
+        {
+            horizontal = 0f;
+        }
+        else 
+        {
+            vertical = 0f;
+        }
+       
     }
 }
