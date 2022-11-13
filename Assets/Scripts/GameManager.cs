@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     public GameState currentGameState;
     public int currentLevel;
     public int maxLevel;
-    public int lives;
+    public int livesCurrent;
+    public int livesInitial;
     public int score;
     public int bones;
     public int deathsCounter;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        currentLevel = 1;
+        ResetGame();
         currentGameState = GameState.MainMenu;
     }
 
@@ -68,8 +69,8 @@ public class GameManager : MonoBehaviour
 
     public void WolfInjured()
     {
-        lives--;
-        if (lives <= 0)
+        livesCurrent--;
+        if (livesCurrent <= 0)
         {
             GameOver();;
         }
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         PauseGame(true);
         currentGameState = GameState.EndGame;
-        currentLevel = 1;
+        ResetGame();
         gameOverMenu.SetActive(true);
         currentActiveMenu = gameOverMenu;
     }
@@ -130,11 +131,10 @@ public class GameManager : MonoBehaviour
     {
         PauseGame(true);
         currentGameState = GameState.EndGame;
-        currentLevel = 1;
+        ResetGame();
         gameWinMenu.SetActive(true);
         currentActiveMenu = gameWinMenu;
     }
-
 
     #endregion
 
@@ -187,10 +187,18 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+
+    private void ResetGame()
+    {
+        currentLevel = 1;
+        livesCurrent = livesInitial;
+    }
+
     public void BackToMain()
     {
         PauseGame(false);
         currentActiveMenu.SetActive(false);
+        ResetGame();
         LoadMainMenu();
     }
 }
