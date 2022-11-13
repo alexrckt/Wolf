@@ -15,11 +15,15 @@ public class FarmerShooting : MonoBehaviour
     AIPath aiPath;
     public GameObject crosshair;
     FarmerFOV farmerFOV;
-    bool isAiming;
+    FarmerController fc;
+    //bool isAiming = false;
     Animator animator;
     public string currentState;
     AIDestinationSetter aids;
     public float aimingTime = 1f;
+    Vector2 crossHairPlayerPos;
+    public Vector2 whichWayPlayer;
+    
     
     // string SHOOT_UP_FARMER = "Shoot_Up_Farmer";
     // string SHOOT_RIGHT_FARMER = "Shoot_Right_Farmer";
@@ -38,23 +42,47 @@ public class FarmerShooting : MonoBehaviour
         farmerFOV = GetComponent<FarmerFOV>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponent<Animator>();
+        fc = GetComponent<FarmerController>();
     }
 
     
-    void FixedUpdate()
+    void Update()
     {
-        // ref for current movespeed
-         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-          {aiPath.maxSpeed = 2f;}
+        whichWayPlayer =  player.position - transform.position;
+
+        
+         if (!farmerFOV.canSeePlayer) // implement fov state - if just seen and hidden from sight but 
+         
+                                     // still in  range - stand until the player gets out of range
+          {aiPath.maxSpeed = 2f;
+          //aiPath.canMove = true;
+            fc.isShooting = false; 
+            farmerFOV.angle = 180f;}
           
         
 
-        if (Vector2.Distance(transform.position, player.position) < stoppingDistance && farmerFOV.canSeePlayer)
+        if ( farmerFOV.canSeePlayer  )
                    
           {
+
+            fc.isShooting = true;
             aids.target = player;
             aiPath.maxSpeed = 0.01f;
-            StartCoroutine(Aim());
+            //aiPath.canMove = false;
+            farmerFOV.angle = 360f;
+            if ( timeBtwShots <= 0)
+          {
+            
+            Instantiate (crosshair, player.position, Quaternion.identity);
+            crossHairPlayerPos = player.position;
+            
+            
+
+           WhichWayShoot(); // tell anim which way to look
+        
+            animator.SetTrigger("aimed"); // start animating the shot
+            timeBtwShots = startTimeBtwShots;
+          }
             
             
             
@@ -79,47 +107,44 @@ public class FarmerShooting : MonoBehaviour
         
        riflePoint = farmerFOV.viewPoint;
        
-       var b = Instantiate (projectile, riflePoint.position, Quaternion.identity);
-       b.GetComponent<Bullet>().target = player.position;
-       timeBtwShots = startTimeBtwShots;
+       var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, fc.lastMotionVector ));
+       // ne rabotaet!
+       b.GetComponent<Bullet>().SetPlayerPos(crossHairPlayerPos);
+       
        
        WhichWayShoot();
-    //    ChangeAnimState("Idle");
-       //WhichWayIdle();
-       // idle anim
-       
-       
-        
         
     }
 
-     IEnumerator Aim()
-     {
-        yield return new WaitForSeconds(aimingTime);
-        if (timeBtwShots <= 0)
-        {
-        WhichWayShoot();
-        if (Vector2.Distance(transform.position, player.position)
-                                     < stoppingDistance && farmerFOV.canSeePlayer)
-        animator.SetTrigger("aimed");
-        //Shoot(); // actually trigger animator and change state
-     }}
+     
     void WhichWayShoot()
     {
-      farmerFOV.WhereIsFarmerLooking();
-      switch (farmerFOV.viewPointString)
+      
+      switch (fc.lastMotionVector.x)
       {
-        case "up": animator.SetFloat("lastVertical", 1f);
+       
+        case 1: animator.SetFloat("lastHorizontal", 1f);
         
         break;
-        case "right": animator.SetFloat("lastHorizontal", 1f);
+       
+        case -1: animator.SetFloat("lastHorizontal", -1f);
         
         break;
-        case "down": animator.SetFloat("lastVertical", -1f);
+        default: animator.SetFloat("lastHorizontal", 0);
         
         break;
-        case "left": animator.SetFloat("lastHorizontal", -1f);
+         
+      }
+
+      switch (fc.lastMotionVector.y)
+      {
+        case 1: animator.SetFloat("lastVertical", -1f);
         
+        break;
+         case -1: animator.SetFloat("lastVertical", 1f);
+        
+        break;
+        default: animator.SetFloat("lastVertical", 0);
         break;
       }
     }
@@ -153,7 +178,7 @@ public class FarmerShooting : MonoBehaviour
     //   if (newState == SHOOT_UP_FARMER || newState == SHOOT_DOWN_FARMER || newState == SHOOT_RIGHT_FARMER
     //   || newState == SHOOT_LEFT_FARMER)
     //   {
-    //   Instantiate (crosshair, player.position, Quaternion.identity);
+    //   
     //   }
 
     //   animator.Play(newState);

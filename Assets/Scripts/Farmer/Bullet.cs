@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 50f;
-
+      
     
     public Vector2 target;
     
@@ -44,5 +44,10 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
         // visuals?
+    }
+
+    public void SetPlayerPos(Vector2 tar)
+    {
+       target = tar;
     }
 }

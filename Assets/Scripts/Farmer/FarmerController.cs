@@ -13,16 +13,16 @@ public class FarmerController : MonoBehaviour
     AIDestinationSetter aids;
     AIPath aiPath;
     Animator animator;
-    public enum State
-    {
-        Calm,
-        Sniffing,
-        Chasing,
-        LostTarget
-    }
-    public State currentState;
+    // public enum State
+    // {
+    //     Calm,
+    //     Sniffing,
+    //     Chasing,
+    //     LostTarget
+    // }
+    // public State currentState;
     GameObject playerRef;
-    Vector2 lastMotionVector;
+    public Vector2 lastMotionVector;
     public bool moving;
     public float horizontal;
     public float vertical;
@@ -30,9 +30,9 @@ public class FarmerController : MonoBehaviour
     
     public List<GameObject> moveSpots;
     Transform target;
-
+   public bool isShooting; // debug solution for now - pseudo shooting state
     
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -64,6 +64,7 @@ public class FarmerController : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
+            lastMotionVector = new Vector2(horizontal, vertical);
             animator.SetFloat("lastHorizontal", horizontal);
             animator.SetFloat("lastVertical", vertical);
         }
@@ -75,6 +76,8 @@ public class FarmerController : MonoBehaviour
 IEnumerator Move(){
         while (true)
         {
+           if (!isShooting)
+           {
             int randomSpot = Random.Range(0, moveSpots.Count);
             target = moveSpots[randomSpot].transform;
 
@@ -84,6 +87,8 @@ IEnumerator Move(){
                 yield return null;
             }
 
+            
+            }
             yield return new WaitForSeconds(3f);
         }
 }

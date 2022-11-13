@@ -352,16 +352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f38ea75fa00264ea11e5dbbfaf2061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  lastMotionVector: {x: 0, y: 0}
   moving: 0
   horizontal: 0
   vertical: 0
   debugVelocity: {x: 0, y: 0}
-  moveSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  moveSpots: []
+  isShooting: 0
 --- !u!114 &1827880264101436413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,14 +371,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2b7f53228c35145a082a1fe343dd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoppingDistance: 5
-  timeBtwShots: 3
-  startTimeBtwShots: 3
+  stoppingDistance: 15
+  timeBtwShots: 1.5
+  startTimeBtwShots: 1.5
   projectile: {fileID: 4474645102012975791, guid: 249c3f213280197408798d8d66bb9da5, type: 3}
   riflePoint: {fileID: 0}
   crosshair: {fileID: 2516358723397321926, guid: d32ac466ab708814eb3e8aef63d67333, type: 3}
   currentState: 
   aimingTime: 1
+  whichWayPlayer: {x: 0, y: 0}
 --- !u!114 &916049442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2572c385a103614eb4811a89b6aaa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 15
   closeradius: 4
   angle: 180
   canSeePlayer: 0

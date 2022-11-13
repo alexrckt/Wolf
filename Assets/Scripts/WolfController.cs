@@ -51,7 +51,7 @@ public class WolfController : MonoBehaviour
         grabSheep = GetComponent<GrabSheep>();
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
-        gameManager = FindObjectOfType<GameManager>();
+       // gameManager = FindObjectOfType<GameManager>();
 
         //InvokeRepeating("Debugging", 1f, 1f);
     }
@@ -129,7 +129,7 @@ public class WolfController : MonoBehaviour
 
     public void WolfInjured()
     {
-        gameManager.WolfInjured();
+    //    gameManager.WolfInjured();
     }
 
     void DangleSheep()

@@ -69,22 +69,23 @@ public class FarmerFOV : MonoBehaviour
                                                                                    // behind an obstacle
                 {
                     canSeePlayer = true;
-                    //dc.SetChasingState();
+                    animator.SetBool("playerIsSeen", true);
+                   
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
                     // debug white line shows fov - 5 times a second
                 }
                 else if (closeRangeChecks.Length != 0) // if player is behind an obstacle
                 {
                     canSeePlayer = false;
-                    fc.PlayerLastSeen(); // if dog is chasing
-                                         //sets dog to lost state and saves a ref to last point 
-                                         //where it saw the player
+                    animator.SetBool("playerIsSeen", false);
+                   
                 }
             }
             else // if player isn't in view angle
             {
                 canSeePlayer = false;
-                fc.PlayerLastSeen();
+                animator.SetBool("playerIsSeen", false);
+               
                 
             }
         }
@@ -104,22 +105,23 @@ public class FarmerFOV : MonoBehaviour
                                                                                    // behind an obstacle
                 {
                     canSeePlayer = true;
-                    //dc.SetChasingState();
+                    animator.SetBool("playerIsSeen", true);
+                    
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
                     // debug white line shows fov - 5 times a second
                 }
                 else if (rangeChecks.Length != 0) // if player is behind an obstacle
                 {
                     canSeePlayer = false;
-                    fc.PlayerLastSeen(); // if dog is chasing
-                                         //sets dog to lost state and saves a ref to last point 
-                                         //where it saw the player
+                     animator.SetBool("playerIsSeen", false);
+                    
                 }
             }
             else // if player isn't in view angle
             {
                 canSeePlayer = false;
-                fc.PlayerLastSeen();
+                 animator.SetBool("playerIsSeen", false);
+                
                 
             }
                     
@@ -128,7 +130,8 @@ public class FarmerFOV : MonoBehaviour
         else if (rangeChecks.Length == 0 && canSeePlayer) // if player was in view angle but got away from it
         {
             canSeePlayer = false;
-            fc.PlayerLastSeen();
+             animator.SetBool("playerIsSeen", false);
+            
             
             
 
