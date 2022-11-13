@@ -4,46 +4,43 @@ using UnityEngine;
 
 public class GrabSheep : MonoBehaviour
 {
-    WolfController wc;
-    SheepsClothing sc;
-    DropPointBringSheep dpBSheep;
     bool isTouchingSheep;
     [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
-    public float sheepValue = 1f;
+    public int sheepValue = 1;
     [HideInInspector] public Transform sheep;
-    
+
+    private WolfController wolfController;
+    private SheepsClothing sheepsClothing;
+    private LevelManager levelManager;
+
     void Start()
     {
-        wc = GetComponent<WolfController>();
-        sc = GetComponent<SheepsClothing>();
-        dpBSheep = FindObjectOfType<DropPointBringSheep>();
-
+        wolfController = GetComponent<WolfController>();
+        sheepsClothing = GetComponent<SheepsClothing>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
-
     
     void Update()
     {
         if(Input.GetKeyDown (KeyCode.G))
         {
-          if(isTouchingSheep && !wc.isCarryingSheep)
-          {
-            sheep.SetParent(gameObject.transform, true);
-            sheep.GetComponent<CircleCollider2D>().enabled = false;
+            if(isTouchingSheep && !wolfController.isCarryingSheep)
+            {
+                sheep.SetParent(gameObject.transform, true);
+                sheep.GetComponent<CircleCollider2D>().enabled = false;
+
+                wolfController.IsCarryingSheep(true);
+                sheepsClothing.Stealth(false);
+                return;
+            }
+            if (wolfController.isCarryingSheep)
+            {
+                sheep.GetComponent<CircleCollider2D>().enabled = true;
+                sheep.SetParent(null);
+                wolfController.IsCarryingSheep(false);
             
-            
-            wc.IsCarryingSheep(true);
-            sc.Stealth(false);
-            return;
-          }
-          if (wc.isCarryingSheep)
-          {
-            sheep.GetComponent<CircleCollider2D>().enabled = true;
-            sheep.SetParent(null);
-            
-            wc.IsCarryingSheep(false);
-            
-          }
+            }
         }
     }
 
@@ -51,6 +48,7 @@ public class GrabSheep : MonoBehaviour
     {
        sheep.transform.position = whereMouth.position;
     }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Sheep")
@@ -70,35 +68,27 @@ public class GrabSheep : MonoBehaviour
         {
             isTouchingDropPoint = true;
 
-            if (wc.isCarryingSheep)
+            if (wolfController.isCarryingSheep)
             {
-                wc.IsCarryingSheep(false);
+                wolfController.IsCarryingSheep(false);
                 Destroy(sheep.gameObject);           
-                dpBSheep.UpdateSheepText(sheepValue);
-
+                levelManager.SheepStolen(1);
             }
         }
-
-        
     }
 
-     private void OnCollisionExit2D(Collision2D other) 
+    private void OnCollisionExit2D(Collision2D other) 
      {
-        if (other.gameObject.tag == "Sheep" && !wc.isCarryingSheep)
+        if (other.gameObject.tag == "Sheep" && !wolfController.isCarryingSheep)
         {
            isTouchingSheep = false;
-           
-
         }
-        
-        
-    }
+     }
 
     private void OnTriggerExit2D(Collider2D other) {
-
         if (other.gameObject.tag == "DropPoint")
         {
-          isTouchingDropPoint = false;
+            isTouchingDropPoint = false;
         }
     }
 }

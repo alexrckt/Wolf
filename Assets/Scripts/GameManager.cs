@@ -10,16 +10,25 @@ public class GameManager : MonoBehaviour
     {
         MainMenu,
         Playing,
-        Pause
+        PauseMenu,
+        EndGame
     }
 
     private static GameManager instance = null;
+
     public GameObject pauseMenu;
+    public GameObject levelWinMenu;
+    public GameObject levelFailMenu;
+    public GameObject gameOverMenu;
+    public GameObject gameWinMenu;
+    private GameObject currentActiveMenu;
+    //private Dictionary<bool, GameObject> menuStatuses;
 
     public GameState currentGameState;
     public int currentLevel;
+    public int maxLevel;
     public int lives;
-    public int points;
+    public int score;
     public int bones;
     public int deathsCounter;
 
@@ -48,15 +57,88 @@ public class GameManager : MonoBehaviour
             switch (currentGameState)
             {
                 case GameState.Playing:
-                    Pause();
+                    PauseMenu(true);
                     break;
-                case GameState.Pause:
-                    Resume();
+                case GameState.PauseMenu:
+                    PauseMenu(false);
                     break;
             }
         }
     }
 
+    public void WolfInjured()
+    {
+        lives--;
+        if (lives <= 0)
+        {
+            GameOver();;
+        }
+        else
+        {
+            LevelFail();
+        }
+    }
+
+    #region End Game functions
+
+    /// <summary>
+    /// Called when Level WIN state reached
+    /// </summary>
+    public void LevelWin()
+    {
+        PauseGame(true);
+        currentGameState = GameState.EndGame;
+
+        if (currentLevel == maxLevel)
+        {
+            GameWin();
+            return;
+        }
+
+        currentLevel++;
+        levelWinMenu.SetActive(true);
+        currentActiveMenu = levelWinMenu;
+    }
+
+    /// <summary>
+    /// Called when Level FAIL state reached
+    /// </summary>
+    public void LevelFail()
+    {
+        PauseGame(true);
+        currentGameState = GameState.EndGame;
+        levelFailMenu.SetActive(true);
+        currentActiveMenu = levelFailMenu;
+    }
+
+    /// <summary>
+    /// Called when GAME OVER state reached (no more lives left)
+    /// </summary>
+    public void GameOver()
+    {
+        PauseGame(true);
+        currentGameState = GameState.EndGame;
+        currentLevel = 1;
+        gameOverMenu.SetActive(true);
+        currentActiveMenu = gameOverMenu;
+    }
+
+    /// <summary>
+    /// Called when all levels passed
+    /// </summary>
+    public void GameWin()
+    {
+        PauseGame(true);
+        currentGameState = GameState.EndGame;
+        currentLevel = 1;
+        gameWinMenu.SetActive(true);
+        currentActiveMenu = gameWinMenu;
+    }
+
+
+    #endregion
+
+    #region Scene Loading
     public void LoadLevel()
     {
         SceneManager.LoadScene($"Level {currentLevel}");
@@ -68,26 +150,47 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         currentGameState = GameState.MainMenu;
     }
+    #endregion
 
     #region Pause Menu
-    public void Pause()
+    public void PauseMenu(bool on)
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        currentGameState = GameState.Pause;
-    }
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        currentGameState = GameState.Playing;
-    }
+        if (on)
+        {
+            pauseMenu.SetActive(true);
+            currentActiveMenu = pauseMenu;
+            PauseGame(true);
+            currentGameState = GameState.PauseMenu;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            PauseGame(false);
+            currentGameState = GameState.Playing;
+        }
 
-    public void BackToMain()
+    }
+    public void PauseGame(bool pause)
     {
-        Resume();
-        LoadMainMenu();
+        Time.timeScale = pause ? 0f : 1f;
     }
     #endregion
 
+    #region Level Win/Fail Menu
+
+    public void LoadNextLevel()
+    {
+        currentActiveMenu.SetActive(false);
+        LoadLevel();
+        PauseGame(false);
+    }
+
+    #endregion
+
+    public void BackToMain()
+    {
+        PauseGame(false);
+        currentActiveMenu.SetActive(false);
+        LoadMainMenu();
+    }
 }

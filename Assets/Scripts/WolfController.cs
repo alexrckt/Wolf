@@ -23,7 +23,7 @@ public class WolfController : MonoBehaviour
     Vector2 moveInput;
     [HideInInspector] public Vector2 lastMotionVector;
     Animator animator;
-    GrabSheep gs;
+    GrabSheep grabSheep;
     bool moving;
 
     [HideInInspector] public bool isStealthed;
@@ -33,7 +33,8 @@ public class WolfController : MonoBehaviour
     public Transform dangleE;
     public Transform dangleS;
     public Transform dangleW;
-    
+
+    private GameManager gameManager;
     private float stealthMsFactor = 1f;
     private float carryMsFactor = 1f;
     float horizontal;
@@ -47,9 +48,10 @@ public class WolfController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveSpeedCurrent = moveSpeed;
         animator = GetComponent<Animator>();
-        gs = GetComponent<GrabSheep>();
+        grabSheep = GetComponent<GrabSheep>();
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
+        gameManager = FindObjectOfType<GameManager>();
 
         //InvokeRepeating("Debugging", 1f, 1f);
     }
@@ -125,30 +127,32 @@ public class WolfController : MonoBehaviour
         carryMsFactor = yesno ? 0.5f : 1f;
     }
 
+    public void WolfInjured()
+    {
+        gameManager.WolfInjured();
+    }
+
     void DangleSheep()
     {
-     if (isCarryingSheep)
-     { 
-      if (horizontal == 1 )
-      {
-        gs.DangleSheep(dangleE);
-      }
-      else if (vertical == 1  )
-      {
-        gs.DangleSheep(dangleN);
-      }
-      else if (horizontal == -1  )
-      {
-        gs.DangleSheep(dangleW);
-      }
-      else if (vertical == -1  )
-      {
-        gs.DangleSheep(dangleS);
-      }
-      
-
-
-     }
+        if (isCarryingSheep)
+        {
+            if (horizontal == 1)
+            {
+                grabSheep.DangleSheep(dangleE);
+            }
+            else if (vertical == 1)
+            {
+                grabSheep.DangleSheep(dangleN);
+            }
+            else if (horizontal == -1)
+            {
+                grabSheep.DangleSheep(dangleW);
+            }
+            else if (vertical == -1)
+            {
+                grabSheep.DangleSheep(dangleS);
+            }
+        }
     }
 
 }

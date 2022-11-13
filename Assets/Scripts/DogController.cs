@@ -19,7 +19,7 @@ public class DogController : MonoBehaviour
         LostTarget
     }
 
-    GameObject playerRef;
+    WolfController playerRef;
 
     public float maxSpeedCalm;
     public float maxSpeedSniffing;
@@ -53,7 +53,7 @@ public class DogController : MonoBehaviour
     
     void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        playerRef = FindObjectOfType<WolfController>();
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
@@ -105,11 +105,21 @@ public class DogController : MonoBehaviour
     // Switching to LOSTTARGET state IF wolf disappear in raycast field
     private void OnTriggerStay2D(Collider2D other)
     {
+
         if (other.tag.Equals("WolfFootstep") 
             && currentState != State.Chasing
             && currentState != State.LostTarget)
         {
             SetSniffingState(other);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            // BITE THE WOLF
+            playerRef.WolfInjured();
         }
     }
     public void SetSniffingState(Collider2D step)
