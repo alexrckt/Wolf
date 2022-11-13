@@ -12,6 +12,7 @@ TagManager:
   - DogPatrolSpot
   - GameManager
   - FarmerPatrolSpot
+  - Obstacle
   layers:
   - Default
   - TransparentFX

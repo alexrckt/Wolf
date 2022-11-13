@@ -23,6 +23,7 @@ public class FarmerShooting : MonoBehaviour
     public float aimingTime = 1f;
     Vector2 crossHairPlayerPos;
     public Vector2 whichWayPlayer;
+    public Transform[] gunPoints; // NESW
     
     
     // string SHOOT_UP_FARMER = "Shoot_Up_Farmer";
@@ -103,9 +104,20 @@ public class FarmerShooting : MonoBehaviour
     public void Shoot()
     {
        
+        farmerFOV.WhereIsFarmerLooking();
+        switch (farmerFOV.viewPointString)
+        {
+          case "up": riflePoint = gunPoints[0];
+          break;
+          case "right": riflePoint = gunPoints[1];
+          break;
+          case "down": riflePoint = gunPoints[2];
+          break;
+          case "left": riflePoint = gunPoints[3];
+          break;
+        }
         
-        
-       riflePoint = farmerFOV.viewPoint;
+       
        
        var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, new Vector2(player.position.x, player.position.y)));
        // ne rabotaet!
@@ -149,41 +161,5 @@ public class FarmerShooting : MonoBehaviour
       }
     }
 
-    // void WhichWayIdle()
-    // {
-    //     farmerFOV.WhereIsFarmerLooking();
-    //     switch (farmerFOV.viewPointString)
-    //   {
-    //     case "up": ChangeAnimState(IDLE_UP_FARMER);
-        
-    //     break;
-    //     case "right": ChangeAnimState(IDLE_RIGHT_FARMER);
-        
-    //     break;
-    //     case "down": ChangeAnimState(IDLE_DOWN_FARMER);
-        
-    //     break;
-    //     case "left": ChangeAnimState(IDLE_LEFT_FARMER);
-        
-    //     break;
-    //   }
-    // }
-
-    // void ChangeAnimState(string newState)
-    // {
-    //     //stop the same anim from interrupting itself
-    //   if (currentState == newState)
-    //   return;
-    //   // if shooting, create crosshair
-    //   if (newState == SHOOT_UP_FARMER || newState == SHOOT_DOWN_FARMER || newState == SHOOT_RIGHT_FARMER
-    //   || newState == SHOOT_LEFT_FARMER)
-    //   {
-    //   
-    //   }
-
-    //   animator.Play(newState);
-      
-    //   //reassign the current state
-    //   currentState = newState;
-    // }
+    
 }

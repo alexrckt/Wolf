@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour
       
     
     public Vector2 target;
-    
+    Collider2D col;
+    float lifeTime = 4f;
+    bool hasHitStuff = false;
     void Start()
     {
         
@@ -19,12 +21,20 @@ public class Bullet : MonoBehaviour
    
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if (!hasHitStuff)
+        {transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);}
 
-        if (transform.position.x == target.x && transform.position.y == target.y)
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if (transform.position.x == target.x && transform.position.y == target.y && !hasHitStuff)
         {
             ExplodeProjectile();
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,16 +43,22 @@ public class Bullet : MonoBehaviour
      {
        // gameover
        ExplodeProjectile();
+       
      }
      if (other.CompareTag("Obstacle"))
      {
         //Getcomponent "ovechka" - kill ovechka if so
         ExplodeProjectile();
+        
      }
     }
     private void ExplodeProjectile()
     {
-        Destroy(gameObject);
+        hasHitStuff = true;
+       GetComponent<Collider2D>().enabled = false;
+       GetComponent<SpriteRenderer>().enabled = false;
+       
+        
         // visuals?
     }
 
