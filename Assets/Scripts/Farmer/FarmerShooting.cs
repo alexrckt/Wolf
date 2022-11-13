@@ -107,7 +107,7 @@ public class FarmerShooting : MonoBehaviour
         
        riflePoint = farmerFOV.viewPoint;
        
-       var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, fc.lastMotionVector ));
+       var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, new Vector2(player.position.x, player.position.y)));
        // ne rabotaet!
        b.GetComponent<Bullet>().SetPlayerPos(crossHairPlayerPos);
        
