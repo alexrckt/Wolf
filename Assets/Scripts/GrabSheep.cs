@@ -51,7 +51,7 @@ public class GrabSheep : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Sheep")
+        if (other.gameObject.tag == "Sheep" && !wolfController.isCarryingSheep)
         {
            isTouchingSheep = true;
 

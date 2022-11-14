@@ -343,11 +343,11 @@ GameObject:
   - component: {fileID: 6821469673547053920}
   m_Layer: 8
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5000115567808811977
 Transform:
   m_ObjectHideFlags: 0

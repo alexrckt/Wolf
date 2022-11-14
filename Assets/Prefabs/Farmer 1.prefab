@@ -481,11 +481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f38ea75fa00264ea11e5dbbfaf2061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastMotionVector: {x: 0, y: 0}
-  moving: 0
-  horizontal: 0
-  vertical: 0
-  debugVelocity: {x: 0, y: 0}
   moveSpots: []
   isShooting: 0
 --- !u!114 &1827880264101436413
@@ -503,7 +498,7 @@ MonoBehaviour:
   stoppingDistance: 15
   timeBtwShots: 1.5
   startTimeBtwShots: 1.5
-  projectile: {fileID: 4082306686532670303, guid: 5149544f072a8084ca4fcead00e14c8e, type: 3}
+  projectile: {fileID: 4474645102012975791, guid: 249c3f213280197408798d8d66bb9da5, type: 3}
   riflePoint: {fileID: 0}
   crosshair: {fileID: 2516358723397321926, guid: d32ac466ab708814eb3e8aef63d67333, type: 3}
   currentState: 
