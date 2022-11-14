@@ -36,6 +36,7 @@ public class FarmerController : MonoBehaviour
         state.EnterStateLog();
     }
 
+    #region Timer
     public void SetWaitTimer()
     {
         isWaiting = true;
@@ -57,6 +58,7 @@ public class FarmerController : MonoBehaviour
     {
         return Random.Range(currentState.waitTimeMin, currentState.waitTimeMax);
     }
+    #endregion
 
     public void PlayerLastSeen()
     {

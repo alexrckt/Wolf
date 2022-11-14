@@ -19,18 +19,15 @@ public class FarmerPatrollingState : FarmerBaseState
     {
         moveSpots ??= GameObject.FindGameObjectsWithTag("FarmerPatrolSpot").ToList();
 
-        currentRandomSpot = getRandomSpot();
+        currentRandomSpot = GetRandomSpot();
     }
 
     public override void UpdateState(FarmerController farmer)
     {
-        if (!farmer.isWaiting)
+        if (!farmer.isWaiting && !Move(farmer.transform, currentRandomSpot))
         {
-            if (!Move(farmer.transform, currentRandomSpot))
-            {
-                currentRandomSpot = getRandomSpot();
-                farmer.SetWaitTimer();
-            }
+            currentRandomSpot = GetRandomSpot();
+            farmer.SetWaitTimer();
         }
     }
 
@@ -39,7 +36,7 @@ public class FarmerPatrollingState : FarmerBaseState
 
     }
 
-    public Transform getRandomSpot()
+    public Transform GetRandomSpot()
     {
         return moveSpots[Random.Range(0, moveSpots.Count)].transform;
     }
