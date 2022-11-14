@@ -15,7 +15,8 @@ public class FarmerShooting : MonoBehaviour
     AIPath aiPath;
     public GameObject crosshair;
     FarmerFOV farmerFOV;
-    FarmerController fc;
+    FarmerController farmerController;
+    private AnimatorUpdater animatorUpdater;
     //bool isAiming = false;
     Animator animator;
     public string currentState;
@@ -43,122 +44,109 @@ public class FarmerShooting : MonoBehaviour
         farmerFOV = GetComponent<FarmerFOV>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponent<Animator>();
-        fc = GetComponent<FarmerController>();
+        animatorUpdater = GetComponent<AnimatorUpdater>();
+        farmerController = GetComponent<FarmerController>();
     }
 
     
     void Update()
-    {
+    { 
         whichWayPlayer =  player.position - transform.position;
 
-        
-         if (!farmerFOV.canSeePlayer) // implement fov state - if just seen and hidden from sight but 
-         
-                                     // still in  range - stand until the player gets out of range
-          {aiPath.maxSpeed = 2f;
-          //aiPath.canMove = true;
-            fc.isShooting = false; 
-            farmerFOV.angle = 180f;}
-          
-        
+        if (!farmerFOV.canSeePlayer)   // implement fov state - if just seen and hidden from sight but 
+                                        // still in  range - stand until the player gets out of range
+         {
+             aiPath.maxSpeed = 2f;
+             //aiPath.canMove = true;
+             farmerController.isShooting = false;
+             farmerFOV.angle = 180f;
+         }
+
+
 
         if ( farmerFOV.canSeePlayer  )
-                   
-          {
+        {
 
-            fc.isShooting = true;
+            farmerController.isShooting = true;
             aids.target = player;
             aiPath.maxSpeed = 0.01f;
             //aiPath.canMove = false;
             farmerFOV.angle = 360f;
-            if ( timeBtwShots <= 0)
-          {
-            
-            Instantiate (crosshair, player.position, Quaternion.identity);
-            crossHairPlayerPos = player.position;
-            
-            
+            if (timeBtwShots <= 0)
+            {
 
-           WhichWayShoot(); // tell anim which way to look
-        
-            animator.SetTrigger("aimed"); // start animating the shot
-            timeBtwShots = startTimeBtwShots;
-          }
-            
-            
-            
-          }
-      
+                Instantiate(crosshair, player.position, Quaternion.identity);
+                crossHairPlayerPos = player.position;
 
-        
-      
+                WhichWayShoot(); // tell anim which way to look
 
-       if(timeBtwShots > 0){
-            
-            timeBtwShots -= Time.deltaTime;
+                animator.SetTrigger("aimed"); // start animating the shot
+                timeBtwShots = startTimeBtwShots;
+            }
         }
 
-
+        if(timeBtwShots > 0)
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
     }
 
     public void Shoot()
     {
-       
         farmerFOV.WhereIsFarmerLooking();
         switch (farmerFOV.viewPointString)
         {
-          case "up": riflePoint = gunPoints[0];
-          break;
-          case "right": riflePoint = gunPoints[1];
-          break;
-          case "down": riflePoint = gunPoints[2];
-          break;
-          case "left": riflePoint = gunPoints[3];
-          break;
+            case "up":
+                riflePoint = gunPoints[0];
+                break;
+            case "right":
+                riflePoint = gunPoints[1];
+                break;
+            case "down":
+                riflePoint = gunPoints[2];
+                break;
+            case "left":
+                riflePoint = gunPoints[3];
+                break;
         }
-        
-       
-       
-       var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, new Vector2(player.position.x, player.position.y)));
-       // ne rabotaet!
-       b.GetComponent<Bullet>().SetPlayerPos(crossHairPlayerPos);
-       
-       
-       WhichWayShoot();
-        
+
+
+
+        var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, new Vector2(player.position.x, player.position.y)));
+        // ne rabotaet!
+        b.GetComponent<Bullet>().SetPlayerPos(crossHairPlayerPos);
+
+        WhichWayShoot();
     }
 
      
     void WhichWayShoot()
     {
-      
-      switch (fc.lastMotionVector.x)
-      {
-       
-        case 1: animator.SetFloat("lastHorizontal", 1f);
-        
-        break;
-       
-        case -1: animator.SetFloat("lastHorizontal", -1f);
-        
-        break;
-        default: animator.SetFloat("lastHorizontal", 0);
-        
-        break;
-         
-      }
+        switch (animatorUpdater.lastMotionVector.x)
+        {
+            case 1:
+                animator.SetFloat("lastHorizontal", 1f);
+                break;
+            case -1:
+                animator.SetFloat("lastHorizontal", -1f);
+                break;
+            default:
+                animator.SetFloat("lastHorizontal", 0);
+                break;
+        }
 
-      switch (fc.lastMotionVector.y)
-      {
-        case 1: animator.SetFloat("lastVertical", -1f);
-        
-        break;
-         case -1: animator.SetFloat("lastVertical", 1f);
-        
-        break;
-        default: animator.SetFloat("lastVertical", 0);
-        break;
-      }
+        switch (animatorUpdater.lastMotionVector.y)
+        {
+            case 1:
+                animator.SetFloat("lastVertical", -1f);
+                break;
+            case -1:
+                animator.SetFloat("lastVertical", 1f);
+                break;
+            default:
+                animator.SetFloat("lastVertical", 0);
+                break;
+        }
     }
 
     

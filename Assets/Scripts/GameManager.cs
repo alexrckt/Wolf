@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject gameWinMenu;
     private GameObject currentActiveMenu;
-    //private Dictionary<bool, GameObject> menuStatuses;
 
     public GameState currentGameState;
     public int currentLevel;
@@ -191,6 +190,7 @@ public class GameManager : MonoBehaviour
     private void ResetGame()
     {
         currentLevel = 1;
+        bones = 0;
         livesCurrent = livesInitial;
     }
 

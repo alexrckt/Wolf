@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 916049438}
   - component: {fileID: 1827880264101436413}
   - component: {fileID: 916049442}
+  - component: {fileID: 5953387380766553565}
   m_Layer: 8
   m_Name: Farmer 1
   m_TagString: Farmer
@@ -544,3 +545,20 @@ MonoBehaviour:
   - {fileID: 986345596}
   viewPoint: {fileID: 0}
   viewPointString: 
+--- !u!114 &5953387380766553565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001842422330217959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f60c9aaa0511e4ea7fd0effd37c46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastMotionVector: {x: 0, y: 0}
+  moving: 0
+  horizontal: 0
+  vertical: 0
+  debugVelocity: {x: 0, y: 0}

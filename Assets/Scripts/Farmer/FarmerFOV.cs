@@ -22,14 +22,15 @@ public class FarmerFOV : MonoBehaviour
     Vector3 fovDir = new Vector3();
     public Transform viewPoint; // which way we are looking - one of four "vision point" objects
     public string viewPointString;
-    
-    
+    private AnimatorUpdater animatorUpdater;
+
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         wc = playerRef.GetComponent<WolfController>();
         fc = GetComponent<FarmerController>();
         animator = GetComponent<Animator>();
+        animatorUpdater = GetComponent<AnimatorUpdater>();
         StartCoroutine(FOVRoutine());
     }
 
@@ -120,9 +121,7 @@ public class FarmerFOV : MonoBehaviour
             else // if player isn't in view angle
             {
                 canSeePlayer = false;
-                 animator.SetBool("playerIsSeen", false);
-                
-                
+                animator.SetBool("playerIsSeen", false);
             }
                     
         }
@@ -130,17 +129,8 @@ public class FarmerFOV : MonoBehaviour
         else if (rangeChecks.Length == 0 && canSeePlayer) // if player was in view angle but got away from it
         {
             canSeePlayer = false;
-             animator.SetBool("playerIsSeen", false);
-            
-            
-            
-
+            animator.SetBool("playerIsSeen", false);
         }
-
-
-
-
-    
     }
 
 
@@ -149,40 +139,40 @@ public class FarmerFOV : MonoBehaviour
 
     public void WhereIsFarmerLooking() // sets dir for the purpose of FOV angle + sets viewpoint obj
     {
-        fc.AbsVectors();
-        fc.NormalizeMoveDest();
-        
+        animatorUpdater.AbsVectors();
+        animatorUpdater.NormalizeMoveDest();
+
         clipAnimArray = animator.GetCurrentAnimatorClipInfo(0);
         string animName = (clipAnimArray[0].clip.name);
 
         if (animName == "Idle_Down_Farmer" || animName == "Shoot_Down_Farmer"
-         || animName == "Walk_Down_Farmer")
+                                           || animName == "Walk_Down_Farmer")
         {
-           fovDir = -fovDirs[2].transform.up;
-           viewPoint = fovDirs[2].transform; // which way we are looking
-           viewPointString = "down";
+            fovDir = -fovDirs[2].transform.up;
+            viewPoint = fovDirs[2].transform; // which way we are looking
+            viewPointString = "down";
         }
         else if (animName == "Idle_Up_Farmer" || animName == "Shoot_Up_Farmer"
-         || animName == "Walk_Up_Farmer")
-         {
+                                              || animName == "Walk_Up_Farmer")
+        {
             fovDir = fovDirs[0].transform.up;
             viewPoint = fovDirs[0].transform;
             viewPointString = "up";
-         }
-         else if (animName == "Idle_Right_Farmer" || animName == "Shoot_Right_Farmer"
-         || animName == "Walk_Right_Farmer")
-         {
+        }
+        else if (animName == "Idle_Right_Farmer" || animName == "Shoot_Right_Farmer"
+                                                 || animName == "Walk_Right_Farmer")
+        {
             fovDir = fovDirs[1].transform.right;
             viewPoint = fovDirs[1].transform;
             viewPointString = "right";
-         }
-         else if (animName == "Idle_Left_Farmer" || animName == "Shoot_Left_Farmer"
-         || animName == "Walk_Left_Farmer")
-         {
+        }
+        else if (animName == "Idle_Left_Farmer" || animName == "Shoot_Left_Farmer"
+                                                || animName == "Walk_Left_Farmer")
+        {
             fovDir = -fovDirs[3].transform.right;
             viewPoint = fovDirs[3].transform;
             viewPointString = "left";
-         }
+        }
     }
 
     

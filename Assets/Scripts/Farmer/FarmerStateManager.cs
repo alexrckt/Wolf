@@ -5,16 +5,17 @@ using UnityEngine;
 public class FarmerStateManager : MonoBehaviour
 {
     public FarmerBaseState currentState;
-    private FarmerPatrollingState patrollingState = new FarmerPatrollingState();
-    private FarmerConcernedState concernedState = new FarmerConcernedState();
-    private FarmerShootingState shootingState = new FarmerShootingState();
+    public FarmerPatrollingState patrollingState = new FarmerPatrollingState();
+    public FarmerConcernedState concernedState = new FarmerConcernedState();
+    public FarmerShootingState shootingState = new FarmerShootingState();
+
     // Start is called before the first frame update
     void Start()
     {
         currentState = patrollingState;
 
         currentState.EnterState(this);
-        currentState.EnteringLog();
+        currentState.EnterStateLog();
     }
 
     // Update is called once per frame
@@ -27,6 +28,6 @@ public class FarmerStateManager : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
-        state.EnteringLog();
+        state.EnterStateLog();
     }
 }

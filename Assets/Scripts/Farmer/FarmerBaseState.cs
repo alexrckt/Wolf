@@ -17,7 +17,7 @@ public abstract class FarmerBaseState
 
     public abstract void OnCollisionEnter(FarmerStateManager farmer);
 
-    public void EnteringLog()
+    public void EnterStateLog()
     {
         Debug.Log($"Entering {stateName} state");
     }
