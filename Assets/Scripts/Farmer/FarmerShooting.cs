@@ -53,7 +53,7 @@ public class FarmerShooting : MonoBehaviour
     { 
         whichWayPlayer =  player.position - transform.position;
 
-        if (!farmerFOV.canSeePlayer)   // implement fov state - if just seen and hidden from sight but 
+        if (!farmerController.canSeePlayer)   // implement fov state - if just seen and hidden from sight but 
                                         // still in  range - stand until the player gets out of range
          {
              aiPath.maxSpeed = 2f;
@@ -64,7 +64,7 @@ public class FarmerShooting : MonoBehaviour
 
 
 
-        if ( farmerFOV.canSeePlayer  )
+        if (farmerController.canSeePlayer  )
         {
 
             farmerController.isShooting = true;

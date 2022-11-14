@@ -1,23 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public class FarmerPatrollingState : FarmerBaseState
 {
-    public FarmerPatrollingState() : base("Patrolling") { }
+    List<GameObject> moveSpots;
+    private Transform currentRandomSpot;
 
-    public override void EnterState(FarmerStateManager farmer)
+    public FarmerPatrollingState() : base("Patrolling")
+    {
+        waitTimeMin = 3f;
+        waitTimeMax = 3f;
+    }
+
+    public override void EnterState(FarmerController farmer)
+    {
+        moveSpots ??= GameObject.FindGameObjectsWithTag("FarmerPatrolSpot").ToList();
+
+        currentRandomSpot = getRandomSpot();
+    }
+
+    public override void UpdateState(FarmerController farmer)
+    {
+        if (!farmer.isWaiting)
+        {
+            if (!Move(farmer.transform, currentRandomSpot))
+            {
+                currentRandomSpot = getRandomSpot();
+                farmer.SetWaitTimer();
+            }
+        }
+    }
+
+    public override void OnCollisionEnter(FarmerController farmer)
     {
 
     }
 
-    public override void UpdateState(FarmerStateManager farmer)
+    public Transform getRandomSpot()
     {
-
-    }
-
-    public override void OnCollisionEnter(FarmerStateManager farmer)
-    {
-
+        return moveSpots[Random.Range(0, moveSpots.Count)].transform;
     }
 }

@@ -1,51 +1,61 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
-using System;
 using Random = UnityEngine.Random;
-using System.Linq;
 
 public class FarmerController : MonoBehaviour
 {
 
-    
-    AIDestinationSetter aids;
-    public List<GameObject> moveSpots;
-    Transform target;
     public bool isShooting; // debug solution for now - pseudo shooting state
+
+    public FarmerBaseState currentState;
+    public FarmerPatrollingState patrollingState = new FarmerPatrollingState();
+    public FarmerConcernedState concernedState = new FarmerConcernedState();
+    public FarmerShootingState shootingState = new FarmerShootingState();
+
+    public bool isWaiting = false;
+    public bool canSeePlayer = false;
 
     void Start()
     {
-        aids = GetComponent<AIDestinationSetter>();
-        moveSpots = GameObject.FindGameObjectsWithTag("FarmerPatrolSpot").ToList();
-
-        StartCoroutine(Move());
+        currentState = patrollingState;
+        currentState.EnterState(this);
+        currentState.EnterStateLog();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        currentState.UpdateState(this);
     }
 
-    IEnumerator Move()
+    public void SwitchState(FarmerBaseState state)
     {
-        while (true)
-        {
-            if (!isShooting)
-            {
-                int randomSpot = Random.Range(0, moveSpots.Count);
-                target = moveSpots[randomSpot].transform;
+        isWaiting = false;
+        currentState = state;
+        state.EnterState(this);
+        state.EnterStateLog();
+    }
 
-                while (target != null && Vector2.Distance(transform.position, target.position) > 0.8f)
-                {
-                    aids.target = target;
-                    yield return null;
-                }
-            }
-            yield return new WaitForSeconds(3f);
+    public void SetWaitTimer()
+    {
+        isWaiting = true;
+        StartCoroutine(Timer());
+    }
+    private IEnumerator Timer()
+    {
+        var duration = GetWaitTime();
+        var state = currentState;
+        while (duration >= 0 && state.Equals(currentState))
+        {
+            duration -= Time.deltaTime;
+            yield return null;
         }
+        isWaiting = false;
+    }
+
+    private float GetWaitTime()
+    {
+        return Random.Range(currentState.waitTimeMin, currentState.waitTimeMax);
     }
 
     public void PlayerLastSeen()

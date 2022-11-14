@@ -9,14 +9,14 @@ public class FarmerFOV : MonoBehaviour
     public float closeradius;
     [Range (0, 360)]
     public float angle;
-    public bool canSeePlayer;
+    //public bool canSeePlayer;
     public Transform fovPoint;
     public GameObject playerRef;
     public LayerMask playerMask;
     public LayerMask obstacleMask;
     public GameObject[] fovDirs;
     WolfController wc;
-    FarmerController fc;
+    FarmerController farmerController;
     Animator animator;
     AnimatorClipInfo[] clipAnimArray;
     Vector3 fovDir = new Vector3();
@@ -28,7 +28,7 @@ public class FarmerFOV : MonoBehaviour
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         wc = playerRef.GetComponent<WolfController>();
-        fc = GetComponent<FarmerController>();
+        farmerController = GetComponent<FarmerController>();
         animator = GetComponent<Animator>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
         StartCoroutine(FOVRoutine());
@@ -69,7 +69,7 @@ public class FarmerFOV : MonoBehaviour
                                                 distanceToTarget, obstacleMask)) // if player isn't
                                                                                    // behind an obstacle
                 {
-                    canSeePlayer = true;
+                    farmerController.canSeePlayer = true;
                     animator.SetBool("playerIsSeen", true);
                    
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
@@ -77,14 +77,14 @@ public class FarmerFOV : MonoBehaviour
                 }
                 else if (closeRangeChecks.Length != 0) // if player is behind an obstacle
                 {
-                    canSeePlayer = false;
+                    farmerController.canSeePlayer = false;
                     animator.SetBool("playerIsSeen", false);
                    
                 }
             }
             else // if player isn't in view angle
             {
-                canSeePlayer = false;
+                farmerController.canSeePlayer = false;
                 animator.SetBool("playerIsSeen", false);
                
                 
@@ -105,7 +105,7 @@ public class FarmerFOV : MonoBehaviour
                                                 distanceToTarget, obstacleMask)) // if player isn't
                                                                                    // behind an obstacle
                 {
-                    canSeePlayer = true;
+                    farmerController.canSeePlayer = true;
                     animator.SetBool("playerIsSeen", true);
                     
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
@@ -113,30 +113,26 @@ public class FarmerFOV : MonoBehaviour
                 }
                 else if (rangeChecks.Length != 0) // if player is behind an obstacle
                 {
-                    canSeePlayer = false;
+                    farmerController.canSeePlayer = false;
                      animator.SetBool("playerIsSeen", false);
                     
                 }
             }
             else // if player isn't in view angle
             {
-                canSeePlayer = false;
+                farmerController.canSeePlayer = false;
                 animator.SetBool("playerIsSeen", false);
             }
                     
         }
 
-        else if (rangeChecks.Length == 0 && canSeePlayer) // if player was in view angle but got away from it
+        else if (rangeChecks.Length == 0 && farmerController.canSeePlayer) // if player was in view angle but got away from it
         {
-            canSeePlayer = false;
+            farmerController.canSeePlayer = false;
             animator.SetBool("playerIsSeen", false);
         }
     }
-
-
-
-
-
+    
     public void WhereIsFarmerLooking() // sets dir for the purpose of FOV angle + sets viewpoint obj
     {
         animatorUpdater.AbsVectors();
@@ -174,6 +170,4 @@ public class FarmerFOV : MonoBehaviour
             viewPointString = "left";
         }
     }
-
-    
 }
