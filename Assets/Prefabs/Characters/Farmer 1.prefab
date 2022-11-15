@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817895072
 GameObject:
@@ -91,7 +91,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986345596
 GameObject:
@@ -122,7 +122,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197131149
 GameObject:
@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365640455
 GameObject:
@@ -184,7 +184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665054203
 GameObject:
@@ -246,7 +246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001842422330217954}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001842422330217959
 GameObject:
@@ -287,12 +287,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1665054204}
-  - {fileID: 926890805}
-  - {fileID: 1365640456}
-  - {fileID: 986345597}
   - {fileID: 645484930}
+  - {fileID: 926890805}
   - {fileID: 1197131150}
+  - {fileID: 1365640456}
   - {fileID: 2131735154}
+  - {fileID: 986345597}
   - {fileID: 817895073}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -481,8 +481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f38ea75fa00264ea11e5dbbfaf2061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpots: []
   isShooting: 0
+  isWaiting: 0
+  canSeePlayer: 0
 --- !u!114 &1827880264101436413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +525,6 @@ MonoBehaviour:
   radius: 15
   closeradius: 4
   angle: 180
-  canSeePlayer: 0
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:

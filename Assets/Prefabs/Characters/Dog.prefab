@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5000115567808811977
 Transform:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   maxSpeedChasing: 3
   maxSpeedLostTarget: 2
   waitTimeMin: 0
-  waitTimeMax: 2
+  waitTimeMax: 6
   waitTimeSniffMin: 0
   waitTimeSniffMax: 0
   waitTimeLostTargetMin: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a1f4d39c5091e44872d9cca61701af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 10
   closeradius: 1.5
   angle: 180
   canSeePlayer: 0

@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
      {
         if (other.CompareTag("Player")) // OR other.CompareTag("WALL")
      {
-       // gameover
+       other.GetComponent<WolfController>().WolfInjured();
        ExplodeProjectile();
        
      }
