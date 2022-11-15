@@ -29,6 +29,15 @@ public abstract class FarmerBaseState
         }
         return false;
     }
+    public bool Move(Transform actor, Vector3 target)
+    {
+        if (Vector2.Distance(actor.position, target) > 0.8f)
+        {
+            actor.GetComponent<AIPath>().destination = target;
+            return true;
+        }
+        return false;
+    }
 
     public void EnterStateLog()
     {

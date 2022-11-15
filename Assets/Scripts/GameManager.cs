@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using QuantumTek.QuantumUI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     public int livesInitial;
     public int score;
     public int bones;
+    public float huntersCounter;
+    public bool huntersCounterOn = false;
     public int deathsCounter;
 
     // Start is called before the first frame update
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void WolfInjured()
     {
         livesCurrent--;
+        UpdateLivesText();
         if (livesCurrent <= 0)
         {
             GameOver();;
@@ -77,6 +81,29 @@ public class GameManager : MonoBehaviour
         {
             LevelFail();
         }
+    }
+
+    public IEnumerator HuntersCounter()
+    {
+        var textField = GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>();
+        var duration = huntersCounter;
+        while (duration >= 0)
+        {
+            duration -= Time.deltaTime;
+            textField.SetText(duration.ToString("0.00"));
+            yield return null;
+        }
+        textField.SetText("CAVALRY'S HERE!");
+        huntersCounterOn = false;
+    }
+
+    public void UpdateLivesText()
+    {
+        GameObject.Find("WolfLives").GetComponent<TextMeshProUGUI>().SetText(livesCurrent.ToString());
+    }
+    public void UpdateHuntersCounterText()
+    {
+        GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>().SetText("");
     }
 
     #region End Game functions
@@ -186,7 +213,7 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-
+    #region Common
     private void ResetGame()
     {
         currentLevel = 1;
@@ -201,4 +228,7 @@ public class GameManager : MonoBehaviour
         ResetGame();
         LoadMainMenu();
     }
+
+    #endregion
+
 }

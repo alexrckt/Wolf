@@ -14,7 +14,7 @@ public class FarmerShooting : MonoBehaviour
     public Transform riflePoint;
     AIPath aiPath;
     public GameObject crosshair;
-    FarmerFOV farmerFOV;
+    SensesManager _sensesManager;
     FarmerController farmerController;
     private AnimatorUpdater animatorUpdater;
     //bool isAiming = false;
@@ -41,7 +41,7 @@ public class FarmerShooting : MonoBehaviour
     {
         aiPath = GetComponent<AIPath>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        farmerFOV = GetComponent<FarmerFOV>();
+        _sensesManager = GetComponent<SensesManager>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponent<Animator>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
@@ -51,30 +51,18 @@ public class FarmerShooting : MonoBehaviour
     
     void Update()
     { 
-        whichWayPlayer =  player.position - transform.position;
 
-        if (!farmerController.canSeePlayer)   // implement fov state - if just seen and hidden from sight but 
-                                        // still in  range - stand until the player gets out of range
-         {
-             aiPath.maxSpeed = 2f;
-             //aiPath.canMove = true;
-             farmerController.isShooting = false;
-             farmerFOV.angle = 180f;
-         }
+    }
 
+    public void Shooting()
+    {
+        whichWayPlayer = player.position - transform.position;
 
-
-        if (farmerController.canSeePlayer  )
+        if (farmerController.canSeePlayer)
         {
-
-            farmerController.isShooting = true;
             aids.target = player;
-            aiPath.maxSpeed = 0.01f;
-            //aiPath.canMove = false;
-            farmerFOV.angle = 360f;
             if (timeBtwShots <= 0)
             {
-
                 Instantiate(crosshair, player.position, Quaternion.identity);
                 crossHairPlayerPos = player.position;
 
@@ -85,7 +73,7 @@ public class FarmerShooting : MonoBehaviour
             }
         }
 
-        if(timeBtwShots > 0)
+        if (timeBtwShots > 0)
         {
             timeBtwShots -= Time.deltaTime;
         }
@@ -93,8 +81,8 @@ public class FarmerShooting : MonoBehaviour
 
     public void Shoot()
     {
-        farmerFOV.WhereIsFarmerLooking();
-        switch (farmerFOV.viewPointString)
+        _sensesManager.WhereIsFarmerLooking();
+        switch (_sensesManager.viewPointString)
         {
             case "up":
                 riflePoint = gunPoints[0];
@@ -110,16 +98,14 @@ public class FarmerShooting : MonoBehaviour
                 break;
         }
 
-
-
         var b = Instantiate (projectile, riflePoint.position,Quaternion.LookRotation(Vector3.forward, new Vector2(player.position.x, player.position.y)));
         // ne rabotaet!
         b.GetComponent<Bullet>().SetPlayerPos(crossHairPlayerPos);
 
         WhichWayShoot();
+        animator.SetTrigger("shotWasFired");
     }
 
-     
     void WhichWayShoot()
     {
         switch (animatorUpdater.lastMotionVector.x)
@@ -148,6 +134,4 @@ public class FarmerShooting : MonoBehaviour
                 break;
         }
     }
-
-    
 }

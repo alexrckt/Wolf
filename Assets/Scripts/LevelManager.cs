@@ -21,6 +21,9 @@ public class LevelManager : MonoBehaviour
         sheepStolenCounterUI = inGameUI.GetComponentInChildren<TextMeshProUGUI>();
 
         UpdateSheepCounterText();
+        gameManager.UpdateLivesText();
+        gameManager.UpdateHuntersCounterText();
+        gameManager.huntersCounterOn = false;
     }
 
     // Update is called once per frame

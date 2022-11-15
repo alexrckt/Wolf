@@ -170,16 +170,15 @@ public class DogController : MonoBehaviour
             {
                 target = playerRef.transform; // tut budet volk
             }
-            
 
             var initialState = currentState;
-            while(target != null && Vector2.Distance(transform.position, target.position) > 0.1f
+            while(target != null && Vector2.Distance(transform.position, target.position) > 0.2f
                   && initialState == currentState )
             {
                 aids.target = target;
                 yield return null;
             }
-
+            
             //Timer
             var duration = GetWaitTime();
             while (duration >= 0
