@@ -13,12 +13,14 @@ public class GrabSheep : MonoBehaviour
     private WolfController wolfController;
     private SheepsClothing sheepsClothing;
     private LevelManager levelManager;
+    Wolf_Emotes we;
 
     void Start()
     {
         wolfController = GetComponent<WolfController>();
         sheepsClothing = GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
+        we = GetComponent<Wolf_Emotes>();
     }
     
     void Update()
@@ -32,6 +34,7 @@ public class GrabSheep : MonoBehaviour
 
                 wolfController.IsCarryingSheep(true);
                 sheepsClothing.Stealth(false);
+                we.Emote(1);
                 return;
             }
             if (wolfController.isCarryingSheep)
