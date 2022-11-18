@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 483ca26dfe50f3d499cea293f39acee3
+guid: dd1a1bddabbeb5b41bdc1642d66eeb29
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: asteroid_01_0
+      name: npc_chicken__x1_idle1_png_1354830404_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 915
-        width: 91
-        height: 87
+        x: 76
+        y: 1223
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bf86b5020dbc824db2b80ed6364584e
-      internalID: -475582361
+      spriteID: 7d43f4f276b0916479e3ea9737cabbfe
+      internalID: 115765116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_1
+      name: npc_chicken__x1_idle1_png_1354830404_1
       rect:
         serializedVersion: 2
-        x: 141
-        y: 915
-        width: 95
-        height: 91
+        x: 223
+        y: 1223
+        width: 58
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56c4459277fa42048a06a5d23535fba0
-      internalID: 2042480557
+      spriteID: e4a08de31a9bf594a9ecbd22f0b9e176
+      internalID: -43848398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_2
+      name: npc_chicken__x1_idle1_png_1354830404_2
       rect:
         serializedVersion: 2
-        x: 269
-        y: 912
-        width: 96
-        height: 98
+        x: 370
+        y: 1223
+        width: 58
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94bb39a633b9ed447b634444cee11865
-      internalID: -69179703
+      spriteID: c7e14558af366cf49b0fd65bbbdbc65d
+      internalID: 147512800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_3
+      name: npc_chicken__x1_idle1_png_1354830404_3
       rect:
         serializedVersion: 2
-        x: 397
-        y: 910
-        width: 97
-        height: 103
+        x: 518
+        y: 1223
+        width: 58
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdb48878fdc0b924ebb4036ef17020d8
-      internalID: 911473317
+      spriteID: 666148b5fdc5433489a852f90b0211a9
+      internalID: 192654545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_4
+      name: npc_chicken__x1_idle1_png_1354830404_4
       rect:
         serializedVersion: 2
-        x: 525
-        y: 910
-        width: 97
-        height: 105
+        x: 666
+        y: 1223
+        width: 58
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcef11946d4cc1941913d133ed11c5a1
-      internalID: -1131675494
+      spriteID: e2132111ad76a7b43a189f07d7ced400
+      internalID: 462502222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_5
+      name: npc_chicken__x1_idle1_png_1354830404_5
       rect:
         serializedVersion: 2
-        x: 654
-        y: 910
-        width: 98
-        height: 106
+        x: 814
+        y: 1223
+        width: 58
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 125764f162baa364996c877db688cea2
-      internalID: -1673798923
+      spriteID: 2f01b981643511b4db55e03105f4a59b
+      internalID: -1687726723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_6
+      name: npc_chicken__x1_idle1_png_1354830404_6
       rect:
         serializedVersion: 2
-        x: 783
-        y: 910
-        width: 96
-        height: 105
+        x: 74
+        y: 1113
+        width: 60
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d384bd662dc248499d53178411ba361
-      internalID: 2132613586
+      spriteID: 2b10b6fdcd4ed9f4eb17e6dc03ecb1dd
+      internalID: 1580655568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_7
+      name: npc_chicken__x1_idle1_png_1354830404_7
       rect:
         serializedVersion: 2
-        x: 914
-        y: 909
-        width: 93
-        height: 104
+        x: 222
+        y: 1113
+        width: 63
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4724f8d82c7f68647b57d72acb34f40e
-      internalID: 1174965433
+      spriteID: 1c79c268a96265c4d84fcb302d9db575
+      internalID: 1151434876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_8
+      name: npc_chicken__x1_idle1_png_1354830404_8
       rect:
         serializedVersion: 2
-        x: 20
-        y: 779
-        width: 91
-        height: 102
+        x: 371
+        y: 1113
+        width: 64
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 233062819637f5f429c8a9db40d1475b
-      internalID: 303509269
+      spriteID: a4b7699d6b1565541907e3754871cd2f
+      internalID: -370234379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_9
+      name: npc_chicken__x1_idle1_png_1354830404_9
       rect:
         serializedVersion: 2
-        x: 147
-        y: 778
-        width: 92
-        height: 99
+        x: 519
+        y: 1113
+        width: 66
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9a5d208900329145b422cce94b6c442
-      internalID: 670519944
+      spriteID: 041d2d7c326ce4644b1fa667771f7e72
+      internalID: -1889477536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_10
+      name: npc_chicken__x1_idle1_png_1354830404_10
       rect:
         serializedVersion: 2
-        x: 274
-        y: 779
-        width: 92
-        height: 96
+        x: 668
+        y: 1113
+        width: 68
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,20 +341,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7451f6ebbd2dedf40885b05425ac5805
-      internalID: 2108280594
+      spriteID: f7937d8e68699eb4cbb4f9e66a6521a7
+      internalID: -544845233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_11
+      name: npc_chicken__x1_idle1_png_1354830404_11
       rect:
         serializedVersion: 2
-        x: 402
-        y: 781
-        width: 91
-        height: 96
+        x: 816
+        y: 1113
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +362,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e0d991c439303243a4ae98b504eb7a4
-      internalID: -1613442271
+      spriteID: 797d4aa6939b1ae46a397e370e6fa416
+      internalID: 727572284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_12
+      name: npc_chicken__x1_idle1_png_1354830404_12
       rect:
         serializedVersion: 2
-        x: 530
-        y: 785
-        width: 91
-        height: 93
+        x: 76
+        y: 1003
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571a989da9a6250498a39a737ad9097e
-      internalID: -1809455351
+      spriteID: 4d81fc02e2ce20f4fa1054d67b993666
+      internalID: 1731406814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_13
+      name: npc_chicken__x1_idle1_png_1354830404_13
       rect:
         serializedVersion: 2
-        x: 658
-        y: 790
-        width: 88
-        height: 88
+        x: 224
+        y: 1003
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,20 +404,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f96d7560f8ffaa43b79ee8c4455472e
-      internalID: 1502494060
+      spriteID: 99bf801fdbc10dd42a36ba747bce788e
+      internalID: -160318395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_14
+      name: npc_chicken__x1_idle1_png_1354830404_14
       rect:
         serializedVersion: 2
-        x: 787
-        y: 793
-        width: 87
-        height: 85
+        x: 372
+        y: 1003
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,20 +425,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf6efa6bdbc6c442802ca547d5adbb7
-      internalID: 758705433
+      spriteID: 94963c300c2a28f4593fe5649df1a04e
+      internalID: -1861060403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_15
+      name: npc_chicken__x1_idle1_png_1354830404_15
       rect:
         serializedVersion: 2
-        x: 914
-        y: 791
-        width: 89
-        height: 86
+        x: 520
+        y: 1003
+        width: 69
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +446,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e33b2769dab0b243ad77743ed58a632
-      internalID: -932844801
+      spriteID: 89504a724188b094da4b86c5f5aa1dd7
+      internalID: -568142334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_16
+      name: npc_chicken__x1_idle1_png_1354830404_16
       rect:
         serializedVersion: 2
-        x: 15
-        y: 661
-        width: 94
-        height: 88
+        x: 668
+        y: 1003
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,20 +467,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba1b3bde3548c374abf83a173b213608
-      internalID: 1627151565
+      spriteID: 4ce730efa5c116840ad434e48880bad3
+      internalID: 1492038006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_17
+      name: npc_chicken__x1_idle1_png_1354830404_17
       rect:
         serializedVersion: 2
-        x: 142
-        y: 659
-        width: 96
-        height: 91
+        x: 816
+        y: 1003
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,20 +488,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36b40507b2f580543b791d23eb0723a3
-      internalID: -662109699
+      spriteID: 82e2f724418b9d242828d6b0cb1ff107
+      internalID: -699571286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_18
+      name: npc_chicken__x1_idle1_png_1354830404_18
       rect:
         serializedVersion: 2
-        x: 269
-        y: 659
-        width: 98
-        height: 94
+        x: 76
+        y: 893
+        width: 69
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,20 +509,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2104af61ed6eb4390cdb00b3611615
-      internalID: -2044181129
+      spriteID: 5178da98ed68ea542af9dcbded772c2b
+      internalID: 1814132979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_19
+      name: npc_chicken__x1_idle1_png_1354830404_19
       rect:
         serializedVersion: 2
-        x: 397
-        y: 657
-        width: 98
-        height: 98
+        x: 224
+        y: 893
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,20 +530,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45c7f4fbaafffd41a1f6643ee990eaf
-      internalID: 1632985174
+      spriteID: 3b86834afcb96e54ea59f69d7af9df25
+      internalID: 1867017593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_20
+      name: npc_chicken__x1_idle1_png_1354830404_20
       rect:
         serializedVersion: 2
-        x: 526
-        y: 657
-        width: 98
-        height: 98
+        x: 372
+        y: 893
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,20 +551,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9bd22a57f60c5f418e288c1a16f27ea
-      internalID: -993661930
+      spriteID: 811793ba7d8373d4aa0f3007e9a48b76
+      internalID: -1906492565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_21
+      name: npc_chicken__x1_idle1_png_1354830404_21
       rect:
         serializedVersion: 2
-        x: 656
-        y: 657
-        width: 95
-        height: 97
+        x: 520
+        y: 893
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,20 +572,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 316aa2b3ec24d7f4b813a93aca580c68
-      internalID: 229876026
+      spriteID: 766d17e9e337d864bbd59fdc5b56a9ad
+      internalID: -1888260857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_22
+      name: npc_chicken__x1_idle1_png_1354830404_22
       rect:
         serializedVersion: 2
-        x: 787
-        y: 657
-        width: 92
-        height: 94
+        x: 668
+        y: 893
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,20 +593,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61521129da1302f41a0baf41346afc1f
-      internalID: 485167357
+      spriteID: 32b8dfb709ee09b4cbf658f8f6acedb2
+      internalID: 508399108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_23
+      name: npc_chicken__x1_idle1_png_1354830404_23
       rect:
         serializedVersion: 2
-        x: 917
-        y: 658
-        width: 89
-        height: 90
+        x: 816
+        y: 893
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,20 +614,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c05d25d9f02f4b44d865e4836352674f
-      internalID: -956662268
+      spriteID: 4846ac7306b2a17489dec60a49320b45
+      internalID: 2066965304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_24
+      name: npc_chicken__x1_idle1_png_1354830404_24
       rect:
         serializedVersion: 2
-        x: 22
-        y: 531
-        width: 89
-        height: 88
+        x: 76
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -635,20 +635,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c0fa75ba93db34bb02d55ffcc1d463
-      internalID: -1720178380
+      spriteID: abd7fd5095be9f04b8f253640a41560d
+      internalID: 1546177140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_25
+      name: npc_chicken__x1_idle1_png_1354830404_25
       rect:
         serializedVersion: 2
-        x: 147
-        y: 530
-        width: 94
-        height: 91
+        x: 224
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,20 +656,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 201e18109e2ef3e408ffc26b74303511
-      internalID: -2020737876
+      spriteID: 76f43aba963cd5f4d8824ec7871cbc51
+      internalID: -822980861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_26
+      name: npc_chicken__x1_idle1_png_1354830404_26
       rect:
         serializedVersion: 2
-        x: 274
-        y: 531
-        width: 95
-        height: 90
+        x: 372
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,20 +677,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b61fa8321b79134c8e63b22f75a5357
-      internalID: -1826369386
+      spriteID: 2c1533ef69299b041a8ae47d18953050
+      internalID: -826567592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_27
+      name: npc_chicken__x1_idle1_png_1354830404_27
       rect:
         serializedVersion: 2
-        x: 400
-        y: 531
-        width: 97
-        height: 91
+        x: 520
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,20 +698,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37d7c2db32ad9f34fafe9960517742ad
-      internalID: -1882402726
+      spriteID: 4d9c318d2e74db5448416440dc99fe15
+      internalID: 1461085615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_28
+      name: npc_chicken__x1_idle1_png_1354830404_28
       rect:
         serializedVersion: 2
-        x: 527
-        y: 534
-        width: 95
-        height: 88
+        x: 668
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,20 +719,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f9b9f20bc71d347b916f0d411bb8b5
-      internalID: 1941677966
+      spriteID: 248ee6b7c008f9b48a8311d8b3f75b68
+      internalID: 1598585669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_29
+      name: npc_chicken__x1_idle1_png_1354830404_29
       rect:
         serializedVersion: 2
-        x: 655
-        y: 534
-        width: 94
-        height: 87
+        x: 816
+        y: 783
+        width: 70
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -740,20 +740,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc23d4808618f6b439f361a35c04cee6
-      internalID: 2039380105
+      spriteID: c5c7529dccc815249aa75c2802f86c1a
+      internalID: 398841365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_30
+      name: npc_chicken__x1_idle1_png_1354830404_30
       rect:
         serializedVersion: 2
-        x: 784
-        y: 534
-        width: 90
-        height: 83
+        x: 76
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,20 +761,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ff3730ea08de4945b75deb0a1a47160
-      internalID: -1826992104
+      spriteID: 2738c048e8752a54dab3fc3ea5e404b5
+      internalID: -328289057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_31
+      name: npc_chicken__x1_idle1_png_1354830404_31
       rect:
         serializedVersion: 2
-        x: 911
-        y: 532
-        width: 91
-        height: 85
+        x: 224
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -782,20 +782,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc22f608fa98cd47913fcdc0f7bde67
-      internalID: 1190735279
+      spriteID: a7803cea60ca87246870a13645940045
+      internalID: 730810350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_32
+      name: npc_chicken__x1_idle1_png_1354830404_32
       rect:
         serializedVersion: 2
-        x: 19
-        y: 402
-        width: 83
-        height: 92
+        x: 372
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -803,20 +803,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 323aae3000155794bb835d671eb0d033
-      internalID: -156046911
+      spriteID: c55628d9464ea5d4f9120ab8cfff605e
+      internalID: 928976951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_33
+      name: npc_chicken__x1_idle1_png_1354830404_33
       rect:
         serializedVersion: 2
-        x: 147
-        y: 401
-        width: 86
-        height: 94
+        x: 520
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -824,20 +824,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d04ff0c47dfe9244a3f6323cfb16ea6
-      internalID: -49059971
+      spriteID: 31fd81ae2c35aa849b40e60c251db294
+      internalID: -2146010566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_34
+      name: npc_chicken__x1_idle1_png_1354830404_34
       rect:
         serializedVersion: 2
-        x: 275
-        y: 402
-        width: 87
-        height: 96
+        x: 668
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -845,20 +845,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd744d5f2ac883c499d621b04bd51e05
-      internalID: -66597417
+      spriteID: 2310dfe1fd8e6c946946b4853821f895
+      internalID: -647016040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_35
+      name: npc_chicken__x1_idle1_png_1354830404_35
       rect:
         serializedVersion: 2
-        x: 404
-        y: 399
-        width: 88
-        height: 102
+        x: 816
+        y: 673
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,20 +866,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e2f201e26c93e54c86a66fa0a967803
-      internalID: -65701783
+      spriteID: e5d4431304be5994994db7c14bb65bf7
+      internalID: 236352863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_36
+      name: npc_chicken__x1_idle1_png_1354830404_36
       rect:
         serializedVersion: 2
-        x: 531
-        y: 397
-        width: 89
-        height: 105
+        x: 76
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,20 +887,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5811586ebcda0a47ba2d90e0fdcf55d
-      internalID: -842978036
+      spriteID: 79ec908ae0a38234cb5a2af1b6a37bdf
+      internalID: -1406216494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_37
+      name: npc_chicken__x1_idle1_png_1354830404_37
       rect:
         serializedVersion: 2
-        x: 661
-        y: 395
-        width: 89
-        height: 110
+        x: 224
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -908,20 +908,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c1167e0a16d38547b39ace282817760
-      internalID: -105765953
+      spriteID: f508b8472167eea4bab55cdfcc8b6a6d
+      internalID: -1348150046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_38
+      name: npc_chicken__x1_idle1_png_1354830404_38
       rect:
         serializedVersion: 2
-        x: 790
-        y: 396
-        width: 89
-        height: 110
+        x: 372
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -929,20 +929,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4eb77ce679263499b574f1efce71a4
-      internalID: -725037643
+      spriteID: a9a746801436b944aa32eff8f7000126
+      internalID: 601941318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_39
+      name: npc_chicken__x1_idle1_png_1354830404_39
       rect:
         serializedVersion: 2
-        x: 919
-        y: 398
-        width: 90
-        height: 108
+        x: 520
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -950,20 +950,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052df6d2f877e0843806af62785b8862
-      internalID: -1453893033
+      spriteID: 00b55cde945fb3c4f93408baa8e4215f
+      internalID: -375940824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_40
+      name: npc_chicken__x1_idle1_png_1354830404_40
       rect:
         serializedVersion: 2
-        x: 23
-        y: 273
-        width: 90
-        height: 103
+        x: 668
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -971,20 +971,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c67c008963499eb4487c78887b2868c7
-      internalID: -388295367
+      spriteID: 421def9faa6efc241a53c857c7a3e0f4
+      internalID: -261556505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_41
+      name: npc_chicken__x1_idle1_png_1354830404_41
       rect:
         serializedVersion: 2
-        x: 151
-        y: 271
-        width: 89
-        height: 104
+        x: 816
+        y: 563
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -992,20 +992,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4837516cf72fd484ca80f38840abedd0
-      internalID: 1871337091
+      spriteID: 3bae137e6438e55438bed0569d5d5810
+      internalID: 1024494047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_42
+      name: npc_chicken__x1_idle1_png_1354830404_42
       rect:
         serializedVersion: 2
-        x: 279
-        y: 270
-        width: 88
-        height: 104
+        x: 76
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1013,20 +1013,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9a72ddf26f462948943567469ae6b5d
-      internalID: -1657885046
+      spriteID: 9c8c6de7cdc7c5a4b98dc707e5b66312
+      internalID: -255779160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_43
+      name: npc_chicken__x1_idle1_png_1354830404_43
       rect:
         serializedVersion: 2
-        x: 407
-        y: 269
-        width: 86
-        height: 101
+        x: 224
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,20 +1034,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1a21f511bdafb242816b246080d89d5
-      internalID: -1870310268
+      spriteID: 501e3a69e51e05c4faec255adaf0675a
+      internalID: -639263327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_44
+      name: npc_chicken__x1_idle1_png_1354830404_44
       rect:
         serializedVersion: 2
-        x: 535
-        y: 269
-        width: 84
-        height: 97
+        x: 372
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1055,20 +1055,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae8ec30cb43dc2748b23f33997de64df
-      internalID: -987515856
+      spriteID: c003d60d99bd69443822990cdaf011f7
+      internalID: -828328969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_45
+      name: npc_chicken__x1_idle1_png_1354830404_45
       rect:
         serializedVersion: 2
-        x: 663
-        y: 269
-        width: 82
-        height: 98
+        x: 520
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1076,20 +1076,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3d9028f45e945044a65c91db7fd055a
-      internalID: 861273325
+      spriteID: ca5f404be1a6e0b4fb79a69bbccd2c57
+      internalID: 1673956746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_46
+      name: npc_chicken__x1_idle1_png_1354830404_46
       rect:
         serializedVersion: 2
-        x: 790
-        y: 271
-        width: 83
-        height: 95
+        x: 668
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1097,20 +1097,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18bf652cd8221314fb204716d0849def
-      internalID: 1467321022
+      spriteID: 1d9e8913f4f60d147b8c99880f57500f
+      internalID: -2061741687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_47
+      name: npc_chicken__x1_idle1_png_1354830404_47
       rect:
         serializedVersion: 2
-        x: 919
-        y: 271
-        width: 86
-        height: 94
+        x: 816
+        y: 453
+        width: 70
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1118,20 +1118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4528e2d46456b774d9a891e6552794bc
-      internalID: 81131790
+      spriteID: c6bc1cd4fd4a96148b11b796844eada5
+      internalID: -450991173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_48
+      name: npc_chicken__x1_idle1_png_1354830404_48
       rect:
         serializedVersion: 2
-        x: 22
-        y: 143
-        width: 89
-        height: 92
+        x: 76
+        y: 343
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1139,20 +1139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5577f54ecba3fb54184d9cb81d564b48
-      internalID: -1045466567
+      spriteID: 9ac63bfcc730ab54cb7be7c9ac480f58
+      internalID: 1983929887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_49
+      name: npc_chicken__x1_idle1_png_1354830404_49
       rect:
         serializedVersion: 2
-        x: 149
-        y: 145
-        width: 92
-        height: 89
+        x: 224
+        y: 343
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1160,20 +1160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 480cc53d144dca143a7a8d876c452c1a
-      internalID: -607414292
+      spriteID: f6505770c9bdbed4ca3ef577082900be
+      internalID: 719430931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_50
+      name: npc_chicken__x1_idle1_png_1354830404_50
       rect:
         serializedVersion: 2
-        x: 275
-        y: 146
-        width: 96
-        height: 92
+        x: 372
+        y: 343
+        width: 69
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1181,20 +1181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b99fb2fb65c21d44bb74aae14604fe0c
-      internalID: -1850938990
+      spriteID: 9fa06942068dd4042a283f9c00cc5389
+      internalID: 1326989767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_51
+      name: npc_chicken__x1_idle1_png_1354830404_51
       rect:
         serializedVersion: 2
-        x: 402
-        y: 146
-        width: 99
-        height: 96
+        x: 520
+        y: 343
+        width: 67
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1202,20 +1202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1abae801864ca9a46bed5fc26665e5a5
-      internalID: -1258063315
+      spriteID: b5f1304cc279d9a4389a7aaab2395169
+      internalID: -366317649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_52
+      name: npc_chicken__x1_idle1_png_1354830404_52
       rect:
         serializedVersion: 2
-        x: 527
-        y: 147
-        width: 102
-        height: 98
+        x: 668
+        y: 343
+        width: 63
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1223,20 +1223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ace0041803d2e66448b7c0f9018940f6
-      internalID: -345002522
+      spriteID: 8c8afa5c214092641a01c5b3d6fd66dc
+      internalID: 1337442522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_53
+      name: npc_chicken__x1_idle1_png_1354830404_53
       rect:
         serializedVersion: 2
-        x: 655
-        y: 150
-        width: 102
-        height: 95
+        x: 816
+        y: 343
+        width: 60
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1244,20 +1244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e80ef89f75bd1742930c9e6cb66ca23
-      internalID: -1242021698
+      spriteID: 88dd649c7b5166f4790c923a3f99931a
+      internalID: -242897657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_54
+      name: npc_chicken__x1_idle1_png_1354830404_54
       rect:
         serializedVersion: 2
-        x: 782
-        y: 151
-        width: 102
-        height: 94
+        x: 77
+        y: 233
+        width: 55
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1265,20 +1265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7fd0a819a044814e90a72022a1850ba
-      internalID: 1596315682
+      spriteID: 7f786b226dee4824190961e67885297f
+      internalID: 1654257807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_55
+      name: npc_chicken__x1_idle1_png_1354830404_55
       rect:
         serializedVersion: 2
-        x: 910
-        y: 148
-        width: 100
-        height: 97
+        x: 224
+        y: 233
+        width: 57
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1286,20 +1286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e40bdd631d5414ea73f5449afca4e7
-      internalID: 35279484
+      spriteID: 6239de09206df114db71990687b94059
+      internalID: 1303645365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_56
+      name: npc_chicken__x1_idle1_png_1354830404_56
       rect:
         serializedVersion: 2
-        x: 15
-        y: 18
-        width: 98
-        height: 98
+        x: 372
+        y: 233
+        width: 57
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1307,20 +1307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97e85d6d213526d42ae3fab375876bcf
-      internalID: -1686050430
+      spriteID: baf56a40b37752947a1281c157f54676
+      internalID: 2133901490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_57
+      name: npc_chicken__x1_idle1_png_1354830404_57
       rect:
         serializedVersion: 2
-        x: 143
-        y: 18
-        width: 95
-        height: 96
+        x: 520
+        y: 233
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1328,20 +1328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06adc5507a45817458b54d25b287e03c
-      internalID: -1659665363
+      spriteID: 9e74b21afd17c82439172b9f8aea406c
+      internalID: 1096527989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_58
+      name: npc_chicken__x1_idle1_png_1354830404_58
       rect:
         serializedVersion: 2
-        x: 274
-        y: 18
-        width: 90
-        height: 95
+        x: 668
+        y: 233
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1349,20 +1349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f704e6fa05dab54d983046dd4838063
-      internalID: 1421515673
+      spriteID: 0bb529290c93b9948a1f19e52bd2fb0e
+      internalID: 1803140682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_59
+      name: npc_chicken__x1_idle1_png_1354830404_59
       rect:
         serializedVersion: 2
-        x: 401
-        y: 20
-        width: 91
-        height: 90
+        x: 816
+        y: 233
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1370,20 +1370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3454982291986b44901706172d62385
-      internalID: -1894722366
+      spriteID: 418c310bf08d2ad48b7f8eddebaa18d6
+      internalID: -1826654091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_60
+      name: npc_chicken__x1_idle1_png_1354830404_60
       rect:
         serializedVersion: 2
-        x: 529
-        y: 22
-        width: 90
-        height: 87
+        x: 76
+        y: 123
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1391,20 +1391,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd1f9168b3736a24e9861d134bac8a5f
-      internalID: -406233866
+      spriteID: 708e0afd2a8b84f4db075e996b7646b7
+      internalID: 1316374926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_61
+      name: npc_chicken__x1_idle1_png_1354830404_61
       rect:
         serializedVersion: 2
-        x: 657
-        y: 22
-        width: 88
-        height: 87
+        x: 224
+        y: 123
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1412,20 +1412,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 950fafdaf7c5f984ba944e22391bcfaa
-      internalID: -1057548586
+      spriteID: c4fdc0a46da89904b8deedd48c6ceafe
+      internalID: 1481475901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_62
+      name: npc_chicken__x1_idle1_png_1354830404_62
       rect:
         serializedVersion: 2
-        x: 786
-        y: 19
-        width: 86
-        height: 91
+        x: 372
+        y: 123
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1433,20 +1433,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a81b393db14016049b65c8af1f246f29
-      internalID: -1630103107
+      spriteID: 4b4ac2dd33a548a46b4800200553416c
+      internalID: 2112206249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: asteroid_01_63
+      name: npc_chicken__x1_idle1_png_1354830404_63
       rect:
         serializedVersion: 2
-        x: 915
-        y: 18
-        width: 83
-        height: 92
+        x: 520
+        y: 123
+        width: 57
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1454,8 +1454,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b7fba8fe50b51b4798839576a4fb2b3
-      internalID: -380665060
+      spriteID: 68e1a4f194a81be43ba4c6e8005f8648
+      internalID: 328763592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle1_png_1354830404_64
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fea1b870d0796a459d5a8eabe93e63d
+      internalID: 22337791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle1_png_1354830404_65
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a80823f9a35599419b93e3e07ac445f
+      internalID: -568751595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle1_png_1354830404_66
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 13
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17e4b91d20b02b4cb7eca97e62c3f7c
+      internalID: -1512227722
       vertices: []
       indices: 
       edges: []
@@ -1471,70 +1534,73 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      asteroid_01_47: 81131790
-      asteroid_01_43: -1870310268
-      asteroid_01_42: -1657885046
-      asteroid_01_13: 1502494060
-      asteroid_01_18: -2044181129
-      asteroid_01_17: -662109699
-      asteroid_01_35: -65701783
-      asteroid_01_6: 2132613586
-      asteroid_01_2: -69179703
-      asteroid_01_40: -388295367
-      asteroid_01_30: -1826992104
-      asteroid_01_31: 1190735279
-      asteroid_01_32: -156046911
-      asteroid_01_33: -49059971
-      asteroid_01_52: -345002522
-      asteroid_01_28: 1941677966
-      asteroid_01_12: -1809455351
-      asteroid_01_24: -1720178380
-      asteroid_01_26: -1826369386
-      asteroid_01_60: -406233866
-      asteroid_01_19: 1632985174
-      asteroid_01_14: 758705433
-      asteroid_01_4: -1131675494
-      asteroid_01_44: -987515856
-      asteroid_01_7: 1174965433
-      asteroid_01_59: -1894722366
-      asteroid_01_58: 1421515673
-      asteroid_01_8: 303509269
-      asteroid_01_38: -725037643
-      asteroid_01_0: -475582361
-      asteroid_01_55: 35279484
-      asteroid_01_21: 229876026
-      asteroid_01_22: 485167357
-      asteroid_01_57: -1659665363
-      asteroid_01_45: 861273325
-      asteroid_01_53: -1242021698
-      asteroid_01_27: -1882402726
-      asteroid_01_54: 1596315682
-      asteroid_01_25: -2020737876
-      asteroid_01_39: -1453893033
-      asteroid_01_20: -993661930
-      asteroid_01_23: -956662268
-      asteroid_01_51: -1258063315
-      asteroid_01_15: -932844801
-      asteroid_01_11: -1613442271
-      asteroid_01_62: -1630103107
-      asteroid_01_29: 2039380105
-      asteroid_01_37: -105765953
-      asteroid_01_1: 2042480557
-      asteroid_01_50: -1850938990
-      asteroid_01_16: 1627151565
-      asteroid_01_34: -66597417
-      asteroid_01_63: -380665060
-      asteroid_01_36: -842978036
-      asteroid_01_49: -607414292
-      asteroid_01_9: 670519944
-      asteroid_01_5: -1673798923
-      asteroid_01_3: 911473317
-      asteroid_01_41: 1871337091
-      asteroid_01_48: -1045466567
-      asteroid_01_56: -1686050430
-      asteroid_01_10: 2108280594
-      asteroid_01_61: -1057548586
-      asteroid_01_46: 1467321022
+      npc_chicken__x1_idle1_png_1354830404_56: 2133901490
+      npc_chicken__x1_idle1_png_1354830404_58: 1803140682
+      npc_chicken__x1_idle1_png_1354830404_6: 1580655568
+      npc_chicken__x1_idle1_png_1354830404_40: -261556505
+      npc_chicken__x1_idle1_png_1354830404_20: -1906492565
+      npc_chicken__x1_idle1_png_1354830404_28: 1598585669
+      npc_chicken__x1_idle1_png_1354830404_8: -370234379
+      npc_chicken__x1_idle1_png_1354830404_37: -1348150046
+      npc_chicken__x1_idle1_png_1354830404_23: 2066965304
+      npc_chicken__x1_idle1_png_1354830404_48: 1983929887
+      npc_chicken__x1_idle1_png_1354830404_63: 328763592
+      npc_chicken__x1_idle1_png_1354830404_18: 1814132979
+      npc_chicken__x1_idle1_png_1354830404_34: -647016040
+      npc_chicken__x1_idle1_png_1354830404_57: 1096527989
+      npc_chicken__x1_idle1_png_1354830404_53: -242897657
+      npc_chicken__x1_idle1_png_1354830404_0: 115765116
+      npc_chicken__x1_idle1_png_1354830404_41: 1024494047
+      npc_chicken__x1_idle1_png_1354830404_42: -255779160
+      npc_chicken__x1_idle1_png_1354830404_10: -544845233
+      npc_chicken__x1_idle1_png_1354830404_25: -822980861
+      npc_chicken__x1_idle1_png_1354830404_31: 730810350
+      npc_chicken__x1_idle1_png_1354830404_22: 508399108
+      npc_chicken__x1_idle1_png_1354830404_54: 1654257807
+      npc_chicken__x1_idle1_png_1354830404_65: -568751595
+      npc_chicken__x1_idle1_png_1354830404_3: 192654545
+      npc_chicken__x1_idle1_png_1354830404_30: -328289057
+      npc_chicken__x1_idle1_png_1354830404_45: 1673956746
+      npc_chicken__x1_idle1_png_1354830404_66: -1512227722
+      npc_chicken__x1_idle1_png_1354830404_61: 1481475901
+      npc_chicken__x1_idle1_png_1354830404_24: 1546177140
+      npc_chicken__x1_idle1_png_1354830404_33: -2146010566
+      npc_chicken__x1_idle1_png_1354830404_43: -639263327
+      npc_chicken__x1_idle1_png_1354830404_64: 22337791
+      npc_chicken__x1_idle1_png_1354830404_29: 398841365
+      npc_chicken__x1_idle1_png_1354830404_15: -568142334
+      npc_chicken__x1_idle1_png_1354830404_60: 1316374926
+      npc_chicken__x1_idle1_png_1354830404_21: -1888260857
+      npc_chicken__x1_idle1_png_1354830404_17: -699571286
+      npc_chicken__x1_idle1_png_1354830404_13: -160318395
+      npc_chicken__x1_idle1_png_1354830404_4: 462502222
+      npc_chicken__x1_idle1_png_1354830404_11: 727572284
+      npc_chicken__x1_idle1_png_1354830404_2: 147512800
+      npc_chicken__x1_idle1_png_1354830404_55: 1303645365
+      npc_chicken__x1_idle1_png_1354830404_27: 1461085615
+      npc_chicken__x1_idle1_png_1354830404_12: 1731406814
+      npc_chicken__x1_idle1_png_1354830404_35: 236352863
+      npc_chicken__x1_idle1_png_1354830404_49: 719430931
+      npc_chicken__x1_idle1_png_1354830404_59: -1826654091
+      npc_chicken__x1_idle1_png_1354830404_7: 1151434876
+      npc_chicken__x1_idle1_png_1354830404_5: -1687726723
+      npc_chicken__x1_idle1_png_1354830404_1: -43848398
+      npc_chicken__x1_idle1_png_1354830404_32: 928976951
+      npc_chicken__x1_idle1_png_1354830404_47: -450991173
+      npc_chicken__x1_idle1_png_1354830404_52: 1337442522
+      npc_chicken__x1_idle1_png_1354830404_36: -1406216494
+      npc_chicken__x1_idle1_png_1354830404_51: -366317649
+      npc_chicken__x1_idle1_png_1354830404_50: 1326989767
+      npc_chicken__x1_idle1_png_1354830404_62: 2112206249
+      npc_chicken__x1_idle1_png_1354830404_16: 1492038006
+      npc_chicken__x1_idle1_png_1354830404_26: -826567592
+      npc_chicken__x1_idle1_png_1354830404_46: -2061741687
+      npc_chicken__x1_idle1_png_1354830404_9: -1889477536
+      npc_chicken__x1_idle1_png_1354830404_19: 1867017593
+      npc_chicken__x1_idle1_png_1354830404_38: 601941318
+      npc_chicken__x1_idle1_png_1354830404_39: -375940824
+      npc_chicken__x1_idle1_png_1354830404_14: -1861060403
+      npc_chicken__x1_idle1_png_1354830404_44: -828328969
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

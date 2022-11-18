@@ -52,6 +52,7 @@ public class WolfController : MonoBehaviour
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
         gameManager = FindObjectOfType<GameManager>();
+        footstepParent = GameObject.FindGameObjectWithTag("FootstepParent").transform;
 
         //InvokeRepeating("Debugging", 1f, 1f);
     }

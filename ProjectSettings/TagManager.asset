@@ -13,6 +13,7 @@ TagManager:
   - GameManager
   - FarmerPatrolSpot
   - Obstacle
+  - FootstepParent
   layers:
   - Default
   - TransparentFX

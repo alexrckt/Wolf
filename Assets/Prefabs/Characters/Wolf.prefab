@@ -390,6 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isWearingClothing: 0
   clothes: {fileID: 1908698817}
+  defaultCD: 2
+  currentCD: 0
 --- !u!114 &3213818300290640729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +431,7 @@ MonoBehaviour:
   isTouchingDropPoint: 0
   mouth: {fileID: 285352027}
   sheepValue: 1
+  stealthCD: 1
   sheep: {fileID: 0}
 --- !u!114 &8372954254675228265
 MonoBehaviour:
@@ -445,6 +448,7 @@ MonoBehaviour:
   emotes:
   - {fileID: 21300000, guid: 2b77a22f5d6959541b6f38b100d7cd14, type: 3}
   - {fileID: 21300000, guid: 6a1d0344f4a7d034f947538ae674e6ed, type: 3}
+  - {fileID: 21300000, guid: 3ab97b2ecd5c48943b771ec6b0201924, type: 3}
   currentEmote: {fileID: 5304477308677056277}
   emotingTimer: 2
   emotingCurrentTimer: 0

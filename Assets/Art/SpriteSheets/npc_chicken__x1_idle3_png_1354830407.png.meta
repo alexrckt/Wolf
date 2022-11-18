@@ -1,0 +1,2027 @@
+fileFormatVersion: 2
+guid: f250dd91a90527b48aa059e755edf018
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1553
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fba19a6d3249a540b2bd21a7fee7b84
+      internalID: 122652998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1552
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdbfc5f8e11b2044b676e89a2ef0de5
+      internalID: -1516209607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_2
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1552
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb64f912491e4540bd2ee1cc8c64a42
+      internalID: 914179584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_3
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1552
+        width: 55
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1d908434e88c344931d174e162d144
+      internalID: 348408656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_4
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1553
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624928f2f722c4a4fbe552145346b5f7
+      internalID: -129735217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_5
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1556
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183b9141e33ee404d99ed3ca42b6af3a
+      internalID: 1857620774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1446
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa34722554e67f41a8f308be5155170
+      internalID: 1798118733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1446
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6f558cd387992479ad380dfa1ed251
+      internalID: -2074073462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_8
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1446
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a1af369358a03439871593161fa781
+      internalID: 1601051657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_9
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1446
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a4d331abaf1054e80b2440a9a3ec7c
+      internalID: -1761302112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_10
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1446
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38680a47ea4e8f04ea099fb3b954bf7a
+      internalID: -2039633660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_11
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1446
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77849a008e4bfcb47afe74174d6400a5
+      internalID: 1760591220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1336
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b50b4148048594eaf44c196ba73038
+      internalID: 1560486126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1336
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a4ffd296d9de24e8342d796dbc102d
+      internalID: 356966320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_14
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1336
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2d9c0fdc1047a4d924e02ffd8ea97c
+      internalID: -707878191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_15
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1336
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ce3bc4a60c2ad48bf02e553cdc015c
+      internalID: 2097896300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_16
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1336
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6640033266c5165478aca97ee17f4584
+      internalID: 955358461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_17
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1336
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b89f0c5109b5c84297fc1e94a0aae0c
+      internalID: 1418106995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_18
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1226
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d36a6bd48675544ab7655daa234941
+      internalID: -1211856872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_19
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1226
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76228b37ccece746a6fbacecd079d18
+      internalID: -1522290054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_20
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1226
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127b6bac0231c0f41ade03cfc3a43dc5
+      internalID: -108148524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_21
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1226
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5faa10277c789f7469623b4575efe83d
+      internalID: -1841357985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_22
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1226
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d599e461775b343b333a4ab33f8809
+      internalID: -587887924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_23
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1226
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f03955b2eb73234982abf1f4622ecbf
+      internalID: -994965362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_24
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1116
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802955734dccf4b4e9d42d90aa2f1fcf
+      internalID: 301195584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_25
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1116
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1302db996994ba4099457648be3ee85
+      internalID: 1965665829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_26
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1116
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d6f9b8470525046af300f9fde1bfb7
+      internalID: -12211665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_27
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 1116
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce65aa7be7258a644afa92deeca232a2
+      internalID: -1976162328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_28
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1116
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9f11d66a39f6d4da9344404de54a39
+      internalID: 1887862073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_29
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1116
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc33014f4c18be54ab27ffe14257f53e
+      internalID: 385956501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_30
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1006
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a485ebd7acd4f3a48baf347d9f2d7c91
+      internalID: -1609086615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_31
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1006
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a178e80d46111e8428a10f40b446457a
+      internalID: -927515577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_32
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1006
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da40204eed6224489cc671dfb18f53a
+      internalID: 625985859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_33
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1000
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f2705049e52ef4098a796c223b6dab
+      internalID: 1797120809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_34
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1005
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4baccc01301350447a3132e3b3ec0415
+      internalID: -861254121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_35
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1003
+        width: 56
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc5e7a4c37dfaa438094c03eea302af
+      internalID: 1979880537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_36
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 893
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581b2a80ea4c9544482c62d3144a9ccd
+      internalID: 298443578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_37
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 893
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0c0c83158bd664e8412bf27b8a5eb8
+      internalID: 277260601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_38
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 893
+        width: 63
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f70a42fd587d80489b64550bd346ffd
+      internalID: -1294125867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_39
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 893
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06905ee9e1b8a4244b4a7220a05b79a7
+      internalID: -2077036768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_40
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 893
+        width: 56
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f418d3659f26b8b45baeaf67cf729a45
+      internalID: 1076712103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_41
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 893
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f46d2bda1e9af46bba908093cc5da1
+      internalID: 687657023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_42
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 783
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3700744f88061714280c3a660228fd48
+      internalID: 1181705917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_43
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 783
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf965a5351e83e943b03310435b7ad4d
+      internalID: 1687768045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_44
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 783
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26fd433448f7a941988e19b25cd0e0b
+      internalID: 678408074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_45
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 783
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285a1c7020524e74980c1f3e1de98a22
+      internalID: -965968084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_46
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 783
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384341cffce14f7468af035575550041
+      internalID: -1533318239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_47
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 783
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb1d945a533e2543b9ed33e5defd62e
+      internalID: 1621173442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 673
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba9910a673d80b49ae2700c5a7ef6c5
+      internalID: 34625109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_49
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 673
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8287a254b5c3b439a9b34458b41302
+      internalID: 87852923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_50
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 673
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfc1f92509c8674cb8b8a36bcc575f3
+      internalID: -1899340918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_51
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 673
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47218573ebe7d774384d5aa8386a0a4c
+      internalID: -375648546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_52
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 673
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68bdebb5ab710642ab5b5837e6231ee
+      internalID: -349779301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_53
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 673
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3321ba860cd0b43aec1c4ba8e04b87
+      internalID: -2134077734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_54
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 563
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb38b09233125f4597efe730c1dda28
+      internalID: 1695950522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_55
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 563
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289399bee022637429a882b1f9c317c3
+      internalID: -1848046207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_56
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 563
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f707f5c1f4fdb8748adf230d04b96c4e
+      internalID: -851564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_57
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 563
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f06ce0226795844a1839d5be6f608c
+      internalID: 232131269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_58
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 563
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0558a5dffc6aa34fa6c1df9b54ce919
+      internalID: 366828425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_59
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 563
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3d64bb934aa4d4481160975aaed565
+      internalID: 1618712216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 453
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bcb8b0961fab843a0b603068387341
+      internalID: -1168456631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_61
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 453
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f1733899b61d943bbd8a10888fc2d8
+      internalID: 1437552924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_62
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 453
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8152d6ad05263f342b843502301ddc64
+      internalID: 772967857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_63
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 453
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a52e1da885c1c547b1d85093570f561
+      internalID: -1450032243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_64
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 453
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27994046da91f704b843993dd8ca30e1
+      internalID: 1683685885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_65
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 453
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f1eefb1de4a6f429c3addce1a5a1fd
+      internalID: -646116561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_66
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 343
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e30f2f550b91444e959bbabb2c4bb72
+      internalID: 496044440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 343
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8184e5b32d41b7b4681ebac1d9fe02da
+      internalID: -1825390967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_68
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 343
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0661c7d1f40d658458a0d0597defe9df
+      internalID: 818738553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_69
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 343
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0979206a028a04890392073c6a2941
+      internalID: -358102231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_70
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 343
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8378c0ddd4504a240a7d5c93e7604527
+      internalID: -1964361725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_71
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 343
+        width: 57
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddbd66d233020a41bb3a7e6e1787665
+      internalID: 1907861483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_72
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f067df91dac43d4081693e2c8b7846d
+      internalID: -1916589179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_73
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef284f66ee28f84188a45fc6a3e3e6a
+      internalID: -1520526825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_74
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c84031a2dae5ae49a784e650ad66def
+      internalID: -1906843717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_75
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46cd5e84feffd24fb1d2126a2a4399a
+      internalID: 1776238990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_76
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c428e1b412d1e3d428b39d7d1d51464c
+      internalID: 112237902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_77
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 233
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da70a877da9ddcf4eb01cf9782867df9
+      internalID: -478936054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_78
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb14af20660115f409c672d2cf1c2b55
+      internalID: 1678109164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_79
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60bfbd2c0b4c584989a7915f0e97389
+      internalID: -1204799065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_80
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09de969b4bd2914390ea39bd88b1db7
+      internalID: 755469589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_81
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce90226a7c8f0ca42822afdfcc9dc161
+      internalID: -880668011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_82
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c826267a59eee45bb740c5fdab6223
+      internalID: 1179780346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_83
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 123
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31628938c6c38041a3778bb12720276
+      internalID: 988469415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_84
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 13
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f9bbfa8c7cf614ea8ed76b40219532
+      internalID: -383755354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc_chicken__x1_idle3_png_1354830407_85
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 13
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690b7a6a8129b4b48a42c7ef1d479714
+      internalID: 1719295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      npc_chicken__x1_idle3_png_1354830407_11: 1760591220
+      npc_chicken__x1_idle3_png_1354830407_15: 2097896300
+      npc_chicken__x1_idle3_png_1354830407_85: 1719295
+      npc_chicken__x1_idle3_png_1354830407_1: -1516209607
+      npc_chicken__x1_idle3_png_1354830407_46: -1533318239
+      npc_chicken__x1_idle3_png_1354830407_74: -1906843717
+      npc_chicken__x1_idle3_png_1354830407_4: -129735217
+      npc_chicken__x1_idle3_png_1354830407_0: 122652998
+      npc_chicken__x1_idle3_png_1354830407_27: -1976162328
+      npc_chicken__x1_idle3_png_1354830407_36: 298443578
+      npc_chicken__x1_idle3_png_1354830407_13: 356966320
+      npc_chicken__x1_idle3_png_1354830407_14: -707878191
+      npc_chicken__x1_idle3_png_1354830407_79: -1204799065
+      npc_chicken__x1_idle3_png_1354830407_45: -965968084
+      npc_chicken__x1_idle3_png_1354830407_83: 988469415
+      npc_chicken__x1_idle3_png_1354830407_64: 1683685885
+      npc_chicken__x1_idle3_png_1354830407_21: -1841357985
+      npc_chicken__x1_idle3_png_1354830407_34: -861254121
+      npc_chicken__x1_idle3_png_1354830407_60: -1168456631
+      npc_chicken__x1_idle3_png_1354830407_23: -994965362
+      npc_chicken__x1_idle3_png_1354830407_63: -1450032243
+      npc_chicken__x1_idle3_png_1354830407_84: -383755354
+      npc_chicken__x1_idle3_png_1354830407_38: -1294125867
+      npc_chicken__x1_idle3_png_1354830407_47: 1621173442
+      npc_chicken__x1_idle3_png_1354830407_19: -1522290054
+      npc_chicken__x1_idle3_png_1354830407_35: 1979880537
+      npc_chicken__x1_idle3_png_1354830407_30: -1609086615
+      npc_chicken__x1_idle3_png_1354830407_71: 1907861483
+      npc_chicken__x1_idle3_png_1354830407_9: -1761302112
+      npc_chicken__x1_idle3_png_1354830407_10: -2039633660
+      npc_chicken__x1_idle3_png_1354830407_56: -851564
+      npc_chicken__x1_idle3_png_1354830407_55: -1848046207
+      npc_chicken__x1_idle3_png_1354830407_72: -1916589179
+      npc_chicken__x1_idle3_png_1354830407_42: 1181705917
+      npc_chicken__x1_idle3_png_1354830407_59: 1618712216
+      npc_chicken__x1_idle3_png_1354830407_48: 34625109
+      npc_chicken__x1_idle3_png_1354830407_70: -1964361725
+      npc_chicken__x1_idle3_png_1354830407_58: 366828425
+      npc_chicken__x1_idle3_png_1354830407_57: 232131269
+      npc_chicken__x1_idle3_png_1354830407_50: -1899340918
+      npc_chicken__x1_idle3_png_1354830407_54: 1695950522
+      npc_chicken__x1_idle3_png_1354830407_6: 1798118733
+      npc_chicken__x1_idle3_png_1354830407_26: -12211665
+      npc_chicken__x1_idle3_png_1354830407_33: 1797120809
+      npc_chicken__x1_idle3_png_1354830407_73: -1520526825
+      npc_chicken__x1_idle3_png_1354830407_16: 955358461
+      npc_chicken__x1_idle3_png_1354830407_18: -1211856872
+      npc_chicken__x1_idle3_png_1354830407_41: 687657023
+      npc_chicken__x1_idle3_png_1354830407_51: -375648546
+      npc_chicken__x1_idle3_png_1354830407_76: 112237902
+      npc_chicken__x1_idle3_png_1354830407_12: 1560486126
+      npc_chicken__x1_idle3_png_1354830407_52: -349779301
+      npc_chicken__x1_idle3_png_1354830407_44: 678408074
+      npc_chicken__x1_idle3_png_1354830407_66: 496044440
+      npc_chicken__x1_idle3_png_1354830407_61: 1437552924
+      npc_chicken__x1_idle3_png_1354830407_82: 1179780346
+      npc_chicken__x1_idle3_png_1354830407_77: -478936054
+      npc_chicken__x1_idle3_png_1354830407_75: 1776238990
+      npc_chicken__x1_idle3_png_1354830407_37: 277260601
+      npc_chicken__x1_idle3_png_1354830407_81: -880668011
+      npc_chicken__x1_idle3_png_1354830407_3: 348408656
+      npc_chicken__x1_idle3_png_1354830407_39: -2077036768
+      npc_chicken__x1_idle3_png_1354830407_2: 914179584
+      npc_chicken__x1_idle3_png_1354830407_78: 1678109164
+      npc_chicken__x1_idle3_png_1354830407_53: -2134077734
+      npc_chicken__x1_idle3_png_1354830407_65: -646116561
+      npc_chicken__x1_idle3_png_1354830407_62: 772967857
+      npc_chicken__x1_idle3_png_1354830407_5: 1857620774
+      npc_chicken__x1_idle3_png_1354830407_25: 1965665829
+      npc_chicken__x1_idle3_png_1354830407_17: 1418106995
+      npc_chicken__x1_idle3_png_1354830407_32: 625985859
+      npc_chicken__x1_idle3_png_1354830407_8: 1601051657
+      npc_chicken__x1_idle3_png_1354830407_69: -358102231
+      npc_chicken__x1_idle3_png_1354830407_24: 301195584
+      npc_chicken__x1_idle3_png_1354830407_67: -1825390967
+      npc_chicken__x1_idle3_png_1354830407_40: 1076712103
+      npc_chicken__x1_idle3_png_1354830407_49: 87852923
+      npc_chicken__x1_idle3_png_1354830407_20: -108148524
+      npc_chicken__x1_idle3_png_1354830407_28: 1887862073
+      npc_chicken__x1_idle3_png_1354830407_31: -927515577
+      npc_chicken__x1_idle3_png_1354830407_22: -587887924
+      npc_chicken__x1_idle3_png_1354830407_29: 385956501
+      npc_chicken__x1_idle3_png_1354830407_43: 1687768045
+      npc_chicken__x1_idle3_png_1354830407_68: 818738553
+      npc_chicken__x1_idle3_png_1354830407_7: -2074073462
+      npc_chicken__x1_idle3_png_1354830407_80: 755469589
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

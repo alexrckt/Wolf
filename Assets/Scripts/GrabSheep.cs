@@ -5,15 +5,19 @@ using UnityEngine;
 public class GrabSheep : MonoBehaviour
 {
     bool isTouchingSheep;
+    public bool isTouchingChicken;
     [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
     public int sheepValue = 1;
+    public float stealthCD = 1f;
     [HideInInspector] public Transform sheep;
 
     private WolfController wolfController;
     private SheepsClothing sheepsClothing;
     private LevelManager levelManager;
     Wolf_Emotes we;
+    public ChickenAnim cAnim;
+    
 
     void Start()
     {
@@ -21,6 +25,7 @@ public class GrabSheep : MonoBehaviour
         sheepsClothing = GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
         we = GetComponent<Wolf_Emotes>();
+        
     }
     
     void Update()
@@ -33,16 +38,24 @@ public class GrabSheep : MonoBehaviour
                 sheep.GetComponent<CircleCollider2D>().enabled = false;
 
                 wolfController.IsCarryingSheep(true);
-                sheepsClothing.Stealth(false);
+                sheepsClothing.Stealth(false, stealthCD);
                 we.Emote(1);
                 return;
             }
-            if (wolfController.isCarryingSheep)
+            else if (wolfController.isCarryingSheep)
             {
                 sheep.GetComponent<CircleCollider2D>().enabled = true;
                 sheep.SetParent(null);
                 wolfController.IsCarryingSheep(false);
+                
             
+            }
+
+           else  if (isTouchingChicken)
+            {
+                sheepsClothing.Stealth(false, stealthCD);
+                cAnim.IGotEaten();
+
             }
         }
     }

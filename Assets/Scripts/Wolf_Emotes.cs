@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wolf_Emotes : MonoBehaviour
 {
-    public Sprite[] emotes; // 0 = yum, 1 = gotcha
+    public Sprite[] emotes; // 0 = yum, 1 = gotcham, 2 = notyet
     
     public GameObject currentEmote;
     public float emotingTimer = 2f;
