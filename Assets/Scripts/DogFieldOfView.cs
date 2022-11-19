@@ -22,6 +22,7 @@ public class DogFieldOfView : MonoBehaviour
     AnimatorClipInfo[] clipAnimArray;
     Animator animator;
     private AnimatorUpdater animatorUpdater;
+    [SerializeField] FOVVisual fovVisual;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class DogFieldOfView : MonoBehaviour
         wolfController = playerRef.GetComponent<WolfController>();
         dogController = GetComponent<DogController>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
+        
 
         animator = GetComponentInChildren<Animator>();
         StartCoroutine(FOVRoutine());
@@ -54,11 +56,12 @@ public class DogFieldOfView : MonoBehaviour
     {
         Collider2D[] rangeChecks = Physics2D.OverlapCircleAll(transform.position,  radius, playerMask);
         Collider2D[] closeRangeChecks = Physics2D.OverlapCircleAll(transform.position,  closeradius, playerMask);
+        WhereIsDogLooking(); 
         if (closeRangeChecks.Length == 0 && rangeChecks.Length != 0 && !wolfController.isStealthed ) // if player is in the circle's range
         {
             
             WhereIsDogLooking();    // check where the dog is facing now
-                                    // maybe it's better to check directly which anim is playing? idk
+                                    
 
             Transform target = rangeChecks[0].transform;
             Vector2 directionToTarget = (target.position - transform.position).normalized;
@@ -120,21 +123,29 @@ public class DogFieldOfView : MonoBehaviour
             || animName == "Walk_Down_Dog")
         {
             fovDir = -fovDirs[2].transform.up;
+            fovVisual.SetOrigin(fovDirs[2].transform.position);
+            fovVisual.SetStartingAngle(0f);
             // Debug.Log("down");
         }
         else if (animName == "Walk_Up_Dog")
         {
             fovDir = fovDirs[0].transform.up;
+            fovVisual.SetOrigin(fovDirs[0].transform.position);
+            fovVisual.SetStartingAngle(180f);
             // Debug.Log("up");
         }
         else if (animName == "Walk_Right_Dog")
         {
             fovDir = fovDirs[1].transform.right;
+            fovVisual.SetOrigin(fovDirs[1].transform.position);
+            fovVisual.SetStartingAngle(90f);
             //  Debug.Log("right");
         }
         else if (animName == "Walk_Left_Dog")
         {
             fovDir = -fovDirs[3].transform.right;
+            fovVisual.SetOrigin(fovDirs[3].transform.position);
+            fovVisual.SetStartingAngle(270f);
             //  Debug.Log("left");
         }
     }
