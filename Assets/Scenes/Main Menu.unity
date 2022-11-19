@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 34.402008
       objectReference: {fileID: 0}
+    - target: {fileID: 6360962222643075721, guid: 1bfa5574966854a4789e27323924f759, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 411
+      objectReference: {fileID: 0}
     - target: {fileID: 8195875818585169362, guid: 1bfa5574966854a4789e27323924f759, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -530,6 +534,10 @@ PrefabInstance:
     - target: {fileID: 8759561761424212195, guid: 1bfa5574966854a4789e27323924f759, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 42.001007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831927413537190578, guid: 1bfa5574966854a4789e27323924f759, type: 3}
+      propertyPath: m_text
+      value: 'Score: 0'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8195875818585169362, guid: 1bfa5574966854a4789e27323924f759, type: 3}
@@ -897,21 +905,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b601b552e92b349a86ec0c76562fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentGameState: 0
+  currentLevel: 0
+  livesInitial: 3
+  score: 0
+  bones: 0
+  scoreForSheep: 300
+  scoreForChicken: 50
+  scoreForGopher: 200
+  maxLevel: 2
+  livesCurrent: 0
+  huntersCounter: 60
+  huntersArrived: 0
+  huntersCounterOn: 0
+  deathsCounter: 0
   pauseMenu: {fileID: 1309617110}
   levelWinMenu: {fileID: 5473170142343422604}
   levelFailMenu: {fileID: 2020868117}
   gameOverMenu: {fileID: 670472138}
   gameWinMenu: {fileID: 2035640139}
-  currentGameState: 0
-  currentLevel: 0
-  maxLevel: 2
-  livesCurrent: 0
-  livesInitial: 3
-  score: 0
-  bones: 0
-  huntersCounter: 60
-  huntersCounterOn: 0
-  deathsCounter: 0
 --- !u!4 &1024691933
 Transform:
   m_ObjectHideFlags: 0

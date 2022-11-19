@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gopher : MonoBehaviour
+public class Gopher : MonoBehaviour, IEatableAnimal
 {
-    GameManager gm;
-    
+    private WolfController wolfController;
+    private LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
-        
+        wolfController = FindObjectOfType<WolfController>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -19,13 +19,20 @@ public class Gopher : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player")
-        {
-            other.GetComponent<Wolf_Emotes>().Emote(0); // call emotion "anim"
-            gm.livesCurrent += 1;
-            gm.UpdateLivesText();
-            Destroy(gameObject);
-        }
+    public void IGotEaten()
+    {
+        levelManager.GopherEaten();
+        wolfController.GetComponent<WolfEmotes>().Emote(0); // call emotion "anim"
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        (this as IEatableAnimal).OnTriggerStay2D(other);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        (this as IEatableAnimal).OnTriggerExit2D(other);
     }
 }

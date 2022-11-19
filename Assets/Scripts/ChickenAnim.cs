@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenAnim : MonoBehaviour
+public class ChickenAnim : MonoBehaviour, IEatableAnimal
 {
     public float animRangeMin = 2f;
     public float animRangeMax = 7f;
     Animator anim;
-    GameManager gm;
-    public int chickenScoreVal = 50;
+    LevelManager levelManager;
     public float stealthCD = 1f;
     public GameObject bloodObj;
 
-   // public int chickenHungerVal;
-    
+    private SheepsClothing sheepsClothing;
+
+    // public int chickenHungerVal;
+
     void Start()
     {
         anim = GetComponent<Animator>();
-        gm = FindObjectOfType <GameManager>();
+        levelManager = FindObjectOfType <LevelManager>();
+        sheepsClothing = FindObjectOfType<WolfController>().GetComponent<SheepsClothing>();
         RandomNum();
 
     }
@@ -40,35 +42,20 @@ public class ChickenAnim : MonoBehaviour
 
 
     public void IGotEaten()
-    {  
-        gm.score += chickenScoreVal;
+    {
+        sheepsClothing.Stealth(false, stealthCD);
+        levelManager.ChickenEaten();
         Instantiate(bloodObj, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
-        
 
-          
-            
-        
-    
-
-    private void OnTriggerStay2D(Collider2D other) {
-        if (other.tag == "Player")
-        {
-         
-            GrabSheep gs = other.GetComponent<GrabSheep>();
-            gs.isTouchingChicken = true;
-            gs.cAnim = this;
-
-           
-        }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        (this as IEatableAnimal).OnTriggerStay2D(other);
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (other.tag == "Player")
-        {
-            other.GetComponent<GrabSheep>().isTouchingChicken = false;
-        }
-        
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        (this as IEatableAnimal).OnTriggerExit2D(other);
     }
 }

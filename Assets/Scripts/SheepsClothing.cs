@@ -7,14 +7,14 @@ public class SheepsClothing : MonoBehaviour
     public bool isWearingClothing = false;
     public GameObject clothes;
     WolfController w_c;
-    Wolf_Emotes w_e;
+    WolfEmotes w_e;
     public float defaultCD = 2f; // testing cd for sheep clothes
     public float currentCD;
     
     void Start()
     {
         w_c = GetComponent<WolfController>();
-        w_e = GetComponent<Wolf_Emotes>();
+        w_e = GetComponent<WolfEmotes>();
     }
 
     
@@ -48,7 +48,6 @@ public class SheepsClothing : MonoBehaviour
 
     public void Stealth(bool yesno, float CD)
     {
-
         clothes.SetActive(yesno);
         w_c.IsStealthed(yesno);
         currentCD = CD;

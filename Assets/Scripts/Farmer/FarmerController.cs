@@ -82,7 +82,7 @@ public class FarmerController : MonoBehaviour
         if(!currentState.Equals(shootingState))
             SwitchState(shootingState);
 
-        if (!gameManager.huntersCounterOn)
+        if (!gameManager.huntersCounterOn && !gameManager.huntersArrived)
         {
             gameManager.huntersCounterOn = true;
             StartCoroutine(gameManager.HuntersCounter());

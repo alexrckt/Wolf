@@ -23,7 +23,7 @@ public class WolfController : MonoBehaviour
     Vector2 moveInput;
     [HideInInspector] public Vector2 lastMotionVector;
     Animator animator;
-    GrabSheep grabSheep;
+    GrabAnimals _grabAnimals;
     bool moving;
 
     [HideInInspector] public bool isStealthed;
@@ -48,7 +48,7 @@ public class WolfController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveSpeedCurrent = moveSpeed;
         animator = GetComponent<Animator>();
-        grabSheep = GetComponent<GrabSheep>();
+        _grabAnimals = GetComponent<GrabAnimals>();
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
         gameManager = FindObjectOfType<GameManager>();
@@ -139,19 +139,19 @@ public class WolfController : MonoBehaviour
         {
             if (horizontal == 1)
             {
-                grabSheep.DangleSheep(dangleE);
+                _grabAnimals.DangleSheep(dangleE);
             }
             else if (vertical == 1)
             {
-                grabSheep.DangleSheep(dangleN);
+                _grabAnimals.DangleSheep(dangleN);
             }
             else if (horizontal == -1)
             {
-                grabSheep.DangleSheep(dangleW);
+                _grabAnimals.DangleSheep(dangleW);
             }
             else if (vertical == -1)
             {
-                grabSheep.DangleSheep(dangleS);
+                _grabAnimals.DangleSheep(dangleS);
             }
         }
     }

@@ -17,23 +17,37 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance = null;
 
+    public GameState currentGameState;
+    public int currentLevel;
+    public int livesInitial;
+    public int score;
+    public int bones;
+
+    [Header("Score")]
+    public int scoreForSheep;
+    public int scoreForChicken;
+    public int scoreForGopher;
+
+    [HideInInspector]
+    public int maxLevel = 2;
+    [HideInInspector]
+    public int livesCurrent;
+    [HideInInspector]
+    public float huntersCounter;
+    [HideInInspector]
+    public bool huntersArrived = false;
+    [HideInInspector]
+    public bool huntersCounterOn = false;
+    [HideInInspector]
+    public int deathsCounter = 0;
+
+    [Header("Menus")]
     public GameObject pauseMenu;
     public GameObject levelWinMenu;
     public GameObject levelFailMenu;
     public GameObject gameOverMenu;
     public GameObject gameWinMenu;
     private GameObject currentActiveMenu;
-
-    public GameState currentGameState;
-    public int currentLevel;
-    public int maxLevel;
-    public int livesCurrent;
-    public int livesInitial;
-    public int score;
-    public int bones;
-    public float huntersCounter;
-    public bool huntersCounterOn = false;
-    public int deathsCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +86,7 @@ public class GameManager : MonoBehaviour
     public void WolfInjured()
     {
         livesCurrent--;
+        deathsCounter++;
         UpdateLivesText();
         if (livesCurrent <= 0)
         {
@@ -90,13 +105,21 @@ public class GameManager : MonoBehaviour
         while (duration >= 0)
         {
             duration -= Time.deltaTime;
-            textField.SetText(duration.ToString("0.00"));
+            textField.SetText($"Hunters arrives in " + duration.ToString("0.00"));
             yield return null;
         }
         textField.SetText("CAVALRY'S HERE!");
         huntersCounterOn = false;
+        huntersArrived = true;
     }
 
+    public void AddScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        UpdateScoreText();
+    }
+
+    #region Update UI Text
     public void UpdateLivesText()
     {
         GameObject.Find("WolfLives").GetComponent<TextMeshProUGUI>().SetText(livesCurrent.ToString());
@@ -105,6 +128,12 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>().SetText("");
     }
+
+    public void UpdateScoreText()
+    {
+        GameObject.Find("Score").GetComponent<TextMeshProUGUI>().SetText($"Score: {score}");
+    }
+    #endregion
 
     #region End Game functions
 
@@ -216,9 +245,11 @@ public class GameManager : MonoBehaviour
     #region Common
     private void ResetGame()
     {
+        deathsCounter = 0;
         currentLevel = 1;
         bones = 0;
         livesCurrent = livesInitial;
+        huntersArrived = false;
     }
 
     public void BackToMain()
@@ -228,7 +259,6 @@ public class GameManager : MonoBehaviour
         ResetGame();
         LoadMainMenu();
     }
-
     #endregion
 
 }

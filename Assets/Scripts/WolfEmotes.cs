@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wolf_Emotes : MonoBehaviour
+public class WolfEmotes : MonoBehaviour
 {
     public Sprite[] emotes; // 0 = yum, 1 = gotcham, 2 = notyet
     
@@ -19,11 +19,13 @@ public class Wolf_Emotes : MonoBehaviour
     void Update()
     {
         if (emotingCurrentTimer > 0)
-        {emotingCurrentTimer -= Time.deltaTime;}
-       if (emotingCurrentTimer <= 0 && currentEmote.activeInHierarchy == true)
-       {
-        currentEmote.SetActive(false);
-       } 
+        {
+            emotingCurrentTimer -= Time.deltaTime;
+        }
+        if (emotingCurrentTimer <= 0 && currentEmote.activeInHierarchy == true)
+        {
+            currentEmote.SetActive(false);
+        }
     }
 
     public void Emote(int emoteID)
@@ -31,6 +33,5 @@ public class Wolf_Emotes : MonoBehaviour
         currentEmote.GetComponent<SpriteRenderer>().sprite = emotes[emoteID];
         currentEmote.SetActive(true);
         emotingCurrentTimer = emotingTimer;
-
     }
 }

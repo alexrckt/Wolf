@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BloodStain : MonoBehaviour
 {
-
     public Sprite  [] bloodSprites;
     SpriteRenderer sr;
     public float lifeTime = 15f;
@@ -14,16 +13,12 @@ public class BloodStain : MonoBehaviour
         
     }
 
-    
-
-    
     public void BloodSplatter()
     {
-     sr = GetComponent<SpriteRenderer>();
-     int randomNum = Random.Range(0, bloodSprites.Length);
-     sr.sprite = bloodSprites[randomNum];
-     StartCoroutine(Fade());
-     
+        sr = GetComponent<SpriteRenderer>();
+        int randomNum = Random.Range(0, bloodSprites.Length);
+        sr.sprite = bloodSprites[randomNum];
+        StartCoroutine(Fade());
     }
 
     IEnumerator Fade()

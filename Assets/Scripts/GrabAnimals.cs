@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabSheep : MonoBehaviour
+public class GrabAnimals : MonoBehaviour
 {
     bool isTouchingSheep;
-    public bool isTouchingChicken;
+    public bool isTouchingEatable;
     [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
     public int sheepValue = 1;
@@ -15,8 +15,8 @@ public class GrabSheep : MonoBehaviour
     private WolfController wolfController;
     private SheepsClothing sheepsClothing;
     private LevelManager levelManager;
-    Wolf_Emotes we;
-    public ChickenAnim cAnim;
+    WolfEmotes we;
+    public IEatableAnimal eatableAnimal;
     
 
     void Start()
@@ -24,8 +24,7 @@ public class GrabSheep : MonoBehaviour
         wolfController = GetComponent<WolfController>();
         sheepsClothing = GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
-        we = GetComponent<Wolf_Emotes>();
-        
+        we = GetComponent<WolfEmotes>();
     }
     
     void Update()
@@ -47,15 +46,10 @@ public class GrabSheep : MonoBehaviour
                 sheep.GetComponent<CircleCollider2D>().enabled = true;
                 sheep.SetParent(null);
                 wolfController.IsCarryingSheep(false);
-                
-            
             }
-
-           else  if (isTouchingChicken)
+            else if (isTouchingEatable)
             {
-                sheepsClothing.Stealth(false, stealthCD);
-                cAnim.IGotEaten();
-
+                eatableAnimal.IGotEaten();
             }
         }
     }
