@@ -26,6 +26,7 @@ public class SensesManager : MonoBehaviour
     public List<Collider2D> resultsFarRange;
     public List<Collider2D> resultsCloseRange;
     private ContactFilter2D contactFilter;
+    [SerializeField] FOVVisual fovVisual;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class SensesManager : MonoBehaviour
     {
         Physics2D.OverlapCircle(transform.position, radius, contactFilter, resultsFarRange);
         Physics2D.OverlapCircle(transform.position, closeradius, contactFilter, resultsCloseRange);
+        WhereIsFarmerLooking();
 
         if (resultsCloseRange.Count != 0)
         {
@@ -128,6 +130,8 @@ public class SensesManager : MonoBehaviour
             fovDir = -fovDirs[2].transform.up;
             viewPoint = fovDirs[2].transform; // which way we are looking
             viewPointString = "down";
+            fovVisual.SetOrigin(fovDirs[2].transform.position);
+            fovVisual.SetStartingAngle(0f);
         }
         else if (animName == "Idle_Up_Farmer" || animName == "Shoot_Up_Farmer"
                                               || animName == "Walk_Up_Farmer")
@@ -135,6 +139,8 @@ public class SensesManager : MonoBehaviour
             fovDir = fovDirs[0].transform.up;
             viewPoint = fovDirs[0].transform;
             viewPointString = "up";
+            fovVisual.SetOrigin(fovDirs[0].transform.position);
+            fovVisual.SetStartingAngle(180f);
         }
         else if (animName == "Idle_Right_Farmer" || animName == "Shoot_Right_Farmer"
                                                  || animName == "Walk_Right_Farmer")
@@ -142,6 +148,8 @@ public class SensesManager : MonoBehaviour
             fovDir = fovDirs[1].transform.right;
             viewPoint = fovDirs[1].transform;
             viewPointString = "right";
+            fovVisual.SetOrigin(fovDirs[1].transform.position);
+            fovVisual.SetStartingAngle(90f);
         }
         else if (animName == "Idle_Left_Farmer" || animName == "Shoot_Left_Farmer"
                                                 || animName == "Walk_Left_Farmer")
@@ -149,6 +157,8 @@ public class SensesManager : MonoBehaviour
             fovDir = -fovDirs[3].transform.right;
             viewPoint = fovDirs[3].transform;
             viewPointString = "left";
+            fovVisual.SetOrigin(fovDirs[3].transform.position);
+            fovVisual.SetStartingAngle(270f);
         }
     }
 }
