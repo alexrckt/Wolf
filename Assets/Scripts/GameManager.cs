@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public int scoreForSheep;
     public int scoreForChicken;
     public int scoreForGopher;
+    public HungerSlider hungerSlider;
 
     [HideInInspector]
     public int maxLevel = 2;
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        hungerSlider.AddFood(scoreToAdd); // interacts with slider
         UpdateScoreText();
     }
 
