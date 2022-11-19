@@ -28,8 +28,6 @@ public class FarmerPatrollingState : FarmerBaseState
             waitTimeMin = waitTimeMax = 0f;
         }
 
-        farmer.GetComponent<AIPath>().maxSpeed = farmer.maxSpeed;
-
         moveSpots = GameObject.FindGameObjectsWithTag(patrolSpotTagName).ToList();
 
         currentRandomSpot = GetRandomSpot();
@@ -39,14 +37,20 @@ public class FarmerPatrollingState : FarmerBaseState
     {
         if (afterContact)
         {
+            farmer.GetComponent<AIPath>().maxSpeed = 0.01f;
             waitTimeMax = waitTimeMin = farmer.waitOnLost;
             farmer.SetWaitTimer();
             afterContact = false;
         }
-        if (!farmer.isWaiting && !Move(farmer.transform, currentRandomSpot))
+
+        if (!farmer.isWaiting)
         {
-            currentRandomSpot = GetRandomSpot();
-            farmer.SetWaitTimer();
+            farmer.GetComponent<AIPath>().maxSpeed = farmer.maxSpeed;
+            if (!Move(farmer.transform, currentRandomSpot))
+            {
+                currentRandomSpot = GetRandomSpot();
+                farmer.SetWaitTimer();
+            }
         }
     }
 
