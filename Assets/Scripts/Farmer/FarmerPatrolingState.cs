@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ public class FarmerPatrollingState : FarmerBaseState
     List<GameObject> moveSpots;
     private Transform currentRandomSpot;
 
+    public bool afterContact = false;
+
     public FarmerPatrollingState() : base("Patrolling")
     {
         waitTimeMin = 3f;
@@ -17,13 +20,29 @@ public class FarmerPatrollingState : FarmerBaseState
 
     public override void EnterState(FarmerController farmer)
     {
-        moveSpots ??= GameObject.FindGameObjectsWithTag("FarmerPatrolSpot").ToList();
+        var patrolSpotTagName = "FarmerPatrolSpot";
+
+        if (farmer.agitated)
+        {
+            patrolSpotTagName = "FarmerAgitatedPatrolSpot";
+            waitTimeMin = waitTimeMax = 0f;
+        }
+
+        farmer.GetComponent<AIPath>().maxSpeed = farmer.maxSpeed;
+
+        moveSpots = GameObject.FindGameObjectsWithTag(patrolSpotTagName).ToList();
 
         currentRandomSpot = GetRandomSpot();
     }
 
     public override void UpdateState(FarmerController farmer)
     {
+        if (afterContact)
+        {
+            waitTimeMax = waitTimeMin = farmer.waitOnLost;
+            farmer.SetWaitTimer();
+            afterContact = false;
+        }
         if (!farmer.isWaiting && !Move(farmer.transform, currentRandomSpot))
         {
             currentRandomSpot = GetRandomSpot();

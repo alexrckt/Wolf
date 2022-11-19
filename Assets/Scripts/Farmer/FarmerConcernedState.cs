@@ -7,8 +7,8 @@ public class FarmerConcernedState : FarmerBaseState
 {
     public FarmerConcernedState() : base("Concerned")
     {
-        waitTimeMin = 3f;
-        waitTimeMax = 3f;
+        waitTimeMin = 0f;
+        waitTimeMax = 0f;
     }
 
     public override void EnterState(FarmerController farmer)
@@ -18,11 +18,7 @@ public class FarmerConcernedState : FarmerBaseState
 
     public override void UpdateState(FarmerController farmer)
     {
-        if (!Move(farmer.transform, farmer.lastPositionOfInterest))
-        {
-            // What to do next?
-            farmer.SetWaitTimer();
-        }
+
     }
 
     public override void OnCollisionEnter(FarmerController farmer)

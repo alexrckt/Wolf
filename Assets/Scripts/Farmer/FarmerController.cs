@@ -5,16 +5,18 @@ using Random = UnityEngine.Random;
 
 public class FarmerController : MonoBehaviour
 {
-    public float maxSpeed = 2;
-    
+    public float maxSpeed = 2f;
+
+    public float waitOnLost = 0f;
 
     public FarmerBaseState currentState;
     public FarmerPatrollingState patrollingState = new FarmerPatrollingState();
-    public FarmerConcernedState concernedState = new FarmerConcernedState();
+    //public FarmerConcernedState concernedState = new FarmerConcernedState();
     public FarmerShootingState shootingState = new FarmerShootingState();
     
     public bool isWaiting = false;
     public bool canSeePlayer = false;
+    public bool agitated = false;
     public Vector3 lastPositionOfInterest;
 
     private Animator animator;
@@ -70,15 +72,19 @@ public class FarmerController : MonoBehaviour
 
     public void PlayerHid()
     {
-        if (!currentState.Equals(concernedState))
-            SwitchState(concernedState);
+        GetComponent<AIDestinationSetter>().target = null;
+        if (!currentState.Equals(patrollingState))
+        {
+            patrollingState.afterContact = true;
+            SwitchState(patrollingState);
+        }
 
         canSeePlayer = false;
         animator.SetBool("playerIsSeen", false);
-        GetComponent<AIDestinationSetter>().target = null;
     }
     public void PlayerSeen(Vector3 lastSeenPosition)
     {
+        agitated = true;
         if(!currentState.Equals(shootingState))
             SwitchState(shootingState);
 
@@ -91,6 +97,13 @@ public class FarmerController : MonoBehaviour
         lastPositionOfInterest = lastSeenPosition;
         canSeePlayer = true;
         animator.SetBool("playerIsSeen", true);
+    }
+
+    public void HeardAlarm()
+    {
+        agitated = true;
+        if (!currentState.Equals(shootingState))
+            SwitchState(patrollingState);
     }
     public void PlayerInRangeNoSee()
     {

@@ -482,8 +482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 2
+  waitOnLost: 5
   isWaiting: 0
   canSeePlayer: 0
+  agitated: 0
   lastPositionOfInterest: {x: 0, y: 0, z: 0}
 --- !u!114 &1827880264101436413
 MonoBehaviour:

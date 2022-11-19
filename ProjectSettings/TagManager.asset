@@ -14,6 +14,7 @@ TagManager:
   - FarmerPatrolSpot
   - Obstacle
   - FootstepParent
+  - FarmerAgitatedPatrolSpot
   layers:
   - Default
   - TransparentFX
