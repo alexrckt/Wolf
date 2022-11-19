@@ -481,9 +481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f38ea75fa00264ea11e5dbbfaf2061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShooting: 0
+  maxSpeed: 2
   isWaiting: 0
   canSeePlayer: 0
+  lastPositionOfInterest: {x: 0, y: 0, z: 0}
 --- !u!114 &1827880264101436413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +541,9 @@ MonoBehaviour:
   - {fileID: 986345596}
   viewPoint: {fileID: 0}
   viewPointString: 
+  resultsFarRange: []
+  resultsCloseRange: []
+  fovVisual: {fileID: 0}
 --- !u!114 &5953387380766553565
 MonoBehaviour:
   m_ObjectHideFlags: 0

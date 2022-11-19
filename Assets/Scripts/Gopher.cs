@@ -6,10 +6,14 @@ public class Gopher : MonoBehaviour, IEatableAnimal
 {
     private WolfController wolfController;
     private LevelManager levelManager;
+    [SerializeField] GameObject bloodObj;
+    SheepsClothing sheepsClothing;
+    public float stealthCD = 1f;
     // Start is called before the first frame update
     void Start()
     {
         wolfController = FindObjectOfType<WolfController>();
+        sheepsClothing = wolfController.GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
     }
 
@@ -22,7 +26,10 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     public void IGotEaten()
     {
         levelManager.GopherEaten();
+        sheepsClothing.Stealth(false, stealthCD);
         wolfController.GetComponent<WolfEmotes>().Emote(0); // call emotion "anim"
+        var blood = Instantiate(bloodObj, transform.position, Quaternion.identity);
+        blood.GetComponent<BloodStain>().BloodSplatter();
         Destroy(gameObject);
     }
 

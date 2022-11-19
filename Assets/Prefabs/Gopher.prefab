@@ -145,3 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149f40becfc5c014eabb318361e2747d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodObj: {fileID: 8902297620899934996, guid: 23982d224085fc348a301316d83081cf, type: 3}
+  stealthCD: 1

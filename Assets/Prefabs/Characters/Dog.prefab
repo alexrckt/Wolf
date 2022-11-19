@@ -555,6 +555,7 @@ MonoBehaviour:
   - {fileID: 1029384154938240109}
   - {fileID: 3952323712777685707}
   - {fileID: 2713086625818224196}
+  fovVisual: {fileID: 0}
 --- !u!114 &8700230756717973508
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,7 +45,8 @@ public class ChickenAnim : MonoBehaviour, IEatableAnimal
     {
         sheepsClothing.Stealth(false, stealthCD);
         levelManager.ChickenEaten();
-        Instantiate(bloodObj, transform.position, Quaternion.identity);
+        var blood = Instantiate(bloodObj, transform.position, Quaternion.identity);
+        blood.GetComponent<BloodStain>().BloodSplatter();
         Destroy(gameObject);
     }
 
