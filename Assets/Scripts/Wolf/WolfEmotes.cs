@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WolfEmotes : MonoBehaviour
 {
-    public Sprite[] emotes; // 0 = yum, 1 = gotcham, 2 = notyet
+    public Sprite[] emotes; // 0 = yum, 1 = gotcham, 2 = back to forest
     
     public GameObject currentEmote;
     public float emotingTimer = 2f;
@@ -12,7 +12,7 @@ public class WolfEmotes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventManager.OnHungerFull += EmoteToForest;
     }
 
     // Update is called once per frame
@@ -33,5 +33,10 @@ public class WolfEmotes : MonoBehaviour
         currentEmote.GetComponent<SpriteRenderer>().sprite = emotes[emoteID];
         currentEmote.SetActive(true);
         emotingCurrentTimer = emotingTimer;
+    }
+
+    void EmoteToForest()
+    {
+        Emote(2);
     }
 }
