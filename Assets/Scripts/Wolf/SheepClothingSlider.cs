@@ -66,11 +66,11 @@ public class SheepClothingSlider : MonoBehaviour
             thisFillBar.localRotation = new Quaternion (thisFillBar.localRotation.x, thisFillBar.localRotation.y, 0, thisFillBar.localRotation.w);
            //right
         }
-        // else if (wc.vertical == 1 )
-        // {
-        //    thisFillBar.localRotation = new Quaternion (thisFillBar.localRotation.x, thisFillBar.localRotation.y, debugRot.z + 90f, thisFillBar.localRotation.w);
-        //    //up 90
-        // }
+        else if (wc.vertical == 1 )
+        {
+           thisFillBar.rotation =  Quaternion.Euler(0, 0, 90f);
+           //up 90
+        }
         else if (wc.horizontal == -1 )
         {
             thisFillBar.localScale = new Vector3(-1f, thisFillBar.localScale.y, thisFillBar.localScale.z );
@@ -78,11 +78,11 @@ public class SheepClothingSlider : MonoBehaviour
             //left
         }
         
-        // else if (wc.vertical == -1 )
-        // {
-        //     thisFillBar.localRotation = new Quaternion (thisFillBar.localRotation.x, thisFillBar.localRotation.y, debugRot.z -90f, thisFillBar.localRotation.w);
-        //     //down -90
-        // }
+        else if (wc.vertical == -1 )
+        {
+            thisFillBar.rotation =  Quaternion.Euler(0, 0, -90f);
+            //down -90
+        }
         yield return new WaitForSeconds(0.1f);
         }
     }
