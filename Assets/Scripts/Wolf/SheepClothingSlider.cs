@@ -69,6 +69,7 @@ public class SheepClothingSlider : MonoBehaviour
         else if (wc.vertical == 1 )
         {
            thisFillBar.rotation =  Quaternion.Euler(0, 0, 90f);
+           thisFillBar.localScale = new Vector3(1f, thisFillBar.localScale.y, thisFillBar.localScale.z );
            //up 90
         }
         else if (wc.horizontal == -1 )
@@ -81,6 +82,7 @@ public class SheepClothingSlider : MonoBehaviour
         else if (wc.vertical == -1 )
         {
             thisFillBar.rotation =  Quaternion.Euler(0, 0, -90f);
+            thisFillBar.localScale = new Vector3(1f, thisFillBar.localScale.y, thisFillBar.localScale.z );
             //down -90
         }
         yield return new WaitForSeconds(0.1f);
