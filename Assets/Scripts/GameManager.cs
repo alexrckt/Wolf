@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using QuantumTek.QuantumUI;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
     public int scoreForChicken;
     public int scoreForGopher;
     public HungerSlider hungerSlider;
+
+    [HideInInspector] public Dictionary<int, LevelData> levelEntries;
 
     [HideInInspector]
     public int maxLevel = 2;
@@ -65,6 +68,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ResetGame();
         currentGameState = GameState.MainMenu;
+        levelEntries = new Dictionary<int, LevelData>();
     }
 
     // Update is called once per frame
@@ -117,6 +121,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        levelEntries[currentLevel].levelScoreGoalGained += scoreToAdd;
         hungerSlider.AddFood(scoreToAdd); // interacts with slider
         UpdateScoreText();
     }
@@ -198,14 +203,43 @@ public class GameManager : MonoBehaviour
     #region Scene Loading
     public void LoadLevel()
     {
-        SceneManager.LoadScene($"Level {currentLevel}");
-        currentGameState = GameState.Playing;
+        var levelName = $"Level {currentLevel}";
+        SceneManager.LoadScene(levelName);
+        StartCoroutine("WaitForSceneLoad", levelName);
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         currentGameState = GameState.MainMenu;
+    }
+
+    IEnumerator WaitForSceneLoad(string sceneName)
+    {
+        while (SceneManager.GetActiveScene().name != sceneName)
+        {
+            yield return null;
+        }
+
+        if (levelEntries.ContainsKey(currentLevel))
+        {
+            var levelData = levelEntries[currentLevel];
+            // Delete eaten animals
+
+            // Set hunger slider
+            //Debug.Log($"Entering into existing level, and adding {levelData.levelScoreGoalGained} hunger");
+            hungerSlider.SetGoalHunger(levelData.levelScoreGoal);
+            hungerSlider.AddFood(levelData.levelScoreGoalGained);
+        }
+        else
+        {
+            var levelData = FindObjectOfType<LevelManager>().levelData;
+            levelEntries.Add(currentLevel, levelData);
+            hungerSlider.SetGoalHunger(levelData.levelScoreGoal);
+        }
+
+        //Debug.Log($"Level Entries count: {levelEntries.Count}");
+        currentGameState = GameState.Playing;
     }
     #endregion
 
@@ -225,7 +259,6 @@ public class GameManager : MonoBehaviour
             PauseGame(false);
             currentGameState = GameState.Playing;
         }
-
     }
     public void PauseGame(bool pause)
     {
@@ -247,6 +280,8 @@ public class GameManager : MonoBehaviour
     #region Common
     private void ResetGame()
     {
+        levelEntries?.Clear();
+        score = 0;
         deathsCounter = 0;
         currentLevel = 1;
         bones = 0;
