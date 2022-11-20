@@ -9,7 +9,7 @@ public class GrabAnimals : MonoBehaviour
     [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
     public int sheepValue = 1;
-    public float stealthCD = 1f;
+    // public float stealthCD = 1f;
     [HideInInspector] public Transform sheep;
 
     private WolfController wolfController;
@@ -37,7 +37,7 @@ public class GrabAnimals : MonoBehaviour
                 sheep.GetComponent<CircleCollider2D>().enabled = false;
 
                 wolfController.IsCarryingSheep(true);
-                sheepsClothing.Stealth(false, stealthCD);
+                sheepsClothing.Stealth(false);
                 we.Emote(1);
                 return;
             }

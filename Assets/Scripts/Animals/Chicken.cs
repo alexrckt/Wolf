@@ -8,7 +8,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
     public float animRangeMax = 7f;
     Animator anim;
     LevelManager levelManager;
-    public float stealthCD = 1f;
+    // public float stealthCD = 1f;
     public GameObject bloodObj;
 
     private SheepsClothing sheepsClothing;
@@ -43,7 +43,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
 
     public void IGotEaten()
     {
-        sheepsClothing.Stealth(false, stealthCD);
+        sheepsClothing.Stealth(false);
         levelManager.ChickenEaten();
         Instantiate(bloodObj, transform.position, Quaternion.identity);
         Destroy(gameObject);

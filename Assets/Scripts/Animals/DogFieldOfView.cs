@@ -19,6 +19,7 @@ public class DogFieldOfView : MonoBehaviour
     Vector3 fovDir = new Vector3();
     DogController dogController;
     WolfController wolfController;
+    SheepsClothing sheepsClothing;
     AnimatorClipInfo[] clipAnimArray;
     Animator animator;
     private AnimatorUpdater animatorUpdater;
@@ -27,6 +28,7 @@ public class DogFieldOfView : MonoBehaviour
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        sheepsClothing = playerRef.GetComponent<SheepsClothing>();
         wolfController = playerRef.GetComponent<WolfController>();
         dogController = GetComponent<DogController>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
@@ -74,6 +76,7 @@ public class DogFieldOfView : MonoBehaviour
                                                                                    // behind an obstacle
                 {
                     canSeePlayer = true;
+                    sheepsClothing.isSeen = true;
                     dogController.SetChasingState();
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
                     // debug white line shows fov - 5 times a second
@@ -81,6 +84,7 @@ public class DogFieldOfView : MonoBehaviour
                 else // if player is behind an obstacle
                 {
                     canSeePlayer = false;
+                    sheepsClothing.isSeen = false;
                     dogController.PlayerLastSeen(); // if dog is chasing
                                          //sets dog to lost state and saves a ref to last point 
                                          //where it saw the player
@@ -89,6 +93,7 @@ public class DogFieldOfView : MonoBehaviour
             else // if player isn't in view angle
             {
                 canSeePlayer = false;
+                sheepsClothing.isSeen = false;
                 dogController.PlayerLastSeen();
                 
             }
@@ -96,6 +101,7 @@ public class DogFieldOfView : MonoBehaviour
         else if (closeRangeChecks.Length == 0 && canSeePlayer) // if player was in view angle but got away from it
         {
             canSeePlayer = false;
+            sheepsClothing.isSeen = false;
             dogController.PlayerLastSeen();
             
             // method for getting last pos seen, going there, then resetting to calm on reach destination
@@ -104,6 +110,7 @@ public class DogFieldOfView : MonoBehaviour
         else if (closeRangeChecks.Length != 0)
         {
             canSeePlayer = true;
+            sheepsClothing.isSeen = true;
             Transform target = closeRangeChecks[0].transform;
                     dogController.SetChasingState();
                     Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);

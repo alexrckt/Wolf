@@ -53,6 +53,7 @@ public class FOVVisual : MonoBehaviour
            {
             //hit obstacle
             vertex = raycastHit2D.point;
+            
            }
           vertices[vertexIndex] = vertex;
         

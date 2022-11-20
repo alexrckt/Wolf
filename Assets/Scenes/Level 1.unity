@@ -19247,6 +19247,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 640803252, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640803252, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3213818300290640709, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
       propertyPath: m_Name
       value: Wolf

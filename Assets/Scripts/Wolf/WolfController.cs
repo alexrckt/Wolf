@@ -37,8 +37,8 @@ public class WolfController : MonoBehaviour
     private GameManager gameManager;
     private float stealthMsFactor = 1f;
     private float carryMsFactor = 1f;
-    float horizontal;
-    float vertical;
+    public float horizontal;
+    public float vertical;
     private Vector3 lastStep;
     public Transform footstepParent;
 

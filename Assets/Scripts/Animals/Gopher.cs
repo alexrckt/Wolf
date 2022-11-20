@@ -8,7 +8,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     private LevelManager levelManager;
     [SerializeField] GameObject bloodObj;
     SheepsClothing sheepsClothing;
-    public float stealthCD = 1f;
+    // public float stealthCD = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     public void IGotEaten()
     {
         levelManager.GopherEaten();
-        sheepsClothing.Stealth(false, stealthCD);
+        sheepsClothing.Stealth(false);
         wolfController.GetComponent<WolfEmotes>().Emote(0); // call emotion "anim"
         var blood = Instantiate(bloodObj, transform.position, Quaternion.identity);
         blood.GetComponent<BloodStain>().BloodSplatter();

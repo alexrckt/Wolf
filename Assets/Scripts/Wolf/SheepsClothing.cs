@@ -5,51 +5,66 @@ using UnityEngine;
 public class SheepsClothing : MonoBehaviour
 {
     public bool isWearingClothing = false;
-    public GameObject clothes;
+    public bool isSeen = false;
+    
     WolfController w_c;
     WolfEmotes w_e;
-    public float defaultCD = 2f; // testing cd for sheep clothes
-    public float currentCD;
+     SheepClothingSlider scs;
+    
     
     void Start()
     {
         w_c = GetComponent<WolfController>();
         w_e = GetComponent<WolfEmotes>();
+        scs = GetComponentInChildren<SheepClothingSlider>();
+        
     }
 
     
     void Update()
     {
         
-        if (Input.GetKeyDown("space") && currentCD > 0)
-        {
-           w_e.Emote(2); // not yet emote if has cd
-        }
         
-        if (Input.GetKeyDown("space") && currentCD <= 0)
+        
+        if (Input.GetKeyDown("space") )
         {
-            isWearingClothing = !isWearingClothing;
-            if (isWearingClothing && !w_c.isCarryingSheep)
+            if ( !isSeen && !w_c.isCarryingSheep && !w_c.isStealthed)
+            
             {
-                Stealth(true, defaultCD);
+                scs.IsPuttingOnClothes(true);
+                //Stealth(true);
             }
-            else
+            else if (w_c.isStealthed && !scs.isDressing)
             {
-                Stealth(false, defaultCD);
+                Stealth(false);
+                
             }
 
         }
-        if (currentCD > 0)
+
+        if (Input.GetKeyUp("space"))
         {
-            currentCD -= Time.deltaTime;
+            if (!w_c.isStealthed)
+            {
+               scs.IsPuttingOnClothes(false);
+              
+            }
         }
+
+        
+        
     }
 
 
-    public void Stealth(bool yesno, float CD)
+    public void Stealth(bool yesno)
     {
-        clothes.SetActive(yesno);
+        
         w_c.IsStealthed(yesno);
-        currentCD = CD;
+        if (yesno == false)
+        {
+          
+          scs.IsPuttingOnClothes(false);
+        }
+        
     }
 }

@@ -21,11 +21,13 @@ public class FarmerController : MonoBehaviour
 
     private Animator animator;
     private GameManager gameManager;
+    SheepsClothing sheepsClothing;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
+        sheepsClothing = FindObjectOfType<SheepsClothing>();
 
         currentState = patrollingState;
         currentState.EnterState(this);
@@ -80,6 +82,7 @@ public class FarmerController : MonoBehaviour
         }
 
         canSeePlayer = false;
+        sheepsClothing.isSeen = false;
         animator.SetBool("playerIsSeen", false);
     }
     public void PlayerSeen(Vector3 lastSeenPosition)
@@ -96,6 +99,7 @@ public class FarmerController : MonoBehaviour
 
         lastPositionOfInterest = lastSeenPosition;
         canSeePlayer = true;
+        sheepsClothing.isSeen = true;
         animator.SetBool("playerIsSeen", true);
     }
 
@@ -108,6 +112,7 @@ public class FarmerController : MonoBehaviour
     public void PlayerInRangeNoSee()
     {
         canSeePlayer = false;
+        sheepsClothing.isSeen = false;
         animator.SetBool("playerIsSeen", false);
         GetComponent<AIDestinationSetter>().target = null;
     }
