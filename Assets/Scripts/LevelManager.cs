@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    //public int sheepStolenGoal;
-    //public int sheepStolenCounter = 0;
     public int levelID;
     public int scoreGoal;
     public LevelData levelData;
@@ -14,17 +13,34 @@ public class LevelManager : MonoBehaviour
     private GameManager gameManager;
     private GameObject inGameUI;
     private GrabAnimals wolfGrabber;
-    //private TextMeshProUGUI sheepStolenCounterUI;
-
-    //[HideInInspector] public bool levelCleared = false;
 
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        levelData = (gameManager.levelEntries.ContainsKey(levelID)) ?
-            gameManager.levelEntries[levelID]:
-            new LevelData(levelID, scoreGoal);
+        if (gameManager.levelEntries.ContainsKey(levelID))
+        {
+            levelData = gameManager.levelEntries[levelID];
+            DeleteAnimals();
+        }
+    }
+
+    public List<GameObject> GetAnimals()
+    {
+        return GameObject.FindGameObjectsWithTag("Sheep")
+                            .Concat(GameObject.FindGameObjectsWithTag("Chicken"))
+                            .Concat(GameObject.FindGameObjectsWithTag("Gopher"))
+                            .ToList();
+    }
+    private void DeleteAnimals()
+    {
+        foreach(var animal in levelData.aliveAnimals)
+        {
+            if(!animal.Value)
+            {
+                Destroy(GameObject.Find(animal.Key));
+            }
+        }
     }
 
     // Start is called before the first frame update
@@ -32,26 +48,20 @@ public class LevelManager : MonoBehaviour
     {
         inGameUI = GameObject.Find("InGameUI");
         wolfGrabber = FindObjectOfType<GrabAnimals>();
-        //sheepStolenCounterUI = inGameUI.GetComponentInChildren<TextMeshProUGUI>();
 
-        //UpdateSheepCounterText();
         gameManager.UpdateLivesText();
         gameManager.UpdateHuntersCounterText();
         gameManager.UpdateScoreText();
         gameManager.huntersCounterOn = false;
         gameManager.huntersArrived = false;
-        //FindObjectOfType<HungerSlider>().SetGoalHunger(scoreGoal);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (sheepStolenCounter >= sheepStolenGoal)
-        //{
-        //    gameManager.LevelWin();
-        //    sheepStolenCounter = 0;
-        //}
-        if (!levelData.levelCleared && levelData.levelScoreGoalGained >= scoreGoal)
+        if (levelData != null && 
+            !levelData.levelCleared 
+            && levelData.levelScoreGoalGained >= scoreGoal)
         {
             LevelCleared();
         }
@@ -61,7 +71,6 @@ public class LevelManager : MonoBehaviour
             && wolfGrabber.isTouchingDropPoint)
         {
             gameManager.LevelWin();
-            //Debug.Log($"Level cleared: {levelData.levelCleared}; isTouching: {wolfGrabber.isTouchingDropPoint}; Score gained: {levelData.levelScoreGoalGained}");
         }
     }
 
@@ -84,15 +93,8 @@ public class LevelManager : MonoBehaviour
 
     public void SheepStolen(int i)
     {
-        //sheepStolenCounter += i;
         gameManager.AddScore(i * gameManager.scoreForSheep);
-        //UpdateSheepCounterText();
     }
-
-    //void UpdateSheepCounterText()
-    //{
-    //    sheepStolenCounterUI.text = $"{sheepStolenCounter} / {sheepStolenGoal}";
-    //}
 
     public void ChickenEaten()
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Chicken : MonoBehaviour, IEatableAnimal
@@ -45,6 +46,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
     {
         sheepsClothing.Stealth(false);
         levelManager.ChickenEaten();
+        levelManager.levelData.aliveAnimals[gameObject.name] = false;
         Instantiate(bloodObj, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

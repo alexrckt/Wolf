@@ -224,21 +224,24 @@ public class GameManager : MonoBehaviour
         if (levelEntries.ContainsKey(currentLevel))
         {
             var levelData = levelEntries[currentLevel];
-            // Delete eaten animals
-
-            // Set hunger slider
-            //Debug.Log($"Entering into existing level, and adding {levelData.levelScoreGoalGained} hunger");
             hungerSlider.SetGoalHunger(levelData.levelScoreGoal);
             hungerSlider.AddFood(levelData.levelScoreGoalGained);
         }
         else
         {
-            var levelData = FindObjectOfType<LevelManager>().levelData;
+            var levelManager = FindObjectOfType<LevelManager>();
+            var levelData = new LevelData(currentLevel, levelManager.scoreGoal);
+            var animals = levelManager.GetAnimals();
+            foreach (var animal in animals)
+            {
+                levelData.aliveAnimals.Add(animal.name, true);
+            }
+            levelManager.levelData = levelData;
+
             levelEntries.Add(currentLevel, levelData);
             hungerSlider.SetGoalHunger(levelData.levelScoreGoal);
         }
 
-        //Debug.Log($"Level Entries count: {levelEntries.Count}");
         currentGameState = GameState.Playing;
     }
     #endregion

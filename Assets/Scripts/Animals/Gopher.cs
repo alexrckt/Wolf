@@ -30,6 +30,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
         wolfController.GetComponent<WolfEmotes>().Emote(0); // call emotion "anim"
         var blood = Instantiate(bloodObj, transform.position, Quaternion.identity);
         blood.GetComponent<BloodStain>().BloodSplatter();
+        levelManager.levelData.aliveAnimals[gameObject.name] = false;
         Destroy(gameObject);
     }
 

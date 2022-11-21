@@ -590,6 +590,10 @@ PrefabInstance:
       propertyPath: hungerSlider
       value: 
       objectReference: {fileID: 388906064}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: scoreForGopher
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744028, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -597,6 +601,14 @@ PrefabInstance:
     - target: {fileID: 2699456486921740678, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Color.a
       value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090654987492822198, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090654987492822198, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -120.53
       objectReference: {fileID: 0}
     - target: {fileID: 6624775380333184097, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_AnchoredPosition.x

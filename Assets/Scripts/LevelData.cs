@@ -15,5 +15,6 @@ public class LevelData
     {
         this.levelID = levelID;
         this.levelScoreGoal = levelScoreGoal;
+        aliveAnimals = new Dictionary<string, bool>();
     }
 }

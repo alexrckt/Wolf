@@ -81,6 +81,7 @@ public class GrabAnimals : MonoBehaviour
             if (wolfController.isCarryingSheep)
             {
                 wolfController.IsCarryingSheep(false);
+                levelManager.levelData.aliveAnimals[sheep.name] = false;
                 Destroy(sheep.gameObject);           
                 levelManager.SheepStolen(1);
             }
