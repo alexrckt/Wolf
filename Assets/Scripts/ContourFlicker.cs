@@ -12,6 +12,9 @@ public class ContourFlicker : MonoBehaviour
         
     }
 
+         private void OnDestroy() {
+        EventManager.OnHungerFull -= StartFlicker;
+    }
     // Update is called once per frame
     void StartFlicker()
     {
