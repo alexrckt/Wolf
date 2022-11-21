@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HungerSlider : MonoBehaviour
 {
     public Slider slider;
-    bool activated = false;
 
     private void Start()
     {
@@ -18,13 +17,14 @@ public class HungerSlider : MonoBehaviour
         slider.value += food;
         if(slider.value >= slider.maxValue)
         {
-            Paint(Color.green);
+            HungerComplited();
         }
-        if(slider.value >= slider.maxValue && !activated)
-        {
-            activated = true;
-            GetComponent<EventManager>().HungerIsFull();
-        }
+    }
+
+    public void HungerComplited()
+    {
+        Paint(Color.green);
+        GetComponent<EventManager>().HungerIsFull();
     }
 
     public void SetGoalHunger(int hungerGoal)
@@ -36,5 +36,10 @@ public class HungerSlider : MonoBehaviour
     public void Paint(Color color)
     {
         transform.Find("Fill").GetComponent<Image>().color = color;
+    }
+    
+    public void ResetColor()
+    {
+        Paint(Color.yellow);
     }
 }

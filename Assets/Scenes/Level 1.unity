@@ -7489,6 +7489,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 694228872}
     m_Modifications:
+    - target: {fileID: 480387482, guid: 294489798fd4eb645bbbb64041cc10d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 965847546667787121, guid: 294489798fd4eb645bbbb64041cc10d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7739648987226258532, guid: 294489798fd4eb645bbbb64041cc10d0, type: 3}
       propertyPath: m_Name
       value: Drop Point (1)

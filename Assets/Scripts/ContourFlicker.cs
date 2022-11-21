@@ -9,10 +9,10 @@ public class ContourFlicker : MonoBehaviour
     void Start()
     {
         EventManager.OnHungerFull += StartFlicker ;
-        
     }
 
-         private void OnDestroy() {
+    private void OnDestroy()
+    {
         EventManager.OnHungerFull -= StartFlicker;
     }
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class ContourFlicker : MonoBehaviour
 
     IEnumerator Flicker()
     {
+        contour.SetActive(true);
         while (true)
         {
             if (contour.activeInHierarchy)
@@ -30,7 +31,7 @@ public class ContourFlicker : MonoBehaviour
             else
             contour.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);
         }
     }
 }

@@ -263,7 +263,7 @@ public class GameManager : MonoBehaviour
             currentGameState = GameState.Playing;
         }
     }
-    public void PauseGame(bool pause)
+    private void PauseGame(bool pause)
     {
         Time.timeScale = pause ? 0f : 1f;
     }

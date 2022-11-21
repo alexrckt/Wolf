@@ -6,13 +6,11 @@ public class EventManager : MonoBehaviour
 {
     public delegate void HungerFull();
     public static event HungerFull OnHungerFull;
-
-
-
-
-   public void HungerIsFull()
-   {
-    if (OnHungerFull != null)
-    {OnHungerFull();}
-   }
+    public void HungerIsFull()
+    {
+        if (OnHungerFull != null)
+        {
+            OnHungerFull(); 
+        }
+    }
 }

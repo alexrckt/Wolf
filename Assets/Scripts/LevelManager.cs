@@ -17,11 +17,17 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        var slider = FindObjectOfType<HungerSlider>();
+        slider.ResetColor();
 
         if (gameManager.levelEntries.ContainsKey(levelID))
         {
             levelData = gameManager.levelEntries[levelID];
             DeleteAnimals();
+            if(levelData.levelCleared)
+            {
+                slider.HungerComplited();
+            }
         }
     }
 
