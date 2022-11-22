@@ -49,7 +49,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
+  fov: 180
+  origin: {x: 0, y: 0, z: 0}
   startingAngle: 0
+  viewDistance: 10
+  rayCount: 55
 --- !u!33 &1700648513921779096
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -78,7 +82,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13d089d29f6e7b3409abac50e7580c8f, type: 2}
+  - {fileID: 2100000, guid: 61b89fe75af132249ba5700ee0334a72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
