@@ -6,6 +6,7 @@ public class GrabAnimals : MonoBehaviour
 {
     bool isTouchingSheep;
     public bool isTouchingEatable;
+    public bool isTouchingFence = false;
     [HideInInspector] public bool isTouchingDropPoint;
     public Transform mouth;
     public int sheepValue = 1;
@@ -41,7 +42,7 @@ public class GrabAnimals : MonoBehaviour
                 we.Emote(1);
                 return;
             }
-            else if (wolfController.isCarryingSheep)
+            else if (wolfController.isCarryingSheep && !isTouchingFence)
             {
                 sheep.GetComponent<CircleCollider2D>().enabled = true;
                 sheep.SetParent(null);
@@ -69,6 +70,10 @@ public class GrabAnimals : MonoBehaviour
            sheep = other.gameObject.transform;
 
         }
+        if (other.gameObject.tag == "Fences")
+        {
+            isTouchingFence = true;
+        }
          
     
     }
@@ -86,6 +91,8 @@ public class GrabAnimals : MonoBehaviour
                 levelManager.SheepStolen(1);
             }
         }
+
+        
     }
 
     private void OnCollisionExit2D(Collision2D other) 
@@ -94,6 +101,10 @@ public class GrabAnimals : MonoBehaviour
         {
            isTouchingSheep = false;
         }
+        if (other.gameObject.tag == "Fences")
+        {
+            isTouchingFence = false;
+        }
      }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -101,5 +112,7 @@ public class GrabAnimals : MonoBehaviour
         {
             isTouchingDropPoint = false;
         }
+
+         
     }
 }

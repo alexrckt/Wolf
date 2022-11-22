@@ -17,6 +17,7 @@ TagManager:
   - FarmerAgitatedPatrolSpot
   - Chicken
   - Gopher
+  - Fences
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,55 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 3377829923
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 3298099639
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 3128474337
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 68649169
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 1628058727
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 3483706995
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 2194557783
+    locked: 0
+  - name: New Layer 8
+    uniqueID: 1780623399
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 1167964883
+    locked: 0
+  - name: New Layer 10
+    uniqueID: 2203153319
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 2201590585
+    locked: 0
+  - name: New Layer 12
+    uniqueID: 3969822801
+    locked: 0
+  - name: New Layer 13
+    uniqueID: 1742531417
+    locked: 0
+  - name: New Layer 14
+    uniqueID: 896049235
+    locked: 0
+  - name: New Layer 15
+    uniqueID: 2819086623
+    locked: 0
+  - name: New Layer 16
+    uniqueID: 836956341
+    locked: 0
+  - name: New Layer 17
+    uniqueID: 3474312631
     locked: 0

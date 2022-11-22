@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
     public int maxLevel = 2;
     [HideInInspector]
     public int livesCurrent;
-    [HideInInspector]
-    public float huntersCounter;
+    
+    public float huntersCounter = 30f;
     [HideInInspector]
     public bool huntersArrived = false;
     [HideInInspector]
@@ -110,12 +110,15 @@ public class GameManager : MonoBehaviour
         while (duration >= 0)
         {
             duration -= Time.deltaTime;
-            textField.SetText($"Hunters arrives in " + duration.ToString("0.00"));
+            textField.SetText($"Hunters arrive in " + duration.ToString("0.00"));
             yield return null;
         }
-        textField.SetText("CAVALRY'S HERE!");
+        textField.SetText("THE CAVALRY IS HERE!");
         huntersCounterOn = false;
         huntersArrived = true;
+        livesCurrent--;
+        LevelFail(); // temp solution
+
     }
 
     public void AddScore(int scoreToAdd)
@@ -286,7 +289,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 1;
+        currentLevel = 2; // temp
         bones = 0;
         livesCurrent = livesInitial;
         huntersArrived = false;

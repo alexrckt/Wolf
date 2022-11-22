@@ -1130,7 +1130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480556, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480557, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_RootOrder
@@ -9108,7 +9108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480556, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480557, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_RootOrder
@@ -9168,10 +9168,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2106051138}
     m_Modifications:
-    - target: {fileID: 336064165, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
-      propertyPath: waitTimeLostTargetMax
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1682475451, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: fovVisual
       value: 
@@ -9223,10 +9219,6 @@ PrefabInstance:
     - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_Name
       value: Dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
@@ -9375,7 +9367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480556, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480557, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_RootOrder
@@ -16513,7 +16505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480556, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480557, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_RootOrder
@@ -18975,10 +18967,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 3835956194075070746, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
-      propertyPath: m_TagString
-      value: Chicken
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
 --- !u!1001 &2141293812
@@ -19559,7 +19547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480556, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4408437179040480557, guid: d742816996e0cb04cbba105f67214568, type: 3}
       propertyPath: m_RootOrder

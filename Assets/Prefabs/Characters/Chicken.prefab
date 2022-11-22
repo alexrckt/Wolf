@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3192856268108907795}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animRangeMin: 2
   animRangeMax: 7
-  chickenScoreVal: 0
-  stealthCD: 1
   bloodObj: {fileID: 8902297620899934996, guid: 23982d224085fc348a301316d83081cf, type: 3}
 --- !u!61 &3192856268108907795
 BoxCollider2D:
@@ -137,7 +135,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0030662715, y: 0.009199925}
+  m_Offset: {x: 0.0030662417, y: 0.016548142}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,5 +146,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4779992, y: 0.49120045}
+  m_Size: {x: 0.5955714, y: 0.59407675}
   m_EdgeRadius: 0

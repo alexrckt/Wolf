@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3625356214966437049}
   - component: {fileID: 3625356214966437050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NoCol_Rotated_Fence_Lying_Single
-  m_TagString: Untagged
+  m_TagString: Fences
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

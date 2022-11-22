@@ -530,9 +530,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: livesInitial
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: scoreForSheep
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: huntersCounter
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744028, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823125387407744884, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522591485560220825, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7806740092620725724, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -545,6 +565,18 @@ PrefabInstance:
     - target: {fileID: 7806740092620725724, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843399912879467063, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843399913612767247, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843399914263428589, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
