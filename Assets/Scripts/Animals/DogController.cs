@@ -38,11 +38,16 @@ public class DogController : MonoBehaviour
     AIDestinationSetter aids;
     AIPath aiPath;
     private Barker barker;
-    
+    private float TimeInterval;
+    private float timerDuration;
+
     public GameObject debugTar;
     GameObject lastPlayerPosTarget;
     Transform target;
     public Transform footstepParent;
+
+    public delegate void OnFarmerSee(Transform wolfPosition);
+    public static OnFarmerSee onFarmerSee;
     
     void Start()
     {
@@ -56,7 +61,14 @@ public class DogController : MonoBehaviour
         SetCalmState();
         StartCoroutine(Move());
 
+        onFarmerSee += RunToPosition;
+
         //InvokeRepeating("Debugging", 1f, 1f);
+    }
+
+    private void OnDestroy()
+    {
+        onFarmerSee -= RunToPosition;
     }
 
     void Update()
@@ -119,15 +131,14 @@ public class DogController : MonoBehaviour
 
     public void SetChasingState()
     {
-        
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
         barker.AnimationSwitch(true);
+        FarmerController.onHearBarking();
     }
 
     public void SetLostTargetState()
     {
-        
         currentState = State.LostTarget;
         aiPath.maxSpeed = maxSpeedLostTarget;
         barker.AnimationSwitch(false);
@@ -172,19 +183,22 @@ public class DogController : MonoBehaviour
             }
 
             var initialState = currentState;
-            while(target != null && Vector2.Distance(transform.position, target.position) > 0.2f
-                  && initialState == currentState )
+            var initialTarget = target;
+            while (target != null
+                && initialTarget == target
+                && Vector2.Distance(transform.position, target.position) > 0.2f
+                && initialState == currentState )
             {
                 aids.target = target;
                 yield return null;
             }
-            
+
             //Timer
-            var duration = GetWaitTime();
-            while (duration >= 0
+            timerDuration = GetWaitTime();
+            while (timerDuration >= 0
                    && currentState != State.Chasing)
             {
-                duration -= Time.deltaTime;
+                timerDuration -= Time.deltaTime;
                 yield return null;
             }
 
@@ -225,5 +239,25 @@ public class DogController : MonoBehaviour
         }
 
         return Random.Range(min, max);
+    }
+
+    void LateUpdate()
+    {
+        TimeInterval += Time.deltaTime;
+    }
+
+    private void RunToPosition(Transform wolfPosition)
+    {
+        if(currentState != State.Chasing)
+        {
+            if (TimeInterval >= 1)
+            {
+                TimeInterval = 0;
+                timerDuration = 0;
+                aiPath.maxSpeed = maxSpeedChasing;
+                lastPlayerPosTarget = Instantiate(debugTar, wolfPosition.position, Quaternion.identity);
+                SetLostTargetState();
+            }
+        }
     }
 }

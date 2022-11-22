@@ -9,7 +9,7 @@ public class FarmerShooting : MonoBehaviour
     public float timeBtwShots = 3f;
     public float startTimeBtwShots = 3f;
 
-    Transform player;
+    public Transform player;
     public GameObject projectile;
     public Transform riflePoint;
     AIPath aiPath;
@@ -61,6 +61,7 @@ public class FarmerShooting : MonoBehaviour
         if (farmerController.canSeePlayer)
         {
             aids.target = player;
+            DogController.onFarmerSee(player.transform);
             if (timeBtwShots <= 0)
             {
                 Instantiate(crosshair, player.position, Quaternion.identity);

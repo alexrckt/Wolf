@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 public class FarmerController : MonoBehaviour
 {
     public float maxSpeed = 2f;
-
     public float waitOnLost = 0f;
 
     public FarmerBaseState currentState;
@@ -23,6 +22,9 @@ public class FarmerController : MonoBehaviour
     private GameManager gameManager;
     SheepsClothing sheepsClothing;
 
+    public delegate void OnHearBarking();
+    public static OnHearBarking onHearBarking;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,6 +34,13 @@ public class FarmerController : MonoBehaviour
         currentState = patrollingState;
         currentState.EnterState(this);
         currentState.EnterStateLog();
+
+        onHearBarking += HeardAlarm;
+    }
+
+    private void OnDestroy()
+    {
+        onHearBarking -= HeardAlarm;
     }
 
     // Update is called once per frame
@@ -105,9 +114,12 @@ public class FarmerController : MonoBehaviour
 
     public void HeardAlarm()
     {
-        agitated = true;
-        if (!currentState.Equals(shootingState))
+        if (!currentState.Equals(shootingState) && !agitated)
+        {
+            agitated = true;
             SwitchState(patrollingState);
+        }
+            
     }
     public void PlayerInRangeNoSee()
     {

@@ -41,6 +41,6 @@ public abstract class FarmerBaseState
 
     public void EnterStateLog()
     {
-        Debug.Log($"Entering {stateName} state");
+        //Debug.Log($"Entering {stateName} state");
     }
 }
