@@ -24,7 +24,7 @@ public class WolfController : MonoBehaviour
     [HideInInspector] public Vector2 lastMotionVector;
     Animator animator;
     GrabAnimals _grabAnimals;
-    bool moving;
+    public bool moving;
 
     [HideInInspector] public bool isStealthed;
     [HideInInspector] public bool isCarryingSheep;
@@ -53,6 +53,7 @@ public class WolfController : MonoBehaviour
         Footsteps = new LinkedList<FootStepFade>();
         gameManager = FindObjectOfType<GameManager>();
         footstepParent = GameObject.FindGameObjectWithTag("FootstepParent").transform;
+       
 
         //InvokeRepeating("Debugging", 1f, 1f);
     }

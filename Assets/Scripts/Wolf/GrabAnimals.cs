@@ -18,6 +18,7 @@ public class GrabAnimals : MonoBehaviour
     private LevelManager levelManager;
     WolfEmotes we;
     public IEatableAnimal eatableAnimal;
+    EventManager em;
     
 
     void Start()
@@ -26,6 +27,7 @@ public class GrabAnimals : MonoBehaviour
         sheepsClothing = GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
         we = GetComponent<WolfEmotes>();
+        em = FindObjectOfType<EventManager>();
     }
     
     void Update()
@@ -40,6 +42,7 @@ public class GrabAnimals : MonoBehaviour
                 wolfController.IsCarryingSheep(true);
                 sheepsClothing.Stealth(false);
                 we.Emote(1);
+                em.GrabbedDatSheep();
                 return;
             }
             else if (wolfController.isCarryingSheep && !isTouchingFence)

@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
             DeleteAnimals();
             if(levelData.levelCleared)
             {
-                slider.HungerComplited();
+                slider.HungerCompleted();
             }
         }
     }

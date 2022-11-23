@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int livesCurrent;
     
-    public float huntersCounter = 30f;
+    public float huntersCounter = 40f;
     [HideInInspector]
     public bool huntersArrived = false;
     [HideInInspector]
@@ -289,7 +289,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 2; // temp
+        currentLevel = 0; // temp
         bones = 0;
         livesCurrent = livesInitial;
         huntersArrived = false;

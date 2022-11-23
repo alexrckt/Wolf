@@ -17,11 +17,11 @@ public class HungerSlider : MonoBehaviour
         slider.value += food;
         if(slider.value >= slider.maxValue)
         {
-            HungerComplited();
+            HungerCompleted();
         }
     }
 
-    public void HungerComplited()
+    public void HungerCompleted()
     {
         Paint(Color.green);
         GetComponent<EventManager>().HungerIsFull();
