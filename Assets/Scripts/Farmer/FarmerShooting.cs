@@ -61,7 +61,7 @@ public class FarmerShooting : MonoBehaviour
         if (farmerController.canSeePlayer)
         {
             aids.target = player;
-            DogController.onFarmerSee(player.transform);
+            DogController.onAttention(player.transform);
             if (timeBtwShots <= 0)
             {
                 Instantiate(crosshair, player.position, Quaternion.identity);

@@ -433,13 +433,7 @@ MonoBehaviour:
   waitTimeLostTargetMin: 0
   waitTimeLostTargetMax: 2
   currentState: 0
-  moveSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  moveSpots: []
   debugTar: {fileID: 4722391235620918325, guid: 220b779cf62559248a119a70b2553738, type: 3}
   footstepParent: {fileID: 0}
 --- !u!114 &336064166

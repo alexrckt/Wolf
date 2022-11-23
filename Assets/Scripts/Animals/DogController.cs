@@ -46,29 +46,33 @@ public class DogController : MonoBehaviour
     Transform target;
     public Transform footstepParent;
 
-    public delegate void OnFarmerSee(Transform wolfPosition);
-    public static OnFarmerSee onFarmerSee;
+    public delegate void OnAttention(Transform wolfPosition);
+    public static OnAttention onAttention;
     
     void Start()
     {
         playerRef = FindObjectOfType<WolfController>();
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
-        moveSpots = GameObject.FindGameObjectsWithTag("DogPatrolSpot").ToList();
         barker = GetComponentInChildren<Barker>();
+
+        if (moveSpots == null || moveSpots.Count <= 0)
+        {
+            moveSpots = GameObject.FindGameObjectsWithTag("DogPatrolSpot").ToList();
+        }
 
         barker.AnimationSwitch(false);
         SetCalmState();
         StartCoroutine(Move());
 
-        onFarmerSee += RunToPosition;
+        onAttention += RunToPosition;
 
         //InvokeRepeating("Debugging", 1f, 1f);
     }
 
     private void OnDestroy()
     {
-        onFarmerSee -= RunToPosition;
+        onAttention -= RunToPosition;
     }
 
     void Update()
@@ -134,7 +138,12 @@ public class DogController : MonoBehaviour
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
         barker.AnimationSwitch(true);
-        FarmerController.onHearBarking();
+        try
+        {
+            FarmerController.onHearBarking();
+        } catch(Exception ex) { }
+        
+        onAttention(playerRef.transform); // for other dog instances
     }
 
     public void SetLostTargetState()
