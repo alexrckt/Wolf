@@ -6,6 +6,7 @@ public class FOVVisualDebug : MonoBehaviour
 {
     [SerializeField] GameObject fovDog;
     [SerializeField] GameObject fovFarmer;
+    [SerializeField] GameObject fovDog2;
     public bool fovIsOn = false;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class FOVVisualDebug : MonoBehaviour
             if (fovIsOn)
             {
                 fovDog.SetActive(false);
+                if (fovDog2 != null)
+                fovDog2.SetActive(false);
                 fovFarmer.SetActive(false);
                 fovIsOn = false;
             }
@@ -28,6 +31,8 @@ public class FOVVisualDebug : MonoBehaviour
             else if (!fovIsOn)
             {
                 fovDog.SetActive(true);
+                if (fovDog2 != null)
+                fovDog2.SetActive(true);
                 fovFarmer.SetActive(true);
                 fovIsOn = true;
             }

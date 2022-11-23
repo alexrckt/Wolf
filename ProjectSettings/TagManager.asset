@@ -31,7 +31,7 @@ TagManager:
   - Collidable
   - Farmer
   - Fences
-  - 
+  - CantSeeThrough
   - 
   - 
   - 
@@ -55,16 +55,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Static obj
     uniqueID: 3377829923
     locked: 0
-  - name: New Layer 2
+  - name: NPCs
     uniqueID: 3298099639
     locked: 0
-  - name: New Layer 3
+  - name: Player
     uniqueID: 3128474337
     locked: 0
-  - name: New Layer 4
+  - name: Static obj shadow
     uniqueID: 68649169
     locked: 0
   - name: New Layer 5
