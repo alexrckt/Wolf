@@ -52,7 +52,7 @@ public class WolfController : MonoBehaviour
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
         gameManager = FindObjectOfType<GameManager>();
-        footstepParent = GameObject.FindGameObjectWithTag("FootstepParent").transform;
+        footstepParent = GameObject.FindGameObjectWithTag("FootstepParent")?.transform;
        
 
         //InvokeRepeating("Debugging", 1f, 1f);
@@ -89,9 +89,9 @@ public class WolfController : MonoBehaviour
 
     void Move()
     {
-        moveSpeedCurrent = 
-            (moveInput.x != 0 && moveInput.y != 0 ? moveSpeed / 2 : moveSpeed) 
-            * stealthMsFactor * carryMsFactor ;
+        moveSpeedCurrent =
+            (moveInput.x != 0 && moveInput.y != 0 ? moveSpeed / 1.4f : moveSpeed)
+            * stealthMsFactor * carryMsFactor;
         rb.velocity = moveInput * moveSpeedCurrent;
     }
 
