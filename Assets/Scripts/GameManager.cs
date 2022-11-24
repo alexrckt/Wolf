@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public int livesInitial;
     public int score;
     public int bones;
+    EventManager em;
+    public bool tutStarted = false;
+    public bool level1Started = false;
+    
 
     [Header("Score")]
     public int scoreForSheep;
@@ -53,6 +57,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameWinMenu;
     private GameObject currentActiveMenu;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +74,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ResetGame();
         currentGameState = GameState.MainMenu;
+        em = FindObjectOfType <EventManager>();
         levelEntries = new Dictionary<int, LevelData>();
     }
 
@@ -212,6 +219,17 @@ public class GameManager : MonoBehaviour
         var levelName = $"Level {currentLevel}";
         SceneManager.LoadScene(levelName);
         StartCoroutine("WaitForSceneLoad", levelName);
+        if (currentLevel == 0 && !tutStarted)
+        {
+            em.TutStart();
+            tutStarted = true;
+        }
+        if (currentLevel == 1 && !level1Started)
+        {
+            em.Level0Complete();
+            level1Started = true;
+        }
+        
     }
 
     public void LoadMainMenu()
@@ -292,7 +310,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 1; // temp
+        currentLevel = 0; // temp
         bones = 0;
         livesCurrent = livesInitial;
         huntersArrived = false;

@@ -14,6 +14,7 @@ public class WolfEmotes : MonoBehaviour
     {
         currentEmote = transform.Find("currentEmote").gameObject;
         EventManager.OnHungerFull += EmoteToForest;
+        EventManager.OnFirstBlood += EmoteFirstBlood;
     }
 
      private void OnDestroy() {
@@ -45,5 +46,10 @@ public class WolfEmotes : MonoBehaviour
     void EmoteToForest()
     {
         Emote(2);
+    }
+
+    void EmoteFirstBlood()
+    {
+        // Emote(firstblood)
     }
 }

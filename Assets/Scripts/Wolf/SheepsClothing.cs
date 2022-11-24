@@ -12,11 +12,13 @@ public class SheepsClothing : MonoBehaviour
      SheepClothingSlider scs;
     
     
+    
     void Start()
     {
         w_c = GetComponent<WolfController>();
         w_e = GetComponent<WolfEmotes>();
         scs = GetComponentInChildren<SheepClothingSlider>();
+        
         
     }
 

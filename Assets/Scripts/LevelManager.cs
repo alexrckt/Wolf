@@ -13,10 +13,12 @@ public class LevelManager : MonoBehaviour
     private GameManager gameManager;
     private GameObject inGameUI;
     private GrabAnimals wolfGrabber;
+     EventManager em;
 
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        em = FindObjectOfType<EventManager>();
         var slider = FindObjectOfType<HungerSlider>();
         slider.ResetColor();
 
@@ -105,6 +107,10 @@ public class LevelManager : MonoBehaviour
     public void ChickenEaten()
     {
         gameManager.AddScore(gameManager.scoreForChicken);
+        if (gameManager.currentLevel == 0)
+        {
+          em.FirstBlood();
+        }
     }
 
     public void GopherEaten()

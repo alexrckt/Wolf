@@ -41,6 +41,8 @@ public class WolfController : MonoBehaviour
     public float vertical;
     private Vector3 lastStep;
     public Transform footstepParent;
+    bool shouldSendWASD = true;
+    EventManager em;
 
     // Start is called before the first frame update
     void Awake()
@@ -52,7 +54,11 @@ public class WolfController : MonoBehaviour
         lastStep = new Vector3();
         Footsteps = new LinkedList<FootStepFade>();
         gameManager = FindObjectOfType<GameManager>();
+        em = FindObjectOfType<EventManager>();
+        
         footstepParent = GameObject.FindGameObjectWithTag("FootstepParent")?.transform;
+
+
        
 
         //InvokeRepeating("Debugging", 1f, 1f);
@@ -93,6 +99,12 @@ public class WolfController : MonoBehaviour
             (moveInput.x != 0 && moveInput.y != 0 ? moveSpeed / 1.4f : moveSpeed)
             * stealthMsFactor * carryMsFactor;
         rb.velocity = moveInput * moveSpeedCurrent;
+
+        if (shouldSendWASD && (moveInput.x != 0 || moveInput.y != 0))
+        {
+            em.WASD();
+            shouldSendWASD = false;
+        }
     }
 
     void SpawnFootsteps()
@@ -121,6 +133,10 @@ public class WolfController : MonoBehaviour
     {
         isStealthed = yesno;
         stealthMsFactor = yesno ? 0.5f : 1f;
+        if (yesno == true)
+        {
+          em.DisguisePut();
+        }
     }
  
     public void IsCarryingSheep(bool yesno)
@@ -157,4 +173,7 @@ public class WolfController : MonoBehaviour
         }
     }
 
+    
+
+     
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HungerSlider : MonoBehaviour
 {
     public Slider slider;
+    public EventManager em;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class HungerSlider : MonoBehaviour
     public void HungerCompleted()
     {
         Paint(Color.green);
-        GetComponent<EventManager>().HungerIsFull();
+        em.HungerIsFull();
     }
 
     public void SetGoalHunger(int hungerGoal)
