@@ -1,5 +1,6 @@
 using Pathfinding;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,13 +11,16 @@ public class FarmerController : MonoBehaviour
 
     public FarmerBaseState currentState;
     public FarmerPatrollingState patrollingState = new FarmerPatrollingState();
-    //public FarmerConcernedState concernedState = new FarmerConcernedState();
     public FarmerShootingState shootingState = new FarmerShootingState();
     
     public bool isWaiting = false;
     public bool canSeePlayer = false;
     public bool agitated = false;
     public Vector3 lastPositionOfInterest;
+
+    public bool hasSpecificRoute = false;
+    public List<GameObject> moveSpots;
+    public LinkedList<GameObject> moveSpotsLinked;
 
     private Animator animator;
     private GameManager gameManager;
@@ -30,6 +34,9 @@ public class FarmerController : MonoBehaviour
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         sheepsClothing = FindObjectOfType<SheepsClothing>();
+
+        if(hasSpecificRoute)
+            moveSpotsLinked = new LinkedList<GameObject>(moveSpots);
 
         currentState = patrollingState;
         currentState.EnterState(this);

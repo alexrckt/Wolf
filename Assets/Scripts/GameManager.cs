@@ -116,9 +116,12 @@ public class GameManager : MonoBehaviour
         textField.SetText("THE CAVALRY IS HERE!");
         huntersCounterOn = false;
         huntersArrived = true;
-        livesCurrent--;
-        LevelFail(); // temp solution
+        HuntersArrival();
+    }
 
+    public void HuntersArrival()
+    {
+        GameObject.Find("NPCs").transform.Find("Hunters").gameObject.SetActive(true);
     }
 
     public void AddScore(int scoreToAdd)
@@ -289,7 +292,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 0; // temp
+        currentLevel = 1; // temp
         bones = 0;
         livesCurrent = livesInitial;
         huntersArrived = false;

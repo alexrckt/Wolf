@@ -8,9 +8,10 @@ using UnityEngine;
 
 public class FarmerPatrollingState : FarmerBaseState
 {
-    List<GameObject> moveSpots;
-    private Transform currentRandomSpot;
+    LinkedList<GameObject> moveSpots;
+    private LinkedListNode<GameObject> currentSpot;
     private AIPath farmerAIPath;
+    private FarmerController farmer;
 
     public bool afterContact = false;
 
@@ -22,19 +23,26 @@ public class FarmerPatrollingState : FarmerBaseState
 
     public override void EnterState(FarmerController farmer)
     {
-        farmerAIPath = GameObject.FindObjectOfType<FarmerController>().GetComponent<AIPath>();
+        farmerAIPath = farmer.GetComponent<AIPath>();
+        this.farmer = farmer;
 
-        var patrolSpotTagName = "FarmerPatrolSpot";
-
-        if (farmer.agitated)
+        if (farmer.hasSpecificRoute)
         {
-            patrolSpotTagName = "FarmerAgitatedPatrolSpot";
-            waitTimeMin = waitTimeMax = 0f;
+            moveSpots = farmer.moveSpotsLinked;
+            currentSpot = GetNextSpot(farmer.moveSpotsLinked.First);
+        } else
+        {
+            var patrolSpotTagName = "FarmerPatrolSpot";
+
+            if (farmer.agitated)
+            {
+                patrolSpotTagName = "FarmerAgitatedPatrolSpot";
+                waitTimeMin = waitTimeMax = 0f;
+            }
+
+            moveSpots = new LinkedList<GameObject>(GameObject.FindGameObjectsWithTag(patrolSpotTagName));
+            currentSpot = GetNextSpot();
         }
-
-        moveSpots = GameObject.FindGameObjectsWithTag(patrolSpotTagName).ToList();
-
-        currentRandomSpot = GetRandomSpot();
 
         farmerAIPath.maxSpeed = farmer.maxSpeed;
     }
@@ -51,9 +59,9 @@ public class FarmerPatrollingState : FarmerBaseState
 
         if (!farmer.isWaiting)
         {
-            if (!Move(farmer.transform, currentRandomSpot))
+            if (!Move(farmer.transform, currentSpot?.Value.transform))
             {
-                currentRandomSpot = GetRandomSpot();
+                currentSpot = farmer.hasSpecificRoute ? GetNextSpot(currentSpot) : GetNextSpot();
                 farmer.SetWaitTimer();
             }
         }
@@ -64,8 +72,12 @@ public class FarmerPatrollingState : FarmerBaseState
 
     }
 
-    public Transform GetRandomSpot()
+    public LinkedListNode<GameObject> GetNextSpot()
     {
-        return moveSpots[Random.Range(0, moveSpots.Count)].transform;
+        return moveSpots.Find(moveSpots.ToList<GameObject>()[Random.Range(0, moveSpots.Count)]);
+    }
+    public LinkedListNode<GameObject> GetNextSpot(LinkedListNode<GameObject> spot)
+    {
+        return spot == null ? farmer.moveSpotsLinked.First : spot.Next;
     }
 }
