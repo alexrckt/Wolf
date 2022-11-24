@@ -114,6 +114,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 2070707938492374420}
     m_Modifications:
     - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -124,12 +136,28 @@ PrefabInstance:
     - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3897433315894998697, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -140,12 +168,28 @@ PrefabInstance:
     - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3897433316817607412, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -156,12 +200,28 @@ PrefabInstance:
     - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3897433317781623424, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -172,6 +232,10 @@ PrefabInstance:
     - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4719834316511801134, guid: 89327a6e9c72e4e65b669faa90bd3b1f, type: 3}
       propertyPath: m_textInfo.characterCount
@@ -597,6 +661,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2070707938492374420}
     m_Modifications:
+    - target: {fileID: 1539368653998908858, guid: d3bee2b5e70b74f94a0b33605a4efc76, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuantumTek.QuantumUI.QUI_SwitchToggle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496225189742537960, guid: d3bee2b5e70b74f94a0b33605a4efc76, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuantumTek.QuantumUI.QUI_SwitchToggle, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3597043903049039908, guid: d3bee2b5e70b74f94a0b33605a4efc76, type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
