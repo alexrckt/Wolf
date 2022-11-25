@@ -36,8 +36,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Dictionary<int, LevelData> levelEntries;
 
-    [HideInInspector]
-    public int maxLevel = 2;
+    public int maxLevel = 4;
     [HideInInspector]
     public int livesCurrent;
     
@@ -165,7 +164,7 @@ public class GameManager : MonoBehaviour
         PauseGame(true);
         currentGameState = GameState.EndGame;
 
-        if (currentLevel == maxLevel)
+        if (currentLevel >= maxLevel)
         {
             GameWin();
             return;
