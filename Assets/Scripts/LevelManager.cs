@@ -118,5 +118,10 @@ public class LevelManager : MonoBehaviour
         gameManager.livesCurrent += 1;
         gameManager.AddScore(gameManager.scoreForGopher);
         gameManager.UpdateLivesText();
+
+        if (gameManager.currentLevel == 1)
+        {
+          em.GopherEaten();
+        }
     }
 }

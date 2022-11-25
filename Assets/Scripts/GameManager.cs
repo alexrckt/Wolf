@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     EventManager em;
     public bool tutStarted = false;
     public bool level1Started = false;
+    public bool level2Started = false;
+    public bool level3Started = false;
     
 
     [Header("Score")]
@@ -228,6 +230,18 @@ public class GameManager : MonoBehaviour
             em.Level0Complete();
             level1Started = true;
         }
+        if (currentLevel == 2 && !level2Started)
+        {
+            em.Level1Complete();
+            level2Started = true;
+        }
+        if (currentLevel == 3 && !level3Started)
+        {
+            em.TutComplete();
+            level3Started = true;
+        }
+
+
         
     }
 

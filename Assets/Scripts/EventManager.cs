@@ -20,18 +20,24 @@ public class EventManager : MonoBehaviour
     public static event Tutorialka OnFirstBlood;
     public static event Tutorialka OnLevel0Complete;
     public static event Tutorialka OnDisguisePut;
-    bool WASDSent = false;
-    bool grabbedSheep = false;
-    bool disguisePut = false;
+    public static event Tutorialka OnGopherEaten;
+    public static event Tutorialka OnLevel1Complete;
+    public static event Tutorialka OnTutComplete;
+
+    public bool WASDSent = false;
+    public bool grabbedSheep = false;
+    public bool disguisePut = false;
+    public bool level0HungerIsFull = false;
 
     
     
 
     public void HungerIsFull()
     {
-        if (OnHungerFull != null)
+        if (OnHungerFull != null && !level0HungerIsFull)
         {
             OnHungerFull(); 
+            level0HungerIsFull = true;
         }
     }
     
@@ -87,6 +93,34 @@ public class EventManager : MonoBehaviour
         {
             OnDisguisePut();
             disguisePut = true;
+        }
+    }
+
+    public void GopherEaten()
+    {
+         if (OnGopherEaten != null )
+        {
+            OnGopherEaten();
+            
+        }
+    }
+
+    public void Level1Complete()
+    {
+         if (OnLevel1Complete != null )
+        {
+            OnLevel1Complete();
+            
+        }
+    }
+    
+
+    public void TutComplete()
+    {
+         if (OnTutComplete != null )
+        {
+            OnTutComplete();
+            
         }
     }
     
