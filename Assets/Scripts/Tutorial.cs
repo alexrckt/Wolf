@@ -28,6 +28,8 @@ public class Tutorial : MonoBehaviour
     bool barIsFlickering = false;
     public float hungerBarFlickerTime = 5f;
     public bool isOn = true;
+    public bool fading = false;
+    public bool fadeAndDisappear = false;
     
     
     
@@ -67,17 +69,36 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fading)
+        {
+            if (hints.alpha >= 0.25f && !fadeAndDisappear)
+             {hints.alpha -= 0.07f * Time.deltaTime;}
+             
+             if (fadeAndDisappear && hints.alpha > 0)
+             {hints.alpha -= 0.1f * Time.deltaTime;}
+
+
+
+             
+        
+        }
+      
        
+       
+       
+
+
     }
 
     void TutStart()
     {
         
         turnOff.SetActive(true);
-        hints.gameObject.SetActive(false);
+        //hints.gameObject.SetActive(false);
         currentState = tutState.WASD;
         hints.text = "To move, use WASD or arrows";
-        
+        Fading(true);
+
     }
 
     void StartWASDToAnimals()
@@ -92,8 +113,13 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         currentState = tutState.Animals;
         hints.text = "You feel your stomach growling...";
-        barIsFlickering = true;
-        StartCoroutine(FlickerHungerBar());
+        Fading(true);
+        if (isOn)
+        {
+          barIsFlickering = true;
+          StartCoroutine(FlickerHungerBar());
+        }
+       
         
         // maybe fading text
         yield return new WaitForSeconds(hungerBarFlickerTime);
@@ -102,7 +128,8 @@ public class Tutorial : MonoBehaviour
         hungerBarFill.SetActive(true);
         if (currentState == tutState.Animals)
         {
-          hints.text = "To eat an animal or grab a sheep, press G";
+          hints.text = "To eat an animal or grab a sheep, press <G>";
+          Fading(true);
         }
 
     }
@@ -128,6 +155,7 @@ public class Tutorial : MonoBehaviour
     {
       currentState = tutState.GrabSheep;
       hints.text = "Drag that juicy sheep to the forest!"; 
+      Fading(true);
       
     }
 
@@ -144,14 +172,17 @@ public class Tutorial : MonoBehaviour
         // disable space to exit lvl function temporarily
        currentState = tutState.DeliveredSheep;
         hints.text = "You earn points when you eat animals";
+        Fading(true);
         // flicker points
         
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         if (currentState == tutState.DeliveredSheep)
         hints.text = "You can escape to the forest when you're full";
-        yield return new WaitForSeconds(2f);
+        Fading(true);
+        yield return new WaitForSeconds(3f);
         if (currentState == tutState.DeliveredSheep)
         hints.text = "Or stay and eat as many animals as you can!";
+        FadeAndDisappear(true);
         // enable space to exit
 
      }
@@ -168,11 +199,15 @@ public class Tutorial : MonoBehaviour
     }
     IEnumerator DeliveredToSheepsClothing() //        EventManager.OnLevel0Complete
     {
+         FadeAndDisappear(false);
         hints.text = "Dogs can smell you... ";
+        Fading(true);
         yield return new WaitForSeconds(3f);
         hints.text = "but they can't see you very well";
+        Fading(true);
         yield return new WaitForSeconds(3f);
         hints.text = "To fool a dog, put on your disguise - hold <Space>!";
+        Fading(true);
 
     }
 
@@ -186,19 +221,23 @@ public class Tutorial : MonoBehaviour
     {
        currentState = tutState.Gopher;
        hints.text = "Well done!";
+       Fading(true);
        yield return new WaitForSeconds(2f);
        if (currentState == tutState.Gopher)
        hints.text = "A wolf isn't picky about food ";
+       Fading(true);
        yield return new WaitForSeconds(3f);
        if (currentState == tutState.Gopher)
        hints.text = "A gopher might not be as yummy as a sheep...";
+       Fading(true);
        // start flickering gopher contour
        yield return new WaitForSeconds(3f);
        if (currentState == tutState.Gopher)
-       hints.text = "But edible";
+       hints.text = "But is strangely energizing";
+        FadeAndDisappear(true);
        
        
-       // hide text but flicker gopher
+       //  flicker gopher
     }
  
     void StartGopherToGopherEaten()
@@ -210,9 +249,11 @@ public class Tutorial : MonoBehaviour
      
      IEnumerator GopherToGopherEaten() //         EventManager.OnGopherEaten
      {
+         FadeAndDisappear(false);
         currentState = tutState.GopherEaten;
         
-        hints.text = "That's healthy food!";
+        hints.text = "Feeling energized!";
+        FadeAndDisappear(true);
         // flicker lives text + obj
         yield return new WaitForSeconds(2f);
 
@@ -228,12 +269,15 @@ public class Tutorial : MonoBehaviour
 
      IEnumerator LevelOneComplete() // EventManager.OnLevel1Complete
      {
+        FadeAndDisappear(false);
        currentState = tutState.Level1Complete;
        hints.text = "Farmers aren't particularly fond of wolves";
+       Fading(true);
        // contour flicker farmer
        yield return new WaitForSeconds(3f);
        hints.text = "Farmers also come to check when their dogs bark loudly...";
-       // fade text
+       FadeAndDisappear(true);
+       
      }
 
      void TutComplete()
@@ -311,5 +355,16 @@ public class Tutorial : MonoBehaviour
             case tutState.TutComplete: TutComplete();
             break;
         }
+     }
+
+     void Fading(bool yesno)
+     {
+        hints.alpha = 1f;
+        fading = yesno;
+     }
+     void FadeAndDisappear(bool yesno)
+     {
+        hints.alpha = 1f;
+        fadeAndDisappear = yesno;
      }
 }

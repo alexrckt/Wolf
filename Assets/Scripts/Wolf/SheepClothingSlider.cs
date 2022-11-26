@@ -14,6 +14,7 @@ public class SheepClothingSlider : MonoBehaviour
     WolfController  wc;
     SheepsClothing sc;
      [SerializeField] Transform thisFillBar;
+     Image fillbarImage;
     //  Quaternion debugRot;
      
 
@@ -27,6 +28,7 @@ public class SheepClothingSlider : MonoBehaviour
         slider.value = 0;
         wc = FindObjectOfType<WolfController>();
         sc = wc.GetComponent<SheepsClothing>();
+        fillbarImage = thisFillBar.GetComponent<Image>();
         StartCoroutine(WhereWolfIsLooking());
         // debugRot =  thisFillBar.localRotation;
 
@@ -37,6 +39,11 @@ public class SheepClothingSlider : MonoBehaviour
         if (isDressing && slider.value <= slider.maxValue)
         {
             slider.value += Time.deltaTime;
+             Color tmp = fillbarImage.color;
+            tmp.a += 0.5f * Time.deltaTime;
+
+            thisFillBar.GetComponent<Image>().color = tmp;
+            
         }
         if (slider.value >= slider.maxValue)
         {
@@ -50,10 +57,21 @@ public class SheepClothingSlider : MonoBehaviour
     public void IsPuttingOnClothes(bool yesno)
     {
         isDressing = yesno;
-        if (yesno == false)
+        if (!yesno)
         {
             slider.value = 0f;
+            Color tmp = fillbarImage.color;
+            tmp.a = 0.7f;
+
+            fillbarImage.color = tmp;
         }
+        if (yesno)
+        {
+            Color tmp = fillbarImage.color;
+            tmp.a = 0.1f;
+
+            fillbarImage.color = tmp;
+            }
       
     }
 

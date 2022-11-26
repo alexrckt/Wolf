@@ -17498,6 +17498,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 640803253, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
+      propertyPath: m_Color.a
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500595296, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
+      propertyPath: dressingTime
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3213818300290640709, guid: 681f19e05bcf1614e9b63c52e2695961, type: 3}
       propertyPath: m_Name
       value: Wolf
