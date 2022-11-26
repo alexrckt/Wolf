@@ -133,7 +133,7 @@ public class WolfController : MonoBehaviour
     {
         isStealthed = yesno;
         stealthMsFactor = yesno ? 0.5f : 1f;
-        if (yesno == true)
+        if (yesno == true && FindObjectOfType<LevelManager>().levelID != 0)
         {
           em.DisguisePut();
         }
