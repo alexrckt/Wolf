@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 13
   closeradius: 4
-  angle: 140
+  angle: 160
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:

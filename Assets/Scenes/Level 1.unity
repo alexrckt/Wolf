@@ -184,11 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1700648513921779097, guid: 407daabc395f72945869fdf85b210d53, type: 3}
       propertyPath: fov
-      value: 170
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 1700648513921779097, guid: 407daabc395f72945869fdf85b210d53, type: 3}
       propertyPath: viewDistance
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1700648513921779098, guid: 407daabc395f72945869fdf85b210d53, type: 3}
       propertyPath: m_Name
@@ -10957,10 +10957,6 @@ PrefabInstance:
       propertyPath: fovVisual
       value: 
       objectReference: {fileID: 830063999}
-    - target: {fileID: 1682475451, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
-      propertyPath: closeradius
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5000115567808811977, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -11008,10 +11004,6 @@ PrefabInstance:
     - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
       propertyPath: m_Name
       value: Dog
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000115567808811978, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a24bfdf4f6b8b4aa11f7cee6537d41, type: 3}

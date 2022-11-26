@@ -532,9 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a1f4d39c5091e44872d9cca61701af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 11
   closeradius: 2.5
-  angle: 170
+  angle: 190
   canSeePlayer: 0
   fovPoint: {fileID: 4930150178398763320}
   playerRef: {fileID: 0}
@@ -605,9 +605,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -996867657
-  m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingLayerID: -1166492959
+  m_SortingLayer: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1761688510, guid: cbd6c16e6fe91ee4aaf5451e2b9bc945, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

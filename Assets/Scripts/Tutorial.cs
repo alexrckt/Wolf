@@ -77,6 +77,7 @@ public class Tutorial : MonoBehaviour
         hints.gameObject.SetActive(false);
         currentState = tutState.WASD;
         hints.text = "To move, use WASD or arrows";
+        
     }
 
     void StartWASDToAnimals()
