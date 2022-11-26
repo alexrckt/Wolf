@@ -487,6 +487,8 @@ MonoBehaviour:
   canSeePlayer: 0
   agitated: 0
   lastPositionOfInterest: {x: 0, y: 0, z: 0}
+  hasSpecificRoute: 0
+  moveSpots: []
 --- !u!114 &1827880264101436413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,9 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2572c385a103614eb4811a89b6aaa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 15
+  radius: 13
   closeradius: 4
-  angle: 180
+  angle: 140
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:

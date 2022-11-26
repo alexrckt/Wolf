@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 9091794527362886674}
   - component: {fileID: 7711966161025392453}
   - component: {fileID: 965847546667787121}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Drop Point
   m_TagString: DropPoint
   m_Icon: {fileID: 0}

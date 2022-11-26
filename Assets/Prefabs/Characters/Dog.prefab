@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
-  closeradius: 1.5
-  angle: 180
+  closeradius: 2.5
+  angle: 170
   canSeePlayer: 0
   fovPoint: {fileID: 4930150178398763320}
   playerRef: {fileID: 0}

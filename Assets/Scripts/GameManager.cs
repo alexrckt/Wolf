@@ -323,7 +323,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 0; // temp
+        currentLevel = 0; 
         bones = 0;
         livesCurrent = livesInitial;
         huntersArrived = false;

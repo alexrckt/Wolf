@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1700648513921779078
 Transform:
   m_ObjectHideFlags: 0
@@ -49,10 +49,10 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4096
-  fov: 180
+  fov: 140
   origin: {x: 0, y: 0, z: 0}
   startingAngle: 0
-  viewDistance: 15
+  viewDistance: 13
   rayCount: 55
 --- !u!33 &1700648513921779096
 MeshFilter:

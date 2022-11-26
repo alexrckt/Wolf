@@ -686,10 +686,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstepPrefab: {fileID: 4037411245752282829, guid: 50643558dc27495469bc7a0646e91b98, type: 3}
-  moveSpeed: 6
+  moveSpeed: 5
   moveSpeedCurrent: 2
   rb: {fileID: 0}
   lastMotionVector: {x: 0, y: 0}
+  moving: 0
   isStealthed: 0
   isCarryingSheep: 0
   dangleN: {fileID: 1169275899}
