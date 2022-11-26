@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558398563596201373, guid: 0fd0845f1842d44e583bfe03cd1864aa, type: 3}
       propertyPath: m_text
-      value: Wolf in Sheep's clothing
+      value: Wolf in Sheep's Clothing
       objectReference: {fileID: 0}
     - target: {fileID: 5558398563596201373, guid: 0fd0845f1842d44e583bfe03cd1864aa, type: 3}
       propertyPath: m_fontSize
