@@ -141,7 +141,7 @@ public class DogController : MonoBehaviour
         try
         {
             FarmerController.onHearBarking();
-        } catch(Exception ex) { }
+        } catch(Exception ex) { var str = ex.Source; }
         
         onAttention(playerRef.transform); // for other dog instances
     }
