@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public int scoreGoal;
     public LevelData levelData;
 
+    private WolfController playerRef;
     private GameManager gameManager;
     private GameObject inGameUI;
     private GrabAnimals wolfGrabber;
@@ -21,6 +22,7 @@ public class LevelManager : MonoBehaviour
         em = FindObjectOfType<EventManager>();
         var slider = FindObjectOfType<HungerSlider>();
         slider.ResetColor();
+        playerRef = FindObjectOfType<WolfController>();
 
         if (gameManager.levelEntries.ContainsKey(levelID))
         {
@@ -101,6 +103,8 @@ public class LevelManager : MonoBehaviour
 
     public void SheepStolen(int i)
     {
+        gameManager.livesCurrent++;
+        gameManager.UpdateLivesText();
         gameManager.AddScore(i * gameManager.scoreForSheep);
     }
 
@@ -115,9 +119,10 @@ public class LevelManager : MonoBehaviour
 
     public void GopherEaten()
     {
-        gameManager.livesCurrent += 1;
+        //gameManager.livesCurrent += 1;
         gameManager.AddScore(gameManager.scoreForGopher);
         gameManager.UpdateLivesText();
+        playerRef.moveSpeed += 1.5f;
 
         if (gameManager.currentLevel == 1)
         {
