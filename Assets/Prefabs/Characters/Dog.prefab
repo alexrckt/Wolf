@@ -543,7 +543,7 @@ MonoBehaviour:
     m_Bits: 128
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4096
   fovDirs:
   - {fileID: 6729325957135785908}
   - {fileID: 1029384154938240109}
