@@ -7113,7 +7113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: livesInitial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: scoreForSheep
