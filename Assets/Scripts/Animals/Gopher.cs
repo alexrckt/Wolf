@@ -8,8 +8,11 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     private LevelManager levelManager;
     [SerializeField] GameObject bloodObj;
     SheepsClothing sheepsClothing;
-    // public float stealthCD = 1f;
-    // Start is called before the first frame update
+    public GameObject gopherFlickerObj;
+
+    private void Awake() {
+        EventManager.OnGopherStartFlicker += GopherFlicker;
+    }
     void Start()
     {
         wolfController = FindObjectOfType<WolfController>();
@@ -42,5 +45,22 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     private void OnTriggerExit2D(Collider2D other)
     {
         (this as IEatableAnimal).OnTriggerExit2D(other);
+    }
+
+    public void GopherFlicker()
+    {
+     StartCoroutine(GopherFlickerRepeat());
+    }
+
+    IEnumerator GopherFlickerRepeat()
+    {
+        while (true)
+        {
+        if (gopherFlickerObj.activeInHierarchy)
+        gopherFlickerObj.SetActive(false);
+        else 
+        gopherFlickerObj.SetActive(true);
+      yield return new WaitForSeconds(0.9f);
+      }
     }
 }

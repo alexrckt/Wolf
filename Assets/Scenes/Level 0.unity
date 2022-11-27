@@ -7680,11 +7680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 226976818002460383, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 226976818002460383, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: -6.08
       objectReference: {fileID: 0}
     - target: {fileID: 226976818002460383, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7725,6 +7725,18 @@ PrefabInstance:
     - target: {fileID: 3835956194075070746, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
       propertyPath: m_TagString
       value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156219887489853200, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156219887489853200, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156219887489853200, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30c23aa24abee2e42b6ce2328c828d44, type: 3}
@@ -17668,9 +17680,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8486428816834356890, guid: 68334a939130fa74eb4dec92a8445884, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486428816834356890, guid: 68334a939130fa74eb4dec92a8445884, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -917137373
+      objectReference: {fileID: 0}
     - target: {fileID: 8486428816834356895, guid: 68334a939130fa74eb4dec92a8445884, type: 3}
       propertyPath: m_Name
       value: Stone3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486428816834356895, guid: 68334a939130fa74eb4dec92a8445884, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68334a939130fa74eb4dec92a8445884, type: 3}
@@ -17879,6 +17903,10 @@ PrefabInstance:
     - target: {fileID: 4180872483180338052, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
       propertyPath: m_Name
       value: Tracktor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180872483180338052, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4180872483180338055, guid: 91fd31d52b8405746a258ca2c481eb50, type: 3}
       propertyPath: m_RootOrder

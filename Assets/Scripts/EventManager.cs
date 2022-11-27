@@ -24,6 +24,7 @@ public class EventManager : MonoBehaviour
     public static event Tutorialka OnGopherEaten;
     public static event Tutorialka OnLevel1Complete;
     public static event Tutorialka OnTutComplete;
+    public static event Tutorialka OnGopherStartFlicker;
 
     public bool WASDSent = false;
     public bool grabbedSheep = false;
@@ -124,6 +125,15 @@ public class EventManager : MonoBehaviour
             OnTutComplete();
             
         }
+    }
+
+    public void GopherStartFlicker()
+    {
+       if (OnGopherStartFlicker != null )
+        {
+            OnGopherStartFlicker();
+            
+        } 
     }
 
     

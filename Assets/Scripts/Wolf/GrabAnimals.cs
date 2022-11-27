@@ -20,6 +20,7 @@ public class GrabAnimals : MonoBehaviour
     public IEatableAnimal eatableAnimal;
     EventManager em;
     SpaceToRunAway spaceToRunAway;
+    public bool isTutBlockingExit = false;
     
 
     void Start()
@@ -84,7 +85,7 @@ public class GrabAnimals : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if (other.gameObject.tag == "DropPoint")
+        if (other.gameObject.tag == "DropPoint" && !isTutBlockingExit)
         {
             isTouchingDropPoint = true;
 
@@ -116,7 +117,7 @@ public class GrabAnimals : MonoBehaviour
 
 
         void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.tag == "DropPoint")
+            if (other.gameObject.tag == "DropPoint" && !isTutBlockingExit)
             {
                 spaceToRunAway.StartFlicker();
             }
@@ -130,6 +131,11 @@ public class GrabAnimals : MonoBehaviour
         }
 
          
+    }
+
+    public void EnterForest()
+    {
+      spaceToRunAway.StartFlicker();
     }
 
     
