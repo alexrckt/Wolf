@@ -30,6 +30,7 @@ public class Tutorial : MonoBehaviour
     public bool isOn = true;
     public bool fading = false;
     public bool fadeAndDisappear = false;
+    GrabAnimals grabAnimals;
     
     
     
@@ -169,10 +170,12 @@ public class Tutorial : MonoBehaviour
      
      IEnumerator GrabSheepToDeliveredSheep() //   EventManager.OnHungerFull
      {
-        
-        GrabAnimals grabAnimals = FindObjectOfType<GrabAnimals>();
+        if (isOn)
+        {grabAnimals = FindObjectOfType<GrabAnimals>();
         grabAnimals.isTutBlockingExit = true; // blocking exit
         grabAnimals.isTouchingDropPoint = false;
+        }
+        
 
         currentState = tutState.DeliveredSheep;
         hints.text = "You earn points when you eat animals";
@@ -190,11 +193,14 @@ public class Tutorial : MonoBehaviour
         
         hints.text = "Or stay and eat as many animals as you can!";
         FadeAndDisappear(true);
-
+        
+        if (isOn)
+        {
         grabAnimals.isTutBlockingExit = false; // unblocking exit
         yield return new WaitForFixedUpdate();
         if (grabAnimals.isTouchingDropPoint)
         grabAnimals.EnterForest(); 
+        }
         
 
      }
