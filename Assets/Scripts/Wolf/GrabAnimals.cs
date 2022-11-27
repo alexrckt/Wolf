@@ -31,6 +31,8 @@ public class GrabAnimals : MonoBehaviour
         we = GetComponent<WolfEmotes>();
         em = FindObjectOfType<EventManager>();
         spaceToRunAway = FindObjectOfType<SpaceToRunAway>();
+        spaceToRunAway.StopFlicker();
+        spaceToRunAway.aintHungry = false;
     }
     
     void Update()

@@ -25,6 +25,10 @@ public class HungerSlider : MonoBehaviour
     public void HungerCompleted()
     {
         Paint(Color.green);
+        
+        if (!em.level0HungerIsFull)
+        {em.Level0HungerIsFull();}
+        else
         em.HungerIsFull();
     }
 

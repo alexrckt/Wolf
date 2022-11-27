@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isIncreasing: 0
   incrSpeed: 0.3
+  aintHungry: 0
   isGoingUp: 1
 --- !u!114 &832557757
 MonoBehaviour:
@@ -7112,7 +7113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: livesInitial
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: scoreForSheep

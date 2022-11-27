@@ -41,7 +41,7 @@ public class Tutorial : MonoBehaviour
         EventManager.OnGrabSheep += AnimalsToGrabSheep;
         EventManager.OnTutStarted += TutStart;
         EventManager.OnWASD += StartWASDToAnimals;
-        EventManager.OnHungerFull += StartGrabSheepToDeliveredSheep;
+        EventManager.OnLevel0HungerFull += StartGrabSheepToDeliveredSheep;
         EventManager.OnLevel0Complete += StartDeliveredToSheepsClothing;
         EventManager.OnDisguisePut += StartSheepsClothingToGopher;
         EventManager.OnGopherEaten += StartGopherToGopherEaten;
@@ -59,7 +59,7 @@ public class Tutorial : MonoBehaviour
         EventManager.OnGrabSheep -= AnimalsToGrabSheep;
         EventManager.OnTutStarted -= TutStart;
         EventManager.OnWASD -= StartWASDToAnimals;
-        EventManager.OnHungerFull -= StartGrabSheepToDeliveredSheep;
+        EventManager. OnLevel0HungerFull -= StartGrabSheepToDeliveredSheep;
         EventManager.OnLevel0Complete -= StartDeliveredToSheepsClothing;
         EventManager.OnDisguisePut -= StartSheepsClothingToGopher;
         EventManager.OnGopherEaten -= StartGopherToGopherEaten;

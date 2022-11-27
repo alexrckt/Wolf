@@ -220,8 +220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6067012466740345555}
   - component: {fileID: 2830151532751536513}
-  m_Layer: 6
-  m_Name: Col
+  m_Layer: 12
+  m_Name: CantSeeThroughCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

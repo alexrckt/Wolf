@@ -11,12 +11,18 @@ public class SpaceToRunAway : MonoBehaviour
         public bool isIncreasing = false;
         float f;
         public float incrSpeed = 0.3f;
-        bool aintHungry = false;
+        public bool aintHungry = false;
         public bool isGoingUp = true;
     // Start is called before the first frame update
 
     private void Awake() {
         EventManager.OnHungerFull += AbleToFlicker;
+        EventManager.OnLevel0HungerFull += AbleToFlicker;
+    }
+
+    private void OnDestroy() {
+        EventManager.OnHungerFull -= AbleToFlicker;
+        EventManager.OnLevel0HungerFull -= AbleToFlicker;
     }
     void Start()
     {
@@ -77,7 +83,7 @@ public class SpaceToRunAway : MonoBehaviour
         
     }
 
-    public void AbleToFlicker()
+    public void AbleToFlicker() // for onHunger event
     {
        aintHungry = true;
     }

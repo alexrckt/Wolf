@@ -6,7 +6,7 @@ public class EventManager : MonoBehaviour
 {
     public delegate void HungerFull();
     public static event HungerFull OnHungerFull;
-    
+     public static event HungerFull OnLevel0HungerFull;
 
     public delegate void Tutorialka();
 
@@ -37,12 +37,22 @@ public class EventManager : MonoBehaviour
 
     public void HungerIsFull()
     {
-        if (OnHungerFull != null && !level0HungerIsFull)
+        if (OnHungerFull != null)
         {
             OnHungerFull(); 
+            
+        }
+    }
+     
+      public void Level0HungerIsFull()
+    {
+        if (OnLevel0HungerFull != null)
+        {
+            OnLevel0HungerFull(); 
             level0HungerIsFull = true;
         }
     }
+
     
     public void WASD()
     {
