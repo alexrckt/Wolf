@@ -9,6 +9,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
     [SerializeField] GameObject bloodObj;
     SheepsClothing sheepsClothing;
     public GameObject gopherFlickerObj;
+    private SoundManager soundManager;
 
     private void Awake() {
         EventManager.OnGopherStartFlicker += GopherFlicker;
@@ -18,6 +19,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
         wolfController = FindObjectOfType<WolfController>();
         sheepsClothing = wolfController.GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
 
     public void IGotEaten()
     {
+        soundManager.PlayChew();
         levelManager.GopherEaten();
         sheepsClothing.Stealth(false);
         wolfController.GetComponent<WolfEmotes>().Emote(0); // call emotion "anim"

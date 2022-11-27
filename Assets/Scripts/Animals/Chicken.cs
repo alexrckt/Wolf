@@ -13,6 +13,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
     public GameObject bloodObj;
 
     private SheepsClothing sheepsClothing;
+    private SoundManager soundManager;
 
     // public int chickenHungerVal;
 
@@ -22,6 +23,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
         levelManager = FindObjectOfType <LevelManager>();
         sheepsClothing = FindObjectOfType<WolfController>().GetComponent<SheepsClothing>();
         RandomNum();
+        soundManager = FindObjectOfType<SoundManager>();
 
     }
      
@@ -44,6 +46,7 @@ public class Chicken : MonoBehaviour, IEatableAnimal
 
     public void IGotEaten()
     {
+        soundManager.PlayChew();
         sheepsClothing.Stealth(false);
         levelManager.ChickenEaten();
         levelManager.levelData.aliveAnimals[gameObject.name] = false;

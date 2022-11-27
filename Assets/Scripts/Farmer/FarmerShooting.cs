@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using static DogController;
 
 public class FarmerShooting : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class FarmerShooting : MonoBehaviour
     Vector2 crossHairPlayerPos;
     public Vector2 whichWayPlayer;
     public Transform[] gunPoints; // NESW
+
+    private SoundManager soundManager;
     
     
     // string SHOOT_UP_FARMER = "Shoot_Up_Farmer";
@@ -46,6 +49,7 @@ public class FarmerShooting : MonoBehaviour
         animator = GetComponent<Animator>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
         farmerController = GetComponent<FarmerController>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     
@@ -61,7 +65,8 @@ public class FarmerShooting : MonoBehaviour
         if (farmerController.canSeePlayer)
         {
             aids.target = player;
-            DogController.onAttention(player.transform);
+            if (DogController.onAttention != null)
+                DogController.onAttention(player.transform);
             if (timeBtwShots <= 0)
             {
                 Instantiate(crosshair, player.position, Quaternion.identity);
@@ -82,6 +87,7 @@ public class FarmerShooting : MonoBehaviour
 
     public void Shoot()
     {
+        soundManager.PlayShoot();
         _sensesManager.WhereIsFarmerLooking();
         switch (_sensesManager.viewPointString)
         {

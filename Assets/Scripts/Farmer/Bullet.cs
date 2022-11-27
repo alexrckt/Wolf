@@ -6,16 +6,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 50f;
-      
-    
+    private SoundManager soundManager;
+
+
     public Vector2 target;
     Collider2D col;
     float lifeTime = 4f;
     bool hasHitStuff = false;
     void Start()
     {
-        
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
    
@@ -41,8 +41,9 @@ public class Bullet : MonoBehaviour
      {
         if (other.CompareTag("Player")) // OR other.CompareTag("WALL")
      {
-       other.GetComponent<WolfController>().WolfInjured();
-       ExplodeProjectile();
+            soundManager.PlayBulletImpact();
+            other.GetComponent<WolfController>().WolfInjured();
+            ExplodeProjectile();
        
      }
      if (other.CompareTag("Obstacle"))

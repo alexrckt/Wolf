@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     private static GameManager instance = null;
+    private SoundManager soundManager;
 
     public GameState currentGameState;
     public int currentLevel;
@@ -72,6 +73,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.PlayBackgroundMusic();
         DontDestroyOnLoad(gameObject);
         ResetGame();
         currentGameState = GameState.MainMenu;

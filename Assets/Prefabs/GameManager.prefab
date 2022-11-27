@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2485944220077744026}
   - component: {fileID: 2485944220077744027}
+  - component: {fileID: 4956513966012094862}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -56,6 +57,10 @@ MonoBehaviour:
   livesInitial: 3
   score: 0
   bones: 0
+  tutStarted: 0
+  level1Started: 0
+  level2Started: 0
+  level3Started: 0
   scoreForSheep: 300
   scoreForChicken: 50
   scoreForGopher: 0
@@ -71,6 +76,32 @@ MonoBehaviour:
   levelFailMenu: {fileID: 7843399914263428578}
   gameOverMenu: {fileID: 7843399912879467064}
   gameWinMenu: {fileID: 7843399913612767232}
+--- !u!114 &4956513966012094862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485944220077744028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd4d160e5b41744e8c72295c8cf5423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot: {fileID: 8300000, guid: 4c5353d2faf451d42a12b23a9296be86, type: 3}
+  bell: {fileID: 8300000, guid: 87ca9ec955b28a64082a06a367e53afa, type: 3}
+  chew: {fileID: 8300000, guid: 6cb3aebd5613c9f4b9a7f927b5c3d675, type: 3}
+  bulletImpact: {fileID: 8300000, guid: 9bf709f6fe5d13848b8d73892c49ac92, type: 3}
+  sniffs:
+  - {fileID: 8300000, guid: 48f15cb19a8ca534389a241be65fc53c, type: 3}
+  - {fileID: 8300000, guid: fbdacead46545ad4d91a7478d89ece58, type: 3}
+  - {fileID: 8300000, guid: b5095449bf095e1489453c5bf2fe3d49, type: 3}
+  barks:
+  - {fileID: 8300000, guid: 1c7f71989c2858846a8999def74f8b51, type: 3}
+  - {fileID: 8300000, guid: 9a93d2ddc2331a04ebe34bc4758283db, type: 3}
+  - {fileID: 8300000, guid: aef57904c45b1704b989c97b33958bff, type: 3}
+  dogBite: {fileID: 8300000, guid: 544345b138a43cc4aa8f3fc3394227d8, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 0957b2db8f98a4c45988efb5afb0b082, type: 3}
 --- !u!1 &2485944220467955437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1398,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5472452003926525674, guid: 1bfa5574966854a4789e27323924f759, type: 3}
   m_PrefabInstance: {fileID: 2485944219995882626}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1959995071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605971752042103400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62b15d0ffd809e4e80678da903ea86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WASDSent: 0
+  grabbedSheep: 0
+  disguisePut: 0
+  level0HungerIsFull: 0
 --- !u!114 &2462737447558502669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,18 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2462737447558502669}
---- !u!114 &1959995071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7605971752042103400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62b15d0ffd809e4e80678da903ea86c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  em: {fileID: 0}
 --- !u!224 &9023842716647230558 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6864884664952899804, guid: 1bfa5574966854a4789e27323924f759, type: 3}

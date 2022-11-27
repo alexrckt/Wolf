@@ -21,7 +21,8 @@ public class GrabAnimals : MonoBehaviour
     EventManager em;
     SpaceToRunAway spaceToRunAway;
     public bool isTutBlockingExit = false;
-    
+    private SoundManager soundManager;
+
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class GrabAnimals : MonoBehaviour
         spaceToRunAway = FindObjectOfType<SpaceToRunAway>();
         spaceToRunAway.StopFlicker();
         spaceToRunAway.aintHungry = false;
+        soundManager = FindObjectOfType<SoundManager>();
     }
     
     void Update()
@@ -41,6 +43,7 @@ public class GrabAnimals : MonoBehaviour
         {
             if(isTouchingSheep && !wolfController.isCarryingSheep)
             {
+                soundManager.PlayBell();
                 sheep.SetParent(gameObject.transform, true);
                 sheep.GetComponent<CircleCollider2D>().enabled = false;
 
@@ -93,6 +96,7 @@ public class GrabAnimals : MonoBehaviour
 
             if (wolfController.isCarryingSheep)
             {
+                soundManager.PlayBell();
                 wolfController.IsCarryingSheep(false);
                 levelManager.levelData.aliveAnimals[sheep.name] = false;
                 Destroy(sheep.gameObject);           

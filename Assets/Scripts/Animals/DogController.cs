@@ -48,13 +48,15 @@ public class DogController : MonoBehaviour
 
     public delegate void OnAttention(Transform wolfPosition);
     public static OnAttention onAttention;
-    
+    private SoundManager soundManager;
+
     void Start()
     {
         playerRef = FindObjectOfType<WolfController>();
         aiPath = GetComponent<AIPath>();
         aids = GetComponent<AIDestinationSetter>();
         barker = GetComponentInChildren<Barker>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         if (moveSpots == null || moveSpots.Count <= 0)
         {
@@ -98,6 +100,7 @@ public class DogController : MonoBehaviour
             && currentState != State.Chasing
             && currentState != State.LostTarget)
         {
+            soundManager.PlaySniffing();
             SetSniffingState(other);
         }
     }
@@ -107,6 +110,7 @@ public class DogController : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             // BITE THE WOLF
+            soundManager.PlayDogBite();
             playerRef.WolfInjured();
         }
     }
@@ -135,6 +139,7 @@ public class DogController : MonoBehaviour
 
     public void SetChasingState()
     {
+        soundManager.PlayBark();
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
         barker.AnimationSwitch(true);
