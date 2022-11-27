@@ -52,11 +52,14 @@ public class Gopher : MonoBehaviour, IEatableAnimal
 
     public void GopherFlicker()
     {
+        if (gopherFlickerObj!= null)
      StartCoroutine(GopherFlickerRepeat());
     }
 
     IEnumerator GopherFlickerRepeat()
     {
+        if (gopherFlickerObj != null)
+        {
         while (true)
         {
         if (gopherFlickerObj.activeInHierarchy)
@@ -64,6 +67,7 @@ public class Gopher : MonoBehaviour, IEatableAnimal
         else 
         gopherFlickerObj.SetActive(true);
       yield return new WaitForSeconds(0.3f);
+      }
       }
     }
 }
