@@ -6,6 +6,7 @@ public class EventManager : MonoBehaviour
 {
     public delegate void HungerFull();
     public static event HungerFull OnHungerFull;
+    
 
     public delegate void Tutorialka();
 
@@ -28,6 +29,7 @@ public class EventManager : MonoBehaviour
     public bool grabbedSheep = false;
     public bool disguisePut = false;
     public bool level0HungerIsFull = false;
+    
 
     
     
@@ -123,5 +125,7 @@ public class EventManager : MonoBehaviour
             
         }
     }
+
+    
     
 }

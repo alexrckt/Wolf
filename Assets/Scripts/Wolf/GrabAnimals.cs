@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GrabAnimals : MonoBehaviour
 {
-    bool isTouchingSheep;
-    public bool isTouchingEatable;
+    [HideInInspector] public bool isTouchingSheep;
+    [HideInInspector] public bool isTouchingEatable;
     public bool isTouchingFence = false;
-    [HideInInspector] public bool isTouchingDropPoint;
+    public bool isTouchingDropPoint;
     public Transform mouth;
     public int sheepValue = 1;
     // public float stealthCD = 1f;
@@ -19,6 +19,7 @@ public class GrabAnimals : MonoBehaviour
     WolfEmotes we;
     public IEatableAnimal eatableAnimal;
     EventManager em;
+    SpaceToRunAway spaceToRunAway;
     
 
     void Start()
@@ -28,6 +29,7 @@ public class GrabAnimals : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         we = GetComponent<WolfEmotes>();
         em = FindObjectOfType<EventManager>();
+        spaceToRunAway = FindObjectOfType<SpaceToRunAway>();
     }
     
     void Update()
@@ -96,6 +98,8 @@ public class GrabAnimals : MonoBehaviour
         }
 
         
+
+        
     }
 
     private void OnCollisionExit2D(Collision2D other) 
@@ -110,12 +114,23 @@ public class GrabAnimals : MonoBehaviour
         }
      }
 
+
+        void OnTriggerEnter2D(Collider2D other) {
+            if (other.gameObject.tag == "DropPoint")
+            {
+                spaceToRunAway.StartFlicker();
+            }
+            
+        }
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag == "DropPoint")
         {
             isTouchingDropPoint = false;
+            spaceToRunAway.StopFlicker();
         }
 
          
     }
+
+    
 }
