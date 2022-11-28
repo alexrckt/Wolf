@@ -338,12 +338,12 @@ SpriteRenderer:
   m_SortingLayerID: -996867657
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 390598390, guid: 18a96eeb193ee5f44adbb63c0671d86b, type: 3}
-  m_Color: {r: 0.09122462, g: 0.7735849, b: 0.18915753, a: 1}
+  m_Sprite: {fileID: -6725134646623074555, guid: cb1edb61022a4f549b04d946e7d6f0d2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.36, y: 0.51}
+  m_Size: {x: 0.59, y: 0.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -359,7 +359,7 @@ Animator:
   m_GameObject: {fileID: 2001842422330217959}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c0ed97469586e504595c1bf18679e4b5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5940066183c964a4db38021e24068218, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -487,6 +487,8 @@ MonoBehaviour:
   canSeePlayer: 0
   agitated: 0
   lastPositionOfInterest: {x: 0, y: 0, z: 0}
+  hasSpecificRoute: 0
+  moveSpots: []
 --- !u!114 &1827880264101436413
 MonoBehaviour:
   m_ObjectHideFlags: 0

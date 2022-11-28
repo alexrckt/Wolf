@@ -528,9 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2572c385a103614eb4811a89b6aaa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 13
+  radius: 16
   closeradius: 4
-  angle: 160
+  angle: 140
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:
