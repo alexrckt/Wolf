@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -14,7 +15,42 @@ public class SoundManager : MonoBehaviour
     private bool barking = false;
     public AudioClip dogBite;
     public AudioClip backgroundMusic;
+    public bool muted;
 
+    public static string soundVolumeKey = "soundVolume";
+    public static string soundMutedKey = "soundMuted";
+
+    void Start()
+    {
+        if (!PlayerPrefs.HasKey(soundVolumeKey))
+            PlayerPrefs.SetFloat(soundVolumeKey, 1f);
+
+        if (!PlayerPrefs.HasKey(soundMutedKey))
+        {
+            PlayerPrefs.SetInt(soundMutedKey, 0);
+            muted = false;
+        } else
+        {
+            muted = PlayerPrefs.GetInt(soundMutedKey) == 1 ? true : false;
+        }
+
+        MuteAudio(muted);
+        ChangeVolume(PlayerPrefs.GetFloat(soundVolumeKey));
+    }
+
+    public void ChangeVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
+
+    public void MuteAudio(bool muted)
+    {
+        AudioListener.pause = muted;
+        this.muted = muted;
+        PlayerPrefs.SetInt(soundMutedKey, muted ? 1 : 0);
+    }
+
+    #region Play methods
     public void PlaySniffing()
     {
         if (!sniffing)
@@ -57,10 +93,13 @@ public class SoundManager : MonoBehaviour
     {
         PlaySoundOnce(bulletImpact);
     }
-
+    
     public void PlayBackgroundMusic()
     {
-        GameObject soundGameObject = new GameObject("Sound");
+        if (GameObject.Find("Background Music") != null)
+            return;
+
+        GameObject soundGameObject = new GameObject("Background Music");
         soundGameObject.transform.SetParent(GetComponent<GameManager>().transform);
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
@@ -97,4 +136,5 @@ public class SoundManager : MonoBehaviour
         sniffing = false;
         Destroy(soundGameObject);
     }
+    #endregion
 }
