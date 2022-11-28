@@ -80,17 +80,21 @@ public class SoundManager : MonoBehaviour
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        soundGameObject.transform.SetParent(GetComponent<GameManager>().transform);
         audioSource.PlayOneShot(barks[Random.Range(0, barks.Count)]);
         yield return new WaitUntil(() => !audioSource.isPlaying);
         barking = false;
+        Destroy(soundGameObject);
     }
 
     private IEnumerator PlaySniffSound()
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        soundGameObject.transform.SetParent(GetComponent<GameManager>().transform);
         audioSource.PlayOneShot(sniffs[Random.Range(0, sniffs.Count)]);
         yield return new WaitUntil(() => !audioSource.isPlaying);
         sniffing = false;
+        Destroy(soundGameObject);
     }
 }
