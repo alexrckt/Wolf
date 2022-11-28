@@ -73,13 +73,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        soundManager = FindObjectOfType<SoundManager>();
-        soundManager.PlayBackgroundMusic();
         DontDestroyOnLoad(gameObject);
         ResetGame();
         currentGameState = GameState.MainMenu;
         em = FindObjectOfType <EventManager>();
         levelEntries = new Dictionary<int, LevelData>();
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.PlayBackgroundMusic();
     }
 
     // Update is called once per frame

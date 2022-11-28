@@ -34,7 +34,7 @@ namespace QuantumTek.QuantumUI
         {
             toggleGraphic.sprite = toggle.isOn ? onSprite : offSprite;
             toggleGraphic.enabled = true;
-            toggleBackgroundGraphic.sprite = toggle.isOn ? onBackgroundSprite : offBackgroundSprite;
+            //toggleBackgroundGraphic.sprite = toggle.isOn ? onBackgroundSprite : offBackgroundSprite;
         }
     }
 }
