@@ -16560,7 +16560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelID: 3
-  scoreGoal: 500
+  scoreGoal: 750
 --- !u!4 &1624036002
 Transform:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public int levelID;
+    
     public int scoreGoal;
     public LevelData levelData;
 
@@ -64,6 +65,8 @@ public class LevelManager : MonoBehaviour
         gameManager.UpdateScoreText();
         gameManager.huntersCounterOn = false;
         gameManager.huntersArrived = false;
+        if (levelID == gameManager.pinataLevelID)
+        {gameManager.HuntersCounter();}
     }
 
     // Update is called once per frame

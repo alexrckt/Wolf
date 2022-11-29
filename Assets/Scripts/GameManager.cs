@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject gameWinMenu;
     private GameObject currentActiveMenu;
+    public int pinataLevelID = 4;
 
 
 
@@ -150,6 +151,8 @@ public class GameManager : MonoBehaviour
     {
         var textField = GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>();
         var duration = huntersTimer[(int)difficulty];
+        if (currentLevel == pinataLevelID)
+        {duration = 30f;}
         while (duration >= 0)
         {
             duration -= Time.deltaTime;
