@@ -9,6 +9,7 @@ public class AudioSettings : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] Toggle soundToggle;
+    [SerializeField] Toggle musicToggle;
 
     private SoundManager soundManager;
 
@@ -24,14 +25,25 @@ public class AudioSettings : MonoBehaviour
         Save();
     }
 
-    public void OnButtonPress()
+    public void OnSoundMuteButtonPress()
     {
-        if(soundManager.muted)
+        if(soundManager.soundMuted)
         {
             soundManager.MuteAudio(false);
         } else
         {
             soundManager.MuteAudio(true);
+        }
+    }
+    public void OnMusicMuteButtonPress()
+    {
+        if (soundManager.musicMuted)
+        {
+            soundManager.MuteMusic(false);
+        }
+        else
+        {
+            soundManager.MuteMusic(true);
         }
     }
 
@@ -45,5 +57,7 @@ public class AudioSettings : MonoBehaviour
         volumeSlider.value = PlayerPrefs.GetFloat(SoundManager.soundVolumeKey);
         soundToggle.SetIsOnWithoutNotify(PlayerPrefs.GetInt(SoundManager.soundMutedKey) == 1 ? false : true);
         soundToggle.GetComponent<QUI_SwitchToggle>().SetToggleGraphic();
+        musicToggle.SetIsOnWithoutNotify(PlayerPrefs.GetInt(SoundManager.musicMutedKey) == 1 ? false : true);
+        musicToggle.GetComponent<QUI_SwitchToggle>().SetToggleGraphic();
     }
 }

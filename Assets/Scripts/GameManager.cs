@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Menus")]
     public GameObject pauseMenu;
+    public GameObject pauseAudioSettingsMenu;
     public GameObject levelWinMenu;
     public GameObject levelFailMenu;
     public GameObject gameOverMenu;

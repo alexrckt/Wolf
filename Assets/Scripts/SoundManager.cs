@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SoundManager : MonoBehaviour
 {
@@ -15,10 +16,14 @@ public class SoundManager : MonoBehaviour
     private bool barking = false;
     public AudioClip dogBite;
     public AudioClip backgroundMusic;
-    public bool muted;
+    public bool soundMuted;
+    public bool musicMuted;
+
+    [SerializeField] AudioSource backgroundMusicSource;
 
     public static string soundVolumeKey = "soundVolume";
     public static string soundMutedKey = "soundMuted";
+    public static string musicMutedKey = "musicMuted";
 
     void Start()
     {
@@ -28,16 +33,27 @@ public class SoundManager : MonoBehaviour
         if (!PlayerPrefs.HasKey(soundMutedKey))
         {
             PlayerPrefs.SetInt(soundMutedKey, 0);
-            muted = false;
+            soundMuted = false;
         } else
         {
-            muted = PlayerPrefs.GetInt(soundMutedKey) == 1 ? true : false;
+            soundMuted = PlayerPrefs.GetInt(soundMutedKey) == 1 ? true : false;
+        }
+        if (!PlayerPrefs.HasKey(musicMutedKey))
+        {
+            PlayerPrefs.SetInt(musicMutedKey, 0);
+            musicMuted = false;
+        }
+        else
+        {
+            musicMuted = PlayerPrefs.GetInt(musicMutedKey) == 1 ? true : false;
         }
 
-        MuteAudio(muted);
+        MuteAudio(soundMuted);
+        MuteMusic(musicMuted);
         ChangeVolume(PlayerPrefs.GetFloat(soundVolumeKey));
     }
 
+    #region Sound settings
     public void ChangeVolume(float value)
     {
         AudioListener.volume = value;
@@ -46,9 +62,16 @@ public class SoundManager : MonoBehaviour
     public void MuteAudio(bool muted)
     {
         AudioListener.pause = muted;
-        this.muted = muted;
+        this.soundMuted = muted;
         PlayerPrefs.SetInt(soundMutedKey, muted ? 1 : 0);
     }
+    public void MuteMusic(bool muted)
+    {
+        backgroundMusicSource.mute = muted;
+        musicMuted = muted;
+        PlayerPrefs.SetInt(musicMutedKey, muted ? 1 : 0);
+    }
+    #endregion
 
     #region Play methods
     public void PlaySniffing()
@@ -96,15 +119,12 @@ public class SoundManager : MonoBehaviour
     
     public void PlayBackgroundMusic()
     {
-        if (GameObject.Find("Background Music") != null)
+        if (backgroundMusicSource.isPlaying)
             return;
 
-        GameObject soundGameObject = new GameObject("Background Music");
-        soundGameObject.transform.SetParent(GetComponent<GameManager>().transform);
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.loop = true;
-        audioSource.clip = backgroundMusic;
-        audioSource.Play();
+        backgroundMusicSource.loop = true;
+        backgroundMusicSource.clip = backgroundMusic;
+        backgroundMusicSource.Play();
     }
 
 
