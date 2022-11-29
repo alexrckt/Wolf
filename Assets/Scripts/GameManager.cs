@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Dictionary<int, LevelData> levelEntries;
 
-    [HideInInspector]
+    
     public int livesCurrent;
     
     [HideInInspector]
@@ -285,10 +285,13 @@ public class GameManager : MonoBehaviour
         var levelName = $"Level {currentLevel}";
         SceneManager.LoadScene(levelName);
         StartCoroutine("WaitForSceneLoad", levelName);
-        if (currentLevel == 0 && !tutStarted)
+        if (currentLevel == 0)
         {
-            em.TutStart();
-            tutStarted = true;
+            livesCurrent = livesStart[(int)difficulty];
+            if ( !tutStarted)
+            {em.TutStart();
+            tutStarted = true;}
+            
         }
         if (currentLevel == 1 && !level1Started)
         {
