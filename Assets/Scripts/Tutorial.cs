@@ -323,7 +323,7 @@ public class Tutorial : MonoBehaviour
          if (isOn)
          {
             hints.gameObject.SetActive(true);
-             turnOff.GetComponent<Image>().color = new Color(0,255,0); // green
+             turnOff.GetComponent<Image>().color = new Color(255,255,255); // green
              WhatPartOfTut();
          }
 
