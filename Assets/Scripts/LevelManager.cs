@@ -87,7 +87,6 @@ public class LevelManager : MonoBehaviour
     private void LevelCleared()
     {
         levelData.levelCleared = true;
-        // Now showing proposal to left level by running into forest and press Enter
     }
 
     public LevelData CreateLevelData()
@@ -103,7 +102,7 @@ public class LevelManager : MonoBehaviour
 
     public void SheepStolen(int i)
     {
-        gameManager.livesCurrent++;
+        gameManager.tryAddLife();
         gameManager.UpdateLivesText();
         gameManager.AddScore(i * gameManager.scoreForSheep);
     }
@@ -119,7 +118,6 @@ public class LevelManager : MonoBehaviour
 
     public void GopherEaten()
     {
-        //gameManager.livesCurrent += 1;
         gameManager.AddScore(gameManager.scoreForGopher);
         gameManager.UpdateLivesText();
         playerRef.moveSpeed += 1.5f;

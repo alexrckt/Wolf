@@ -16,12 +16,27 @@ public class GameManager : MonoBehaviour
         EndGame
     }
 
+    public enum Difficulty
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+
     private static GameManager instance = null;
     private SoundManager soundManager;
 
     public GameState currentGameState;
+    public Difficulty difficulty;
+    public Dictionary<Difficulty, float> difficultyScoreMultiplier = new Dictionary<Difficulty, float>()
+        {
+            { Difficulty.Easy, 1f },
+            { Difficulty.Medium, 1.2f },
+            { Difficulty.Hard, 1.5f }
+        };
+    public int maxLevel = 4;
     public int currentLevel;
-    public int livesInitial;
+    //public int livesInitial;
     public int score;
     public int bones;
     EventManager em;
@@ -29,21 +44,36 @@ public class GameManager : MonoBehaviour
     public bool level1Started = false;
     public bool level2Started = false;
     public bool level3Started = false;
-    
 
     [Header("Score")]
     public int scoreForSheep;
     public int scoreForChicken;
     public int scoreForGopher;
+    public float scoreForLife = 200f;
     public HungerSlider hungerSlider;
+
+    [Header("Difficulty settings")]
+    [Header("FOV")]
+    public float[] dogFOVAngle = new float[3];
+    public float[] dogFOVRadius = new float[3];
+    public float[] farmerFOVAngle = new float[3];
+    public float[] farmerFOVRadius = new float[3];
+    //[HideInInspector] public float currentDogFOVAngle;
+    //[HideInInspector] public float currentDogFOVRadius;
+    //[HideInInspector] public float currentFarmerFOVAngle;
+    //[HideInInspector] public float currentFarmerFOVRadius;
+    [Header("Hunters timer")]
+    public float[] huntersTimer = new float[3];
+    //[HideInInspector] public float currentHuntersTimer;
+    [Header("Lives")]
+    public int[] livesTop = new int[3];
+    public int[] livesStart = new int[3];
 
     [HideInInspector] public Dictionary<int, LevelData> levelEntries;
 
-    public int maxLevel = 4;
     [HideInInspector]
     public int livesCurrent;
     
-    public float huntersCounter = 40f;
     [HideInInspector]
     public bool huntersArrived = false;
     [HideInInspector]
@@ -74,6 +104,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        difficulty = Difficulty.Easy;
         DontDestroyOnLoad(gameObject);
         ResetGame();
         currentGameState = GameState.MainMenu;
@@ -118,7 +149,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator HuntersCounter()
     {
         var textField = GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>();
-        var duration = huntersCounter;
+        var duration = huntersTimer[(int)difficulty];
         while (duration >= 0)
         {
             duration -= Time.deltaTime;
@@ -144,10 +175,16 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public void tryAddLife()
+    {
+        if (livesCurrent < livesTop[(int)difficulty])
+            livesCurrent++;
+    }
+
     #region Update UI Text
     public void UpdateLivesText()
     {
-        GameObject.Find("WolfLives").GetComponent<TextMeshProUGUI>().SetText(livesCurrent.ToString());
+        GameObject.Find("WolfLives").GetComponent<TextMeshProUGUI>().SetText($"{livesCurrent} / {livesTop[(int)difficulty]}");
     }
     public void UpdateHuntersCounterText()
     {
@@ -160,7 +197,13 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    #region End Game functions
+    #region Start / End Game functions
+
+    public void StartGame(int difficulty)
+    {
+        this.difficulty = (Difficulty)difficulty;
+        LoadLevel();
+    }
 
     /// <summary>
     /// Called when Level WIN state reached
@@ -199,9 +242,16 @@ public class GameManager : MonoBehaviour
     {
         PauseGame(true);
         currentGameState = GameState.EndGame;
-        ResetGame();
         gameOverMenu.SetActive(true);
+        var finalScore = score * difficultyScoreMultiplier[difficulty];
+        gameOverMenu.transform.GetComponentInChildren<TextMeshProUGUI>().SetText(
+            "GAME OVER\n" +
+            $"Score: {score}\n" +
+            $"Difficulty: x{difficultyScoreMultiplier[difficulty]}\n" +
+            $"<color=#65BB6B><b>Final score: {finalScore}</b>"
+            );
         currentActiveMenu = gameOverMenu;
+        ResetGame();
     }
 
     /// <summary>
@@ -211,9 +261,17 @@ public class GameManager : MonoBehaviour
     {
         PauseGame(true);
         currentGameState = GameState.EndGame;
-        ResetGame();
         gameWinMenu.SetActive(true);
+        var finalScore = score * difficultyScoreMultiplier[difficulty] + (livesCurrent * scoreForLife);
+        gameWinMenu.transform.GetComponentInChildren<TextMeshProUGUI>().SetText(
+            "YOU WIN!\n" +
+            $"Score: {score}\n" +
+            $"Difficulty: x{difficultyScoreMultiplier[difficulty]}\n" +
+            $"Lives left: {livesCurrent} x {scoreForLife}\n" +
+            $"<color=#65BB6B><b>Final score: {finalScore}</b>"
+            );
         currentActiveMenu = gameWinMenu;
+        ResetGame();
     }
 
     #endregion
@@ -327,9 +385,9 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 0; 
+        currentLevel = 0;
         bones = 0;
-        livesCurrent = livesInitial;
+        livesCurrent = livesStart[(int)difficulty];
         huntersArrived = false;
     }
 
