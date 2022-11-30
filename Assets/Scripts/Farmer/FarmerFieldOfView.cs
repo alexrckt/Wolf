@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SensesManager : MonoBehaviour
+public class FarmerFieldOfView : MonoBehaviour
 {
-    public float radius;
+    [SerializeField] private float radius;
     public float closeradius;
     [Range (0, 360)]
-    public float angle;
+    private float angle;
+    [SerializeField] private float currentAngle;
     public Transform fovPoint;
     public GameObject playerRef;
     public LayerMask playerMask;
@@ -26,10 +27,12 @@ public class SensesManager : MonoBehaviour
     public List<Collider2D> resultsFarRange;
     public List<Collider2D> resultsCloseRange;
     private ContactFilter2D contactFilter;
+    private GameManager gameManager;
     [SerializeField] FOVVisual fovVisual;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         wc = playerRef.GetComponent<WolfController>();
         farmerController = GetComponent<FarmerController>();
@@ -39,6 +42,11 @@ public class SensesManager : MonoBehaviour
             layerMask = playerMask,
             useLayerMask = true
         };
+        radius = gameManager.GetFOVRadius(gameObject);
+        angle = gameManager.GetFOVAngle(gameObject);
+        currentAngle = angle;
+        fovVisual.SetAngleAndRadius(currentAngle, radius);
+
         StartCoroutine(SensesRoutine());
     }
 
@@ -86,14 +94,14 @@ public class SensesManager : MonoBehaviour
         Transform target = results[0].transform;
         Vector2 directionToTarget = (target.position - transform.position).normalized;
 
-        if (Vector2.Angle(fovDir, directionToTarget) < angle / 2) // if player in view angle
+        if (Vector2.Angle(fovDir, directionToTarget) < currentAngle / 2) // if player in view angle
         {
             float distanceToTarget = Vector2.Distance(transform.position, target.position);
             if (!Physics2D.Raycast(transform.position, directionToTarget,
                     distanceToTarget, obstacleMask))      // if player isn't
                                                             // behind an obstacle
             {
-                angle = 360f;
+                currentAngle = 360f;
                 farmerController.PlayerSeen(target.position);
 
                 Debug.DrawLine(transform.position, target.position, Color.white, 2.5f);
@@ -102,7 +110,7 @@ public class SensesManager : MonoBehaviour
             else if (results.Count != 0 
                      && farmerController.canSeePlayer)     // player WAS in view but HID behind an obstacle
             {
-                angle = 180f;
+                currentAngle = angle;
                 farmerController.PlayerHid();
             }
             else if (results.Count != 0) // if player is behind an obstacle

@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class DogFieldOfView : MonoBehaviour
 {
-    public float radius;
+    [SerializeField] private float radius;
     public float closeradius;
     [Range (0, 360)]
-    public float angle;
+    private float angle;
+    [SerializeField] private float currentAngle;
     public bool canSeePlayer;
     public Transform fovPoint;
     public GameObject playerRef;
@@ -23,16 +24,21 @@ public class DogFieldOfView : MonoBehaviour
     AnimatorClipInfo[] clipAnimArray;
     Animator animator;
     private AnimatorUpdater animatorUpdater;
+    private GameManager gameManager;
     [SerializeField] FOVVisual fovVisual;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         sheepsClothing = playerRef.GetComponent<SheepsClothing>();
         wolfController = playerRef.GetComponent<WolfController>();
         dogController = GetComponent<DogController>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
-        
+        radius = gameManager.GetFOVRadius(gameObject);
+        angle = gameManager.GetFOVAngle(gameObject);
+        currentAngle = angle;
+        fovVisual.SetAngleAndRadius(currentAngle, radius);
 
         animator = GetComponentInChildren<Animator>();
         StartCoroutine(FOVRoutine());
@@ -68,7 +74,7 @@ public class DogFieldOfView : MonoBehaviour
             Transform target = rangeChecks[0].transform;
             Vector2 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector2.Angle(fovDir, directionToTarget) < angle / 2) // if player in view angle
+            if (Vector2.Angle(fovDir, directionToTarget) < currentAngle / 2) // if player in view angle
             {
                 float distanceToTarget = Vector2.Distance(transform.position, target.position);
                 if (!Physics2D.Raycast(transform.position, directionToTarget,

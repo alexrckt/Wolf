@@ -265,8 +265,8 @@ GameObject:
   - component: {fileID: 916049436}
   - component: {fileID: 916049438}
   - component: {fileID: 1827880264101436413}
-  - component: {fileID: 916049442}
   - component: {fileID: 5953387380766553565}
+  - component: {fileID: 6899197614620780922}
   m_Layer: 8
   m_Name: Farmer 1
   m_TagString: Farmer
@@ -516,7 +516,24 @@ MonoBehaviour:
   - {fileID: 1197131150}
   - {fileID: 2131735154}
   - {fileID: 817895073}
---- !u!114 &916049442
+--- !u!114 &5953387380766553565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001842422330217959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f60c9aaa0511e4ea7fd0effd37c46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastMotionVector: {x: 0, y: 0}
+  moving: 0
+  horizontal: 0
+  vertical: 0
+  debugVelocity: {x: 0, y: 0}
+--- !u!114 &6899197614620780922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,9 +545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2572c385a103614eb4811a89b6aaa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 16
-  closeradius: 4
-  angle: 140
+  radius: 0
+  closeradius: 2
+  currentAngle: 0
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:
@@ -549,20 +566,3 @@ MonoBehaviour:
   resultsFarRange: []
   resultsCloseRange: []
   fovVisual: {fileID: 0}
---- !u!114 &5953387380766553565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001842422330217959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5f60c9aaa0511e4ea7fd0effd37c46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastMotionVector: {x: 0, y: 0}
-  moving: 0
-  horizontal: 0
-  vertical: 0
-  debugVelocity: {x: 0, y: 0}

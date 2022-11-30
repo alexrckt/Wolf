@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using QuantumTek.QuantumUI;
@@ -167,10 +168,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-        textField.SetText("THE CAVALRY IS HERE!");
-        huntersCounterOn = false;
-        huntersArrived = true;
-        HuntersArrival();
+            textField.SetText("THE CAVALRY IS HERE!");
+            huntersCounterOn = false;
+            huntersArrived = true;
+            HuntersArrival();
         }
     }
 
@@ -178,6 +179,35 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("NPCs").transform.Find("Hunters").gameObject.SetActive(true);
     }
+
+    public float GetFOVAngle(GameObject actor)
+    {
+        if (actor.GetComponent<FarmerFieldOfView>() != null)
+        {
+            return farmerFOVAngle[(int)difficulty];
+        } else 
+        if (actor.GetComponent<DogFieldOfView>() != null)
+        {
+            return dogFOVAngle[(int)difficulty];
+        } else
+            throw new Exception("Actor type not found");
+    }
+
+    public float GetFOVRadius(GameObject actor)
+    {
+        if (actor.GetComponent<FarmerFieldOfView>() != null)
+        {
+            return farmerFOVRadius[(int)difficulty];
+        }
+        else
+        if (actor.GetComponent<DogFieldOfView>() != null)
+        {
+            return dogFOVRadius[(int)difficulty];
+        }
+        else
+            throw new Exception("Actor type not found");
+    }
+
 
     public void AddScore(int scoreToAdd)
     {
@@ -400,7 +430,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 5; // starting from 1
+        currentLevel = 1; // starting from 1
         bones = 0;
         livesCurrent = livesStart[(int)difficulty];
         huntersArrived = false;

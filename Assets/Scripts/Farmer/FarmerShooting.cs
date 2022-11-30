@@ -15,7 +15,7 @@ public class FarmerShooting : MonoBehaviour
     public Transform riflePoint;
     AIPath aiPath;
     public GameObject crosshair;
-    SensesManager _sensesManager;
+    FarmerFieldOfView _sensesManager;
     FarmerController farmerController;
     private AnimatorUpdater animatorUpdater;
     //bool isAiming = false;
@@ -44,7 +44,7 @@ public class FarmerShooting : MonoBehaviour
     {
         aiPath = GetComponent<AIPath>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        _sensesManager = GetComponent<SensesManager>();
+        _sensesManager = GetComponent<FarmerFieldOfView>();
         aids = GetComponent<AIDestinationSetter>();
         animator = GetComponent<Animator>();
         animatorUpdater = GetComponent<AnimatorUpdater>();
