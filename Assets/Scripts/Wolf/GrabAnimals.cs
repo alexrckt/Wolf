@@ -16,6 +16,7 @@ public class GrabAnimals : MonoBehaviour
     private WolfController wolfController;
     private SheepsClothing sheepsClothing;
     private LevelManager levelManager;
+    private GameManager gameManager;
     WolfEmotes we;
     public IEatableAnimal eatableAnimal;
     EventManager em;
@@ -29,6 +30,7 @@ public class GrabAnimals : MonoBehaviour
         wolfController = GetComponent<WolfController>();
         sheepsClothing = GetComponent<SheepsClothing>();
         levelManager = FindObjectOfType<LevelManager>();
+        gameManager = FindObjectOfType<GameManager>();
         we = GetComponent<WolfEmotes>();
         em = FindObjectOfType<EventManager>();
         spaceToRunAway = FindObjectOfType<SpaceToRunAway>();
@@ -39,7 +41,7 @@ public class GrabAnimals : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown (KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.currentGameState != GameManager.GameState.EndGame)
         {
             if(isTouchingSheep && !wolfController.isCarryingSheep)
             {

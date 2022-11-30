@@ -57,11 +57,6 @@ public class WolfController : MonoBehaviour
         em = FindObjectOfType<EventManager>();
         
         footstepParent = GameObject.FindGameObjectWithTag("FootstepParent")?.transform;
-
-
-       
-
-        //InvokeRepeating("Debugging", 1f, 1f);
     }
 
     void Debugging()
