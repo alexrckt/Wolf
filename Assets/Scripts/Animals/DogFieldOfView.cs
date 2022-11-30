@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,6 +56,7 @@ public class DogFieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
+            int rnd = Random.Range(0, 256);
             FieldOfViewCheck();
         }
     }
@@ -64,16 +65,12 @@ public class DogFieldOfView : MonoBehaviour
     {
         Collider2D[] rangeChecks = Physics2D.OverlapCircleAll(transform.position,  radius, playerMask);
         Collider2D[] closeRangeChecks = Physics2D.OverlapCircleAll(transform.position,  closeradius, playerMask);
-        WhereIsDogLooking(); 
+        WhereIsDogLooking();
         if (closeRangeChecks.Length == 0 && rangeChecks.Length != 0 && !wolfController.isStealthed ) // if player is in the circle's range
         {
-            
             WhereIsDogLooking();    // check where the dog is facing now
-                                    
-
             Transform target = rangeChecks[0].transform;
             Vector2 directionToTarget = (target.position - transform.position).normalized;
-
             if (Vector2.Angle(fovDir, directionToTarget) < currentAngle / 2) // if player in view angle
             {
                 float distanceToTarget = Vector2.Distance(transform.position, target.position);

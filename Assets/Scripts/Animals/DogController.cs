@@ -143,11 +143,11 @@ public class DogController : MonoBehaviour
         currentState = State.Chasing;
         aiPath.maxSpeed = maxSpeedChasing;
         barker.AnimationSwitch(true);
-        try
+        if(FarmerController.onHearBarking != null)
         {
             FarmerController.onHearBarking();
-        } catch(Exception ex) { var str = ex.Source; }
-        
+        }
+
         onAttention(playerRef.transform); // for other dog instances
     }
 
