@@ -39,7 +39,7 @@ public class GrabAnimals : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown (KeyCode.G))
+        if(Input.GetKeyDown (KeyCode.Space))
         {
             if(isTouchingSheep && !wolfController.isCarryingSheep)
             {

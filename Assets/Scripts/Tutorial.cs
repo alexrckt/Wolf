@@ -113,7 +113,7 @@ public class Tutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         currentState = tutState.Animals;
-        hints.text = "You feel your stomach growling...";
+        hints.text = "You are hungry like the wolf...";
         Fading(true);
         if (isOn)
         {
@@ -129,7 +129,7 @@ public class Tutorial : MonoBehaviour
         hungerBarFill.SetActive(true);
         if (currentState == tutState.Animals)
         {
-          hints.text = "To eat an animal or grab a sheep, press <G>";
+          hints.text = "To eat an animal or grab a sheep, press <Space>";
           Fading(true);
         }
 
@@ -191,7 +191,7 @@ public class Tutorial : MonoBehaviour
         Fading(true);
         yield return new WaitForSeconds(3f);
         
-        hints.text = "Or stay and eat as many animals as you can!";
+        hints.text = "Or stay and wolf down as many animals as you can!";
         FadeAndDisappear(true);
         
         if (isOn)
@@ -224,7 +224,7 @@ public class Tutorial : MonoBehaviour
         hints.text = "but they can't see you very well";
         Fading(true);
         yield return new WaitForSeconds(3f);
-        hints.text = "To fool a dog, put on your disguise - hold <Space>!";
+        hints.text = "To fool a dog, put on your disguise - hold <G>!";
         Fading(true);
 
     }

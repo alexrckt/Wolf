@@ -160,10 +160,18 @@ public class GameManager : MonoBehaviour
             textField.SetText($"Hunters arrive in " + duration.ToString("0.00"));
             yield return null;
         }
+        if (currentLevel == pinataLevelID)
+        {
+            LevelWin();
+            textField.SetText("You barely escaped!");
+        }
+        else
+        {
         textField.SetText("THE CAVALRY IS HERE!");
         huntersCounterOn = false;
         huntersArrived = true;
         HuntersArrival();
+        }
     }
 
     public void HuntersArrival()
