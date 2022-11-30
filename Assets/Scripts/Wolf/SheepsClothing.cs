@@ -28,7 +28,7 @@ public class SheepsClothing : MonoBehaviour
         
         
         
-        if (Input.GetKeyDown(KeyCode.G) )
+        if (Input.GetKeyDown(KeyCode.LeftShift) )
         {
             if ( !isSeen && !w_c.isCarryingSheep && !w_c.isStealthed)
             
@@ -44,7 +44,7 @@ public class SheepsClothing : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             if (!w_c.isStealthed)
             {

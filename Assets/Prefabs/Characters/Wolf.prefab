@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f960704a971f0b49a233572c87c8a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dressingTime: 1.5
+  dressingTime: 1
   isDressing: 0
   thisFillBar: {fileID: 640803252}
 --- !u!1 &1908698817
@@ -712,12 +712,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aec39ea79e0d404c871ed15bc1cd93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTouchingSheep: 0
   isTouchingEatable: 0
   isTouchingFence: 0
   isTouchingDropPoint: 0
   mouth: {fileID: 285352027}
   sheepValue: 1
   sheep: {fileID: 0}
+  isTutBlockingExit: 0
 --- !u!114 &8372954254675228265
 MonoBehaviour:
   m_ObjectHideFlags: 0

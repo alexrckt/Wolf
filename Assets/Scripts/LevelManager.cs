@@ -128,7 +128,7 @@ public class LevelManager : MonoBehaviour
         gameManager.UpdateLivesText();
         playerRef.moveSpeed += 1.5f;
 
-        if (gameManager.currentLevel == 1)
+        if (gameManager.currentLevel == 2)
         {
           em.GopherEaten();
         }

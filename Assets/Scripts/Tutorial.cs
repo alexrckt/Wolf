@@ -181,15 +181,15 @@ public class Tutorial : MonoBehaviour
         hints.text = "You earn points when you eat animals";
         Fading(true);
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         
         hints.text = "Sheep will also gain you extra lives";
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         
         hints.text = "You can escape to the forest when you're full";
         Fading(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         
         hints.text = "Or stay and wolf down as many animals as you can!";
         FadeAndDisappear(true);
@@ -224,7 +224,7 @@ public class Tutorial : MonoBehaviour
         hints.text = "but they can't see you very well";
         Fading(true);
         yield return new WaitForSeconds(3f);
-        hints.text = "To fool a dog, put on your disguise - hold <G>!";
+        hints.text = "To fool a dog, put on your disguise - hold <Left Shift>!";
         Fading(true);
 
     }
