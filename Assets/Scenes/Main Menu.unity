@@ -8144,11 +8144,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: maxLevel
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: livesInitial
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: pinataLevelID
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: scoreForSheep
@@ -8582,10 +8590,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 31.37
       objectReference: {fileID: 0}
+    - target: {fileID: 7300018542043486431, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300018542043486431, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300018542043486431, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_Color.r
+      value: 0.972549
+      objectReference: {fileID: 0}
     - target: {fileID: 7370187596094404375, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8d63f0731b37c4f8a92f30aed16fd0f0, type: 3}
+    - target: {fileID: 7570230331211407247, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_margin.z
+      value: -12.085846
+      objectReference: {fileID: 0}
     - target: {fileID: 7570230331211407247, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -8734,6 +8758,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: dca951feb01de487f97d842fbe9fb1f5, type: 3}
+    - target: {fileID: 8807198537836895755, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 162.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807198537836895755, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 147.22998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807198537836895755, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 502.51
+      objectReference: {fileID: 0}
     - target: {fileID: 8829593077496481432, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Name
       value: HeartIcon

@@ -66,7 +66,10 @@ public class LevelManager : MonoBehaviour
         gameManager.huntersCounterOn = false;
         gameManager.huntersArrived = false;
         if (levelID == gameManager.pinataLevelID)
-        {gameManager.HuntersCounter();}
+        {
+            gameManager.huntersCounterOn = true;
+            StartCoroutine(gameManager.HuntersCounter());
+        }
     }
 
     // Update is called once per frame

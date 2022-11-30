@@ -186,7 +186,7 @@ public class DogController : MonoBehaviour
             }
             else if (currentState == State.LostTarget)
             {
-                target = lastPlayerPosTarget.transform;
+                target = lastPlayerPosTarget?.transform;
                 
                 if (aiPath.reachedDestination)
                     SetCalmState();

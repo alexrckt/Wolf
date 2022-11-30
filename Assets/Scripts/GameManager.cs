@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject gameWinMenu;
     private GameObject currentActiveMenu;
-    public int pinataLevelID = 4;
+    public int pinataLevelID = 5;
 
 
 
@@ -152,7 +152,8 @@ public class GameManager : MonoBehaviour
         var textField = GameObject.Find("HuntersCounter").GetComponent<TextMeshProUGUI>();
         var duration = huntersTimer[(int)difficulty];
         if (currentLevel == pinataLevelID)
-        {duration = 30f;}
+            duration = 30f;
+
         while (duration >= 0)
         {
             duration -= Time.deltaTime;
@@ -282,10 +283,10 @@ public class GameManager : MonoBehaviour
     #region Scene Loading
     public void LoadLevel()
     {
-        var levelName = $"Level {currentLevel}";
-        SceneManager.LoadScene(levelName);
-        StartCoroutine("WaitForSceneLoad", levelName);
-        if (currentLevel == 0)
+        //var levelName = $"Level {currentLevel}";
+        SceneManager.LoadScene(currentLevel);
+        StartCoroutine("WaitForSceneLoad", currentLevel);
+        if (currentLevel == 1)
         {
             livesCurrent = livesStart[(int)difficulty];
             if ( !tutStarted)
@@ -293,17 +294,17 @@ public class GameManager : MonoBehaviour
             tutStarted = true;}
             
         }
-        if (currentLevel == 1 && !level1Started)
+        if (currentLevel == 2 && !level1Started)
         {
             em.Level0Complete();
             level1Started = true;
         }
-        if (currentLevel == 2 && !level2Started)
+        if (currentLevel == 3 && !level2Started)
         {
             em.Level1Complete();
             level2Started = true;
         }
-        if (currentLevel == 3 && !level3Started)
+        if (currentLevel == 4 && !level3Started)
         {
             em.TutComplete();
             level3Started = true;
@@ -319,9 +320,9 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.MainMenu;
     }
 
-    IEnumerator WaitForSceneLoad(string sceneName)
+    IEnumerator WaitForSceneLoad(int sceneIndex)
     {
-        while (SceneManager.GetActiveScene().name != sceneName)
+        while (SceneManager.GetActiveScene().buildIndex != sceneIndex)
         {
             yield return null;
         }
@@ -391,7 +392,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 0;
+        currentLevel = 5; // starting from 1
         bones = 0;
         livesCurrent = livesStart[(int)difficulty];
         huntersArrived = false;
