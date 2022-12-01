@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8105532668242540608, guid: bdcb6b7c784e6624a9c9f6e0687daaa4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a9f84881abde25b48904c0ff67bca145, type: 2}
+      objectReference: {fileID: 2100000, guid: 61b89fe75af132249ba5700ee0334a72, type: 2}
     - target: {fileID: 8105532668242540609, guid: bdcb6b7c784e6624a9c9f6e0687daaa4, type: 3}
       propertyPath: m_Name
       value: FOVObjDogStealth Variant

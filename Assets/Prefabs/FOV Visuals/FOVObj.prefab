@@ -46,13 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28644d854bdc93044aa905d5e2c1223f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialActive: {fileID: 2100000, guid: 2e19e5cae29e4134aa4ed7546c0ff305, type: 2}
+  materialNonActive: {fileID: 2100000, guid: f69b09956f0590448b3f5d62cfef48c4, type: 2}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4096
-  fov: 140
+  angle: 0
+  radius: 0
   origin: {x: 0, y: 0, z: 0}
   startingAngle: 0
-  viewDistance: 16
   rayCount: 55
 --- !u!33 &1700648513921779096
 MeshFilter:
@@ -81,8 +83,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 61b89fe75af132249ba5700ee0334a72, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

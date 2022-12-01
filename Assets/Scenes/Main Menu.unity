@@ -8315,6 +8315,18 @@ PrefabInstance:
       value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVAngle.Array.data[0]
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVAngle.Array.data[1]
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVAngle.Array.data[2]
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: farmerFOVRadius.Array.data[0]
       value: 14
       objectReference: {fileID: 0}
@@ -8325,6 +8337,18 @@ PrefabInstance:
     - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: farmerFOVRadius.Array.data[2]
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVRadius.Array.data[0]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVRadius.Array.data[1]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485944220077744027, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
+      propertyPath: hunterFOVRadius.Array.data[2]
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2485944220077744028, guid: 5ac188f1c0c164a428e7000591efc430, type: 3}
       propertyPath: m_Name

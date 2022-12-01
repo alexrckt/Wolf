@@ -193,13 +193,13 @@ public class FarmerFieldOfView : MonoBehaviour
 
     public void WolfStealthed()
     {
-      fovVisualStealth.gameObject.SetActive(true);
-      // fovVisual change material
+        fovVisualStealth?.gameObject.SetActive(true);
+        fovVisual?.SetMaterialActive(false);
     }
 
     public void WolfUnstealthed()
     {
-        fovVisualStealth.gameObject.SetActive(false);
-        //fovVisual change material to default
+        fovVisualStealth?.gameObject.SetActive(false);
+        fovVisual?.SetMaterialActive(true);
     }
 }
