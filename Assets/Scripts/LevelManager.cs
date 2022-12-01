@@ -111,6 +111,7 @@ public class LevelManager : MonoBehaviour
         gameManager.tryAddLife();
         gameManager.UpdateLivesText();
         gameManager.AddScore(i * gameManager.scoreForSheep);
+        em.SheepEaten();
     }
 
     public void ChickenEaten()

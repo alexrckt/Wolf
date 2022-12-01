@@ -7,6 +7,7 @@ public class EventManager : MonoBehaviour
     public delegate void HungerFull();
     public static event HungerFull OnHungerFull;
      public static event HungerFull OnLevel0HungerFull;
+     public static event HungerFull OnSheepEaten;
 
      public delegate void Stealth();
      public static event Stealth OnStealth;
@@ -190,5 +191,13 @@ public class EventManager : MonoBehaviour
             OnSeenPlayer();
             
         } 
+    }
+
+    public void SheepEaten()
+    {
+        if (OnSheepEaten != null)
+        {
+            OnSheepEaten();
+        }
     }
 }

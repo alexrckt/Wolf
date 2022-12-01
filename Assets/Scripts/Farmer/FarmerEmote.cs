@@ -17,6 +17,12 @@ public class FarmerEmote : MonoBehaviour
          EventManager.OnAgitated += AgitatedEmote;
     }
 
+    void OnDestroy()
+    {
+        EventManager.OnSeenPlayer -= SeenPlayerEmote;
+         EventManager.OnAgitated -= AgitatedEmote;
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -737,6 +737,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6a1d0344f4a7d034f947538ae674e6ed, type: 3}
   - {fileID: 21300000, guid: 2e44efdf0c4b13c4d874b167c3150266, type: 3}
   - {fileID: 21300000, guid: b63f35a176cec1145ba8768aeec3281b, type: 3}
+  - {fileID: 21300000, guid: d4b187113c8f83745a82e80620aac85d, type: 3}
   emotingTimer: 2
   emotingCurrentTimer: 0
 --- !u!1 &5304477308677056277
