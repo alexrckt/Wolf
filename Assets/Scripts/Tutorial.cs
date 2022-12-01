@@ -155,8 +155,7 @@ public class Tutorial : MonoBehaviour
     void AnimalsToGrabSheep() // EventManager.OnGrabSheep
     {
       currentState = tutState.GrabSheep;
-      hungerBarBorder.SetActive(true);
-      hungerBarFill.SetActive(true);
+      
       hints.text = "Drag that juicy sheep to the forest!"; 
       Fading(true);
       
@@ -165,6 +164,8 @@ public class Tutorial : MonoBehaviour
     void StartGrabSheepToDeliveredSheep()
     {
         StopAllCoroutines();
+        hungerBarBorder.SetActive(true);
+        hungerBarFill.SetActive(true);
         StartCoroutine(GrabSheepToDeliveredSheep());
         
 
