@@ -29,6 +29,7 @@ public class FarmerFieldOfView : MonoBehaviour
     private ContactFilter2D contactFilter;
     private GameManager gameManager;
     [SerializeField] FOVVisual fovVisual;
+    [SerializeField] FOVVisual fovVisualStealth;
     public bool iAmAHunter = false;
 
     void Start()
@@ -43,11 +44,17 @@ public class FarmerFieldOfView : MonoBehaviour
             layerMask = playerMask,
             useLayerMask = true
         };
+
+        EventManager.OnStealth += WolfStealthed;
+        EventManager.OnStealthFinish += WolfUnstealthed;
         radius = gameManager.GetFOVRadius(gameObject);
         angle = gameManager.GetFOVAngle(gameObject);
         currentAngle = angle;
         if (fovVisual != null)
+        {
         fovVisual.SetAngleAndRadius(currentAngle, radius);
+        fovVisualStealth.SetAngleAndRadius(currentAngle, closeradius);
+        }
 
         StartCoroutine(SensesRoutine());
     }
@@ -58,6 +65,10 @@ public class FarmerFieldOfView : MonoBehaviour
         
     }
 
+     private void OnDisable() {
+        EventManager.OnStealth -= WolfStealthed;
+        EventManager.OnStealthFinish -= WolfUnstealthed;
+    }
     private IEnumerator SensesRoutine()
     {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
@@ -142,6 +153,8 @@ public class FarmerFieldOfView : MonoBehaviour
             viewPointString = "down";
             fovVisual?.SetOrigin(fovDirs[2].transform.position);
             fovVisual?.SetStartingAngle(0f);
+            fovVisualStealth?.SetOrigin(fovDirs[2].transform.position);
+            fovVisualStealth?.SetStartingAngle(0f);
         }
         else if (animName == "Idle_Up_Farmer" || animName == "Shoot_Up_Farmer"
                                               || animName == "Walk_Up_Farmer")
@@ -151,6 +164,8 @@ public class FarmerFieldOfView : MonoBehaviour
             viewPointString = "up";
             fovVisual?.SetOrigin(fovDirs[0].transform.position);
             fovVisual?.SetStartingAngle(180f);
+            fovVisualStealth?.SetOrigin(fovDirs[0].transform.position);
+            fovVisualStealth?.SetStartingAngle(180f);
         }
         else if (animName == "Idle_Right_Farmer" || animName == "Shoot_Right_Farmer"
                                                  || animName == "Walk_Right_Farmer")
@@ -160,6 +175,8 @@ public class FarmerFieldOfView : MonoBehaviour
             viewPointString = "right";
             fovVisual?.SetOrigin(fovDirs[1].transform.position);
             fovVisual?.SetStartingAngle(90f);
+            fovVisualStealth?.SetOrigin(fovDirs[1].transform.position);
+            fovVisualStealth?.SetStartingAngle(90f);
         }
         else if (animName == "Idle_Left_Farmer" || animName == "Shoot_Left_Farmer"
                                                 || animName == "Walk_Left_Farmer")
@@ -169,6 +186,20 @@ public class FarmerFieldOfView : MonoBehaviour
             viewPointString = "left";
             fovVisual?.SetOrigin(fovDirs[3].transform.position);
             fovVisual?.SetStartingAngle(270f);
+            fovVisualStealth?.SetOrigin(fovDirs[3].transform.position);
+            fovVisualStealth?.SetStartingAngle(270f);
         }
+    }
+
+    public void WolfStealthed()
+    {
+      fovVisualStealth.gameObject.SetActive(true);
+      // fovVisual change material
+    }
+
+    public void WolfUnstealthed()
+    {
+        fovVisualStealth.gameObject.SetActive(false);
+        //fovVisual change material to default
     }
 }

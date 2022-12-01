@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0
-  closeradius: 2
+  closeradius: 4
   currentAngle: 0
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
@@ -566,3 +566,5 @@ MonoBehaviour:
   resultsFarRange: []
   resultsCloseRange: []
   fovVisual: {fileID: 0}
+  fovVisualStealth: {fileID: 0}
+  iAmAHunter: 0

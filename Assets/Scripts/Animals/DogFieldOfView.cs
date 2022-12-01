@@ -26,6 +26,8 @@ public class DogFieldOfView : MonoBehaviour
     private AnimatorUpdater animatorUpdater;
     private GameManager gameManager;
     [SerializeField] FOVVisual fovVisual;
+    [SerializeField] FOVVisual fovVisualStealth;
+
 
     private void Start()
     {
@@ -38,7 +40,12 @@ public class DogFieldOfView : MonoBehaviour
         radius = gameManager.GetFOVRadius(gameObject);
         angle = gameManager.GetFOVAngle(gameObject);
         currentAngle = angle;
+        
         fovVisual.SetAngleAndRadius(currentAngle, radius);
+        fovVisualStealth.SetAngleAndRadius(360f, closeradius);
+
+        EventManager.OnStealth += WolfStealthed;
+        EventManager.OnStealthFinish += WolfUnstealthed;
 
         animator = GetComponentInChildren<Animator>();
         StartCoroutine(FOVRoutine());
@@ -48,6 +55,11 @@ public class DogFieldOfView : MonoBehaviour
     void Update()
     {
          
+    }
+
+    private void OnDisable() {
+        EventManager.OnStealth -= WolfStealthed;
+        EventManager.OnStealthFinish -= WolfUnstealthed;
     }
 
     private IEnumerator FOVRoutine()
@@ -135,6 +147,8 @@ public class DogFieldOfView : MonoBehaviour
             fovDir = -fovDirs[2].transform.up;
             fovVisual.SetOrigin(fovDirs[2].transform.position);
             fovVisual.SetStartingAngle(0f);
+            fovVisualStealth.SetOrigin(fovDirs[2].transform.position);
+            fovVisualStealth.SetStartingAngle(0f);
             // Debug.Log("down");
         }
         else if (animName == "Walk_Up_Dog")
@@ -142,6 +156,8 @@ public class DogFieldOfView : MonoBehaviour
             fovDir = fovDirs[0].transform.up;
             fovVisual.SetOrigin(fovDirs[0].transform.position);
             fovVisual.SetStartingAngle(180f);
+            fovVisualStealth.SetOrigin(fovDirs[0].transform.position);
+            fovVisualStealth.SetStartingAngle(180f);
             // Debug.Log("up");
         }
         else if (animName == "Walk_Right_Dog")
@@ -149,6 +165,8 @@ public class DogFieldOfView : MonoBehaviour
             fovDir = fovDirs[1].transform.right;
             fovVisual.SetOrigin(fovDirs[1].transform.position);
             fovVisual.SetStartingAngle(90f);
+            fovVisualStealth.SetOrigin(fovDirs[1].transform.position);
+            fovVisualStealth.SetStartingAngle(90f);
             //  Debug.Log("right");
         }
         else if (animName == "Walk_Left_Dog")
@@ -156,9 +174,22 @@ public class DogFieldOfView : MonoBehaviour
             fovDir = -fovDirs[3].transform.right;
             fovVisual.SetOrigin(fovDirs[3].transform.position);
             fovVisual.SetStartingAngle(270f);
+            fovVisualStealth.SetOrigin(fovDirs[3].transform.position);
+            fovVisualStealth.SetStartingAngle(270f);
             //  Debug.Log("left");
         }
     }
 
+    public void WolfStealthed()
+    {
+      fovVisualStealth.gameObject.SetActive(true);
+      // fovVisual change material
+    }
+
+    public void WolfUnstealthed()
+    {
+        fovVisualStealth.gameObject.SetActive(false);
+        //fovVisual change material to default
+    }
     
 }

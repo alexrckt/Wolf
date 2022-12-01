@@ -128,10 +128,20 @@ public class WolfController : MonoBehaviour
     {
         isStealthed = yesno;
         stealthMsFactor = yesno ? 0.5f : 1f;
-        if (yesno == true && FindObjectOfType<LevelManager>().levelID != 1)
+        
+        if (yesno)
         {
-          em.DisguisePut();
+            em.Stealthed();
+            if (FindObjectOfType<LevelManager>().levelID != 1)
+            {em.DisguisePut();}
         }
+
+        else if (!yesno)
+        {
+            em.Unstealthed();
+        }
+
+
     }
  
     public void IsCarryingSheep(bool yesno)

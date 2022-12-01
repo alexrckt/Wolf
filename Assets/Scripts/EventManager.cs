@@ -8,6 +8,10 @@ public class EventManager : MonoBehaviour
     public static event HungerFull OnHungerFull;
      public static event HungerFull OnLevel0HungerFull;
 
+     public delegate void Stealth();
+     public static event Stealth OnStealth;
+      public static event Stealth OnStealthFinish;
+
     public delegate void Tutorialka();
 
     public static event Tutorialka OnTutStarted;
@@ -146,6 +150,23 @@ public class EventManager : MonoBehaviour
         } 
     }
 
+
+    public void Stealthed()
+    {
+       if (OnStealth != null )
+        {
+            OnStealth();
+            
+        } 
+    }
     
+    public void Unstealthed()
+    {
+       if (OnStealthFinish != null )
+        {
+            OnStealthFinish();
+            
+        } 
+    }
     
 }
