@@ -44,7 +44,7 @@ public class SheepsClothing : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
             if (!w_c.isStealthed)
             {
