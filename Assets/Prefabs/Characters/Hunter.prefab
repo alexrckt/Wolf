@@ -529,8 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 15
-  closeradius: 4
-  angle: 180
+  closeradius: 15
+  currentAngle: 290
   fovPoint: {fileID: 0}
   playerRef: {fileID: 0}
   playerMask:
@@ -549,6 +549,7 @@ MonoBehaviour:
   resultsFarRange: []
   resultsCloseRange: []
   fovVisual: {fileID: 0}
+  iAmAHunter: 1
 --- !u!114 &5953387380766553565
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class FarmerFieldOfView : MonoBehaviour
     private ContactFilter2D contactFilter;
     private GameManager gameManager;
     [SerializeField] FOVVisual fovVisual;
+    public bool iAmAHunter = false;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class FarmerFieldOfView : MonoBehaviour
         radius = gameManager.GetFOVRadius(gameObject);
         angle = gameManager.GetFOVAngle(gameObject);
         currentAngle = angle;
+        if (fovVisual != null)
         fovVisual.SetAngleAndRadius(currentAngle, radius);
 
         StartCoroutine(SensesRoutine());

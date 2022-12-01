@@ -59,6 +59,9 @@ public class GameManager : MonoBehaviour
     public float[] dogFOVRadius = new float[3];
     public float[] farmerFOVAngle = new float[3];
     public float[] farmerFOVRadius = new float[3];
+    public float[] hunterFOVAngle = new float[3];
+    public float[] hunterFOVRadius = new float[3];
+
     //[HideInInspector] public float currentDogFOVAngle;
     //[HideInInspector] public float currentDogFOVRadius;
     //[HideInInspector] public float currentFarmerFOVAngle;
@@ -182,9 +185,13 @@ public class GameManager : MonoBehaviour
 
     public float GetFOVAngle(GameObject actor)
     {
-        if (actor.GetComponent<FarmerFieldOfView>() != null)
+         if (actor.GetComponent<FarmerFieldOfView>() != null)
         {
+            if (!actor.GetComponent<FarmerFieldOfView>().iAmAHunter)
             return farmerFOVAngle[(int)difficulty];
+            else
+            return hunterFOVAngle[(int)difficulty];
+            
         } else 
         if (actor.GetComponent<DogFieldOfView>() != null)
         {
@@ -197,7 +204,11 @@ public class GameManager : MonoBehaviour
     {
         if (actor.GetComponent<FarmerFieldOfView>() != null)
         {
+            if (!actor.GetComponent<FarmerFieldOfView>().iAmAHunter)
             return farmerFOVRadius[(int)difficulty];
+            else
+            return hunterFOVRadius[(int)difficulty];
+            
         }
         else
         if (actor.GetComponent<DogFieldOfView>() != null)
@@ -430,7 +441,7 @@ public class GameManager : MonoBehaviour
         levelEntries?.Clear();
         score = 0;
         deathsCounter = 0;
-        currentLevel = 1; // starting from 1
+        currentLevel = 2; // starting from 1
         bones = 0;
         livesCurrent = livesStart[(int)difficulty];
         huntersArrived = false;
