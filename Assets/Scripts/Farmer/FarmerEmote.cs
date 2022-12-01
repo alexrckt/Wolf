@@ -2,31 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfEmotes : MonoBehaviour
+public class FarmerEmote : MonoBehaviour
 {
-    public Sprite[] emotes; // 0 = yum, 1 = gotcham, 2 = back to forest, 3 - lupus homini
+    public Sprite[] emotes; // 0 = hunters, 1 = wolves, 2 = mysheep
     
-    GameObject currentEmote;
+    [SerializeField] GameObject currentEmote;
     public float emotingTimer = 2f;
     public float emotingCurrentTimer = 0f;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        currentEmote = transform.Find("currentEmote").gameObject;
-        EventManager.OnHungerFull += EmoteToForest;
-        EventManager.OnFirstBlood += EmoteFirstBlood;
-    }
-
-     private void OnDestroy() {
-        EventManager.OnHungerFull -= EmoteToForest;
-        EventManager.OnFirstBlood -= EmoteFirstBlood;
+         currentEmote = transform.Find("currentEmote").gameObject;
+         EventManager.OnSeenPlayer += SeenPlayerEmote;
+         EventManager.OnAgitated += AgitatedEmote;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (emotingCurrentTimer > 0)
+         if (emotingCurrentTimer > 0)
         {
             emotingCurrentTimer -= Time.deltaTime;
         }
@@ -44,13 +38,18 @@ public class WolfEmotes : MonoBehaviour
         emotingCurrentTimer = emotingTimer;
     }
 
-    void EmoteToForest()
+    void SeenPlayerEmote()
+    {
+     StartCoroutine(SeenPlayerRoutine());
+    }
+    IEnumerator SeenPlayerRoutine()
+    {
+      Emote(0);
+      yield return new WaitForSeconds(2f);
+      Emote(1);
+    }
+    void AgitatedEmote()
     {
         Emote(2);
-    }
-
-    void EmoteFirstBlood()
-    {
-        Emote(3);
     }
 }

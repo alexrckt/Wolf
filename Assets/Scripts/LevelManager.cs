@@ -116,7 +116,7 @@ public class LevelManager : MonoBehaviour
     public void ChickenEaten()
     {
         gameManager.AddScore(gameManager.scoreForChicken);
-        if (gameManager.currentLevel == 0)
+        if (gameManager.currentLevel == 1)
         {
           em.FirstBlood();
         }

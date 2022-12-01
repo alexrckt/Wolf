@@ -19109,14 +19109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2106051138}
     m_Modifications:
-    - target: {fileID: 916049442, guid: 6d4069f9fe0d5074c8c931580aaedd36, type: 3}
-      propertyPath: fovVisual
-      value: 
-      objectReference: {fileID: 2019380771}
-    - target: {fileID: 916049442, guid: 6d4069f9fe0d5074c8c931580aaedd36, type: 3}
-      propertyPath: playerRef
-      value: 
-      objectReference: {fileID: 144407534}
     - target: {fileID: 2001842422330217954, guid: 6d4069f9fe0d5074c8c931580aaedd36, type: 3}
       propertyPath: m_RootOrder
       value: 2

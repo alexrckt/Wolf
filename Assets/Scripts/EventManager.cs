@@ -10,7 +10,12 @@ public class EventManager : MonoBehaviour
 
      public delegate void Stealth();
      public static event Stealth OnStealth;
-      public static event Stealth OnStealthFinish;
+     public static event Stealth OnStealthFinish;
+
+     public delegate void FarmerEvents();
+     public static event FarmerEvents OnAgitated;
+     public static event FarmerEvents OnSeenPlayer;
+
 
     public delegate void Tutorialka();
 
@@ -169,4 +174,21 @@ public class EventManager : MonoBehaviour
         } 
     }
     
+     public void Agitated()
+    {
+       if (OnAgitated != null )
+        {
+            OnAgitated();
+            
+        } 
+    }
+
+     public void SeenPlayer()
+    {
+       if (OnSeenPlayer != null )
+        {
+            OnSeenPlayer();
+            
+        } 
+    }
 }

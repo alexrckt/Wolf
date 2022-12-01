@@ -25,6 +25,7 @@ public class FarmerController : MonoBehaviour
     private Animator animator;
     private GameManager gameManager;
     SheepsClothing sheepsClothing;
+    EventManager em;
 
     public delegate void OnHearBarking();
     public static OnHearBarking onHearBarking;
@@ -34,6 +35,7 @@ public class FarmerController : MonoBehaviour
         animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         sheepsClothing = FindObjectOfType<SheepsClothing>();
+        em = FindObjectOfType<EventManager>();
 
         if(hasSpecificRoute)
             moveSpotsLinked = new LinkedList<GameObject>(moveSpots);
@@ -110,6 +112,7 @@ public class FarmerController : MonoBehaviour
         if (!gameManager.huntersCounterOn && !gameManager.huntersArrived)
         {
             gameManager.huntersCounterOn = true;
+            em.SeenPlayer(); // event for emote
             StartCoroutine(gameManager.HuntersCounter());
         }
 
@@ -124,6 +127,8 @@ public class FarmerController : MonoBehaviour
         if (!currentState.Equals(shootingState) && !agitated)
         {
             agitated = true;
+            em.Agitated(); // event for emote
+            
             SwitchState(patrollingState);
         }
             
