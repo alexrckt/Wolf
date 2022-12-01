@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
             { Difficulty.Medium, 1.2f },
             { Difficulty.Hard, 1.5f }
         };
+    public Dictionary<Difficulty, float> difficultyScoreForLifeMultiplier = new Dictionary<Difficulty, float>()
+        {
+            { Difficulty.Easy, 0.5f },
+            { Difficulty.Medium, 0.7f },
+            { Difficulty.Hard, 1f }
+        };
     public int maxLevel = 4;
     public int currentLevel;
     //public int livesInitial;
@@ -315,12 +321,12 @@ public class GameManager : MonoBehaviour
         PauseGame(true);
         currentGameState = GameState.EndGame;
         gameWinMenu.SetActive(true);
-        var finalScore = score * difficultyScoreMultiplier[difficulty] + (livesCurrent * scoreForLife);
+        var finalScore = score * difficultyScoreMultiplier[difficulty] + (livesCurrent * (scoreForLife * difficultyScoreForLifeMultiplier[difficulty]));
         gameWinMenu.transform.GetComponentInChildren<TextMeshProUGUI>().SetText(
             "YOU WIN!\n" +
             $"Score: {score}\n" +
             $"Difficulty: x{difficultyScoreMultiplier[difficulty]}\n" +
-            $"Lives left: {livesCurrent} x {scoreForLife}\n" +
+            $"Lives left: {livesCurrent} x {scoreForLife * difficultyScoreForLifeMultiplier[difficulty]}\n" +
             $"<color=#65BB6B><b>Final score: {finalScore}</b>"
             );
         currentActiveMenu = gameWinMenu;
