@@ -409,7 +409,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000015894572, y: 0.004102747}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
 --- !u!114 &336064165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 12
   closeradius: 2.5
-  angle: 250
+  currentAngle: 0
   canSeePlayer: 0
   fovPoint: {fileID: 4930150178398763320}
   playerRef: {fileID: 0}
@@ -550,6 +550,7 @@ MonoBehaviour:
   - {fileID: 3952323712777685707}
   - {fileID: 2713086625818224196}
   fovVisual: {fileID: 0}
+  fovVisualStealth: {fileID: 0}
 --- !u!114 &8700230756717973508
 MonoBehaviour:
   m_ObjectHideFlags: 0

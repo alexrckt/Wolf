@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 5254388034908981208}
   - component: {fileID: 3900391726282133038}
   m_Layer: 6
-  m_Name: Obstacle col
+  m_Name: ASTARCOL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0020719469, y: 0.21474814}
+  m_Offset: {x: -0.013993263, y: 0.21474814}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -267,7 +267,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93784136, y: 0.4294963}
+  m_Size: {x: 0.4237404, y: 0.23670912}
   m_EdgeRadius: 0
 --- !u!1 &2896943516946077573
 GameObject:
@@ -311,7 +311,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0020719469, y: 0.21474814}
