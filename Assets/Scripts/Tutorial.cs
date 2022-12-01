@@ -227,7 +227,7 @@ public class Tutorial : MonoBehaviour
         hints.text = "but they can't see you very well";
         Fading(true);
         yield return new WaitForSeconds(3f);
-        hints.text = "To fool a dog, put on your disguise - hold <Left Shift>!";
+        hints.text = "To fool a dog, put on your disguise - hold <Shift>!";
         Fading(true);
 
     }
